@@ -1,6 +1,6 @@
 # LS170-171
 ## Contents
-## Lesson 1
+## [Lesson 1](https://github.com/SandyRodger/LS170-171/blob/main/lesson_1.md)
 ## Lesson 2
 ## Lesson 3
 ## Lesson 4
