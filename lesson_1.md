@@ -10,4 +10,4 @@
 ## [Summary](https://launchschool.com/lessons/4af196b9/assignments/6b7df8fb)
 ## [Quiz](https://launchschool.com/lessons/4af196b9/assignments/d810a100)
 ## [Ginni's notes](https://github.com/gcpinckert/ls170_171/blob/main/study_guide/the_internet.md)
-
+blah
