@@ -104,6 +104,21 @@
 - The seperation of layers provides a level of abstraction which allows us to use different protocols at one layer without worryinbg about the other layers.
   - A good example of this is at the Application layer where many different protocols are used depending on the application and use case.
 ## [The physical network](https://launchschool.com/lessons/4af196b9/assignments/097d7577)
+- Everything described above is conceptual abstractions, but when you drill down there is a physical reality to the internet, which is the subject of this chapter.
+- These are devices, cables, wires, radio-waves, light-waves, etc. bound by the laws of physics.
+- These elements are bound by such questions as 'how fast can an electrical signal travel? How far can a radio-wave reach?
+### Bits and Signals
+- The OSI model defines its base layer as 'physical', but the IP suite doesn't directly relate to it (although there are some physical interactions in the link layer)
+- Either way these interactions are concerned with 'bits' ie binary data.
+- For transportation these bits are converted into signals.
+### Characteristics of a physical network.
+- Latency: The time it takes for data to get from one point to another in a network.
+  - If a car drives at 50mph down a 10 mile road, then the road has a letency of 12 minutes.  
+- Bandwidth: The amount of data that can be sent in a unit of time (probably a second).
+  - Adding more lanes to the road increases bandwidth because the road can deliver more cars, but it doesn not affect latency because the cars are still constricted by their maximum speed.
+  - Increasing Bandwidth doesn't necessarily improve a network's performance.
+- The elements of latency:
+  - Propagation delay: 
 ## [ The data/link layer](https://launchschool.com/lessons/4af196b9/assignments/81df3782)
 ## [The internet/network layer](https://launchschool.com/lessons/4af196b9/assignments/b222ecfb)
 ## [Summary](https://launchschool.com/lessons/4af196b9/assignments/6b7df8fb)
@@ -113,13 +128,13 @@
  
 Lesson 1: The Internet
 
-|  | Once | Twice | Thrice | How well do you know this?
-| :--- | :---: | :---: | :---: | :--- 
-|1. Introduction|4th April| 7th April||N/A
-|2. What to Focus on|4th April|7th April||N/A
-|3.  AWS Cloud 9|4th April|7th April||N/A
-|4.  What is the internet?|4th April|7th April || 90%
-|5. Protocols|4th April|7th April||
+|  | Once | Twice | Thrice | Comprehension | Retention
+| :--- | :---: | :---: | :---: | :--- | :---
+|1. Introduction|4th April| 7th April||N/A |N/A
+|2. What to Focus on|4th April|7th April||N/A|N/A
+|3.  AWS Cloud 9|4th April|7th April||N/A|N/A
+|4.  What is the internet?|4th April|7th April || 90%|70%
+|5. Protocols|4th April|7th April|||80%|40%
 |6.  A layered system|4th April| |
 |7. The Physical network|4th April| |
 |8.  The data/link layer|4th April| |
