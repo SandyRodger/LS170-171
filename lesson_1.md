@@ -117,9 +117,28 @@
 - Bandwidth: The amount of data that can be sent in a unit of time (probably a second).
   - Adding more lanes to the road increases bandwidth because the road can deliver more cars, but it doesn not affect latency because the cars are still constricted by their maximum speed.
   - Increasing Bandwidth doesn't necessarily improve a network's performance.
-- The elements of latency:
-  - Propagation delay: 
+- Latency is actually a collection of different types of delay. Here are the elements of latency:
+  - Propagation delay: The amount of time it takes for a message to get from sender to receiver. 
+    - Speed = distance/time
+  - Transmission delay: The route taken by the data will involve many didferent wires, cables, switches, routers etc. The time it takes to get onto the next part of the route adds up and makes the transmission delay. In the analogy of the road, this can be thought of as time spent at roundabouts and interchanges.
+  - Processing delay: Data travelling across the physical network doesn't skip unimpeded from one stage to the next. It is processed in various ways. THese processes take time and add up to the processing delay. In the road analoguy this might be checkpoints along the route, or toll-booths.
+  - Queueing delay: Networks can only handle so much data transfer. If the amount of traffic exceeds this then the network queues or buffers the data. This can be visualised as time spent in traffic waiting for the toll-booth/checkpoint.
+  - Total latency is the combined milliseconds (ms) of the above.
+- Other Latency-related terms:
+  -  Last-mile latency: Most of hte delays often occur right at the end of the transfer. So entering the LAN. For this reason they are referred to thusly.
+  -  Round-trip-time(RTT): Lenght of time for a signal to be sent + for an acknowledgement/response to be received.
+### Network Hops
+- `traceroute google.com` traceroute is a utility for displaying the route and latency of a path across a network. Running this command returns a list of the hops taken for the test data to get from your device to the google server. The values printed here are the RTT for each hop
+### Bandwidth
+- Varies across the network. So, not a constant from start to end.
+- The capacity of the core network is much greater than the part that connects to your LAN.
+- Where the bandwidth goes from relatively high to relatively low a bottleneck can occur.
+- Low-bandwidth can be an issue when dealing with large volumes of data.
+- However in many situations latency can be a greater impingement on the performance of a networked application.
+### Limitations of physical networks
+- As developers we cannot really change the physical reality of the network, but understanding how it works will be useful in designing programs that can make best use of the physicial network.
 ## [ The data/link layer](https://launchschool.com/lessons/4af196b9/assignments/81df3782)
+- 
 ## [The internet/network layer](https://launchschool.com/lessons/4af196b9/assignments/b222ecfb)
 ## [Summary](https://launchschool.com/lessons/4af196b9/assignments/6b7df8fb)
 ## [Quiz](https://launchschool.com/lessons/4af196b9/assignments/d810a100)
