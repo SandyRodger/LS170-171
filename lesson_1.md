@@ -288,13 +288,13 @@ Some of the more important header fields are:
 ## [Ginni's notes](https://github.com/gcpinckert/ls170_171/blob/main/study_guide/the_internet.md)
 
  
-Lesson 1: The Internet
+Overview:
 
 |  | Once | Twice | Thrice | Comprehension | Retention
 | :--- | :---: | :---: | :---: | :--- | :---
-|1. Introduction|4th April| 7th April||N/A |N/A
-|2. What to Focus on|4th April|7th April||N/A|N/A
-|3.  AWS Cloud 9|4th April|7th April||N/A|N/A
+|1. Introduction|4th April| 7th April||
+|2. What to Focus on|4th April|7th April||
+|3.  AWS Cloud 9|4th April|7th April||
 |4.  What is the internet?|4th April|7th April || 90%|70%
 |5. Protocols|4th April|7th April||80%|40%
 |6.  A layered system|4th April|7th April ||85%|50%
