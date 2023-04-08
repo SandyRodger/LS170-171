@@ -58,7 +58,8 @@
 ## [A layered system](https://launchschool.com/lessons/4af196b9/assignments/21ef33af)
 
 - Protocols are best grouped together by the aspect of communication they deal with.
-- Rather than trying to understand all aspects of communication simultaneously (language, physics, biology, etiquette) there are models for message thransfer that aim to deal with everything in a manageable way. The two main ways are :
+- Rather than trying to understand all aspects of communication simultaneously (language, physics, biology, etiquette) there are models for message th
+- transfer that aim to deal with everything in a manageable way. The two main ways are :
   - The Internet Protocol Suite
   - The OSI model.
 <p align="center">
