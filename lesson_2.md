@@ -219,6 +219,14 @@ Solution 3:
                   TCP Connection State Diagram
                             Figure 6.
 ```
+The three way handshake can look like this:
+
+|Client Start|Client Action|Client End State|Server Start State|Server Action|Server End State
+| :--- | :---: | :---: | :---: | :--- | :---
+|CLOSED|Sends a SYN segment|SYN_SENT|LISTEN|waits for a connection request|
+|SYN-SENT|waits to receive an ACK to the SYN it sent, as well as the server's SYN|SYN-SENT|LISTEN|Sends a SYN-ACK segment which serves as both its SYN and and ACK for the client's SYN.|SYN-RECEIVED
+|SYN-SENT
+|ESTABLISHED
 
 ## [User datagram protocol (UDP)](https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b)
 ## [Summary](https://launchschool.com/lessons/2a6c7439/assignments/4ab0993c)
