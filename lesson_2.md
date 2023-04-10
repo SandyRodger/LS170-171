@@ -54,7 +54,7 @@ Solution 2:
 <img width="805" alt="Screenshot 2023-04-10 at 16 30 10" src="https://user-images.githubusercontent.com/78854926/230933136-ec313447-f587-4524-8b7b-23ac93a941db.png">
 </p>
 
-- Problem 1: The receiver receives the message but the acknowledgement becomes corrupt/lost/ delayed to the extent that the sender resends the same message. The receiver is now getting duplicate messages.
+- Problem: The receiver receives the message but the acknowledgement becomes corrupt/lost/ delayed to the extent that the sender resends the same message. The receiver is now getting duplicate messages.
 
 Solution 3:
 
@@ -78,13 +78,49 @@ Solution 3:
 
 ### Pipelining:
   - Sending multiple messages before receiving acknowledgements.
-  - How does that impact reliability? It doesn't, the aclknowledgment system is unchanged.
+  - How does that impact reliability? It doesn't, the acknowledgment system is unchanged.
  
  <p align="center">
 <img width="865" alt="Screenshot 2023-04-10 at 16 45 31" src="https://user-images.githubusercontent.com/78854926/230938239-75b7ff33-f9e1-40b7-9cb2-742112dfff7d.png">
 </p>
 
+- Different ways to pipeline:
+  - Go back N
+  - Selective repeat
+- but the difference isn't important right now.
+- With both systems the send implements a 'window' representing the maximum number of messages that can be 'in the pipeline' at any one time.
+- Once it has received an acknowledgement it sends the next message:
+ 
+ <p align="center">
+  <img width="802" alt="Screenshot 2023-04-10 at 16 57 28" src="https://user-images.githubusercontent.com/78854926/230940667-5b668c63-aedf-41a3-9115-9a27d1e6cae5.png">
+ </p>
+ 
+ [interactive pipelining simulation](http://www.ccs-labs.org/teaching/rn/animations/gbn_sr/)
+ 
+ - Pipelining is a more efficient use of bandwidth. Less time is spent waiting. More time is spent transmitting.
+ - Finding a balance between reliability and performance is a key part of the Transmission Control Protocol(TCP)
+
 ## [Transmission Control Protocol(TCP](https://launchschool.com/lessons/2a6c7439/assignments/d09ddd52)
+
+- The transmission control protocol is one of the corner-stones of the internet and one of its keyfeatures is providing reliable data transfer.
+- TCP provides the abstraction of reliable data-transfer on top of an unreliable channel.
+- What this abstraction does is to hide the complexity of reliable network communication from the application layer:
+  - Data integrity.
+  - de-duplication.
+  - in-order delivery.
+  - re-transmission of lost data.
+- TCP is the protocol of choice for many networked applications because it provides great services.
+- The disadvantage is that these services are the performance challenges that come with this complexity. (Just because the complexity is hidden from the dev working at the application layer doesn't mean its not there- it's real and does affect performance).
+- TCP also provides:
+  - Multiplexing
+  - Data-encapsulation
+
+### TCP segments
+ 
+ <p align="center">
+<img width="869" alt="Screenshot 2023-04-10 at 17 15 36" src="https://user-images.githubusercontent.com/78854926/230943883-f9503ff1-9f42-417a-aa54-cc1e1e2830db.png">
+ </p>
+
 ## [User datagram protocol (UDP)](https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b)
 ## [Summary](https://launchschool.com/lessons/2a6c7439/assignments/4ab0993c)
 
