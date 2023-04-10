@@ -154,6 +154,72 @@ Solution 3:
 <img width="893" alt="Screenshot 2023-04-10 at 22 00 23" src="https://user-images.githubusercontent.com/78854926/230997932-0ae70d6a-5d6b-435e-a946-b026ccc957c9.png">
 </p>
 
+- So when the sender gets the ACK, it immediately starts sending application data. The receiver has to wait until it has received the ACK to send back any data. This is so that the SYN numbers can be  synchronised.
+- One of thes main reasons for flags is to manage the *connection state*.
+- A connection progresses through a series of states in its lifetime:
+  - LISTEN
+  - SYN-SENT
+  - SYN-RECEIVED
+  - ESTABLISHED
+  - FIN-WAIT-1
+  - FIN-WAIT-2
+  - CLOSE-WAIT
+  - CLOSING
+  - LAST-ACK
+  - TIME-WAIT
+  - CLOSED (which is a fictional state because it is implied by the connection not existing).
+- We are most interested in ESTABLISHED and LISTEN.
+- Here is the RFC document for establishing and closing connections which I am not meant to understand, but looks lovely.
+```
+                             +---------+ ---------\      active OPEN
+                             |  CLOSED |            \    -----------
+                             +---------+<---------\   \   create TCB
+                               |     ^              \   \  snd SYN
+                  passive OPEN |     |   CLOSE        \   \
+                  ------------ |     | ----------       \   \
+                   create TCB  |     | delete TCB         \   \
+                               V     |                      \   \
+                             +---------+            CLOSE    |    \
+                             |  LISTEN |          ---------- |     |
+                             +---------+          delete TCB |     |
+                  rcv SYN      |     |     SEND              |     |
+                 -----------   |     |    -------            |     V
++---------+      snd SYN,ACK  /       \   snd SYN          +---------+
+|         |<-----------------           ------------------>|         |
+|   SYN   |                    rcv SYN                     |   SYN   |
+|   RCVD  |<-----------------------------------------------|   SENT  |
+|         |                    snd ACK                     |         |
+|         |------------------           -------------------|         |
++---------+   rcv ACK of SYN  \       /  rcv SYN,ACK       +---------+
+  |           --------------   |     |   -----------
+  |                  x         |     |     snd ACK
+  |                            V     V
+  |  CLOSE                   +---------+
+  | -------                  |  ESTAB  |
+  | snd FIN                  +---------+
+  |                   CLOSE    |     |    rcv FIN
+  V                  -------   |     |    -------
++---------+          snd FIN  /       \   snd ACK          +---------+
+|  FIN    |<-----------------           ------------------>|  CLOSE  |
+| WAIT-1  |------------------                              |   WAIT  |
++---------+          rcv FIN  \                            +---------+
+  | rcv ACK of FIN   -------   |                            CLOSE  |
+  | --------------   snd ACK   |                           ------- |
+  V        x                   V                           snd FIN V
++---------+                  +---------+                   +---------+
+|FINWAIT-2|                  | CLOSING |                   | LAST-ACK|
++---------+                  +---------+                   +---------+
+  |                rcv ACK of FIN |                 rcv ACK of FIN |
+  |  rcv FIN       -------------- |    Timeout=2MSL -------------- |
+  |  -------              x       V    ------------        x       V
+  \ snd ACK                 +---------+delete TCB         +---------+
+   ------------------------>|TIME WAIT|------------------>| CLOSED  |
+                            +---------+                   +---------+
+
+                  TCP Connection State Diagram
+                            Figure 6.
+```
+
 ## [User datagram protocol (UDP)](https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b)
 ## [Summary](https://launchschool.com/lessons/2a6c7439/assignments/4ab0993c)
 
