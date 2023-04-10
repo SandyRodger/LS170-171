@@ -7,7 +7,7 @@
 
 ## [Communication between processes](https://launchschool.com/lessons/2a6c7439/assignments/41113e98)
 
-- The Internet PRotocol provides the inter-network communicationservaces necessary for "minimum viable internet".
+- The Internet Protocol provides the inter-network communicationservaces necessary for "minimum viable internet".
 - But to create networked applications we need more than IP.
   - A direct connection between applications
   - Reliable network communication.
