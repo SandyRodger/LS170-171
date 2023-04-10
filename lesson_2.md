@@ -223,10 +223,57 @@ The three way handshake can look like this:
 
 |Client Start|Client Action|Client End State|Server Start State|Server Action|Server End State
 | :--- | :---: | :---: | :---: | :--- | :---
-|CLOSED|Sends a SYN segment|SYN_SENT|LISTEN|waits for a connection request|
+|CLOSED|Sends a SYN segment|SYN_SENT|LISTEN|waits for a connection request|-
 |SYN-SENT|waits to receive an ACK to the SYN it sent, as well as the server's SYN|SYN-SENT|LISTEN|Sends a SYN-ACK segment which serves as both its SYN and and ACK for the client's SYN.|SYN-RECEIVED
-|SYN-SENT
-|ESTABLISHED
+|SYN-SENT|Receives the SYN-ACK segment sent by the server and sends an ACK in response. The client is now finished with the connection establishment process|ESTABLISHED|SYN-RECEIVED|waits for an ACK for the SYN it just received|-
+|ESTABLISHED|Ready for data transfer. Can start sending application data|ESTABLISHED|SYN-RECEIVED|Receives the ACK sent in response to its SYN. THe server is not finished with the connection establishment process.|ESTABLISHED|
+
+- You don't need to memorise this but remember:
+  - There are fair amount of complexity in how TCP handles connection state.
+  - This is particularly true at the establishment of a connection, where the key thing to remember is that the sender cannot send any data until it has sent the ACK segment.
+  - What this means is that there is an entire round trip of latency before any application data can be exchanged.
+  - Since this hand-shake process happens every time a TCP connection is made this has a big impact on any application which uses TCP at the transport layer.
+
+<p align="center">
+<img width="906" alt="Screenshot 2023-04-10 at 22 28 55" src="https://user-images.githubusercontent.com/78854926/231002601-a0354a55-22de-487d-ad8c-3ebb948b0081.png">
+</p>
+
+- So TCP involves a lot of costs in terms of establishing a connection and providing reliability through the retransmission of lost data.
+- To deal with this we have to be as efficient as possible with the functioning of data-transfer. To speed things up once a connection is established TCP implements mechanisms for flow-control and congestion-avoidance.
+
+### Flow Control
+
+- The aim of this is to prevent the sender from overloading the receiver.
+- The receiver can only process a limited amount of data in a time-frame.
+- Data awaiting processing is stored in a "buffer"
+- buffer size depends on the amount of memory allocated. That depends on the configuration of the OS and physical resources available.
+- Each side of a connection can tell the other side how much data it is willing to receive with the WINDOW field. This number is dynamic so it can change during the course of a connection.
+- If the buffer is getting full then it can send a lower window size.
+- Flow control means the sender and receiver don't overwhelm each other, but they can still overwhelm the underlying network. For that we need congestion avoidance.
+
+### Congestion Avoidance
+
+- Network Congestion happens when there is more data being trasmitted on the network than the network has capacity to process that data. It's like gridlock on the roads. But instead of things jamming up the excess vehicles disappear.
+- IP packets move accross a network in a series of hops and at each hop the packet needs to be processed.
+  - The router runs a checksum on the data to make sure it's OK
+  - It also checks the destination to work out how best to send it.
+- Routers use a buffer to store data, but overflow is dropped.
+- TCP retransmits lost data. If lots is lost, lots is re-transmitted which is inefficient.
+- TCP uses data-loss as a metric by which to detect and avoid network congestion.
+- If lots of re-transmissions are occuring TCP reduces the size of the transmission window because congestion has been detected.
+- There are different algorithms for detecting and establishing the transmission window.
+
+### Disadvantages of TCP
+
+Pros:
+  - Reliable data transfer
+  - Uses flow control and congestion avoidance techniques.
+Cons:
+  - Latency overhead in establishing a connection with the handshake process.
+  - Head-of-Line (HOL) blocking.
+
+- HOL blocking isn't specific to TCP. Basically it is about how processing one message in a sequence can block the processing of subsequent messages in the sequence.
+- TCP's provision of in-order delivery or segments can cause HOL blocking. If one segment goes missing, it jams transmission for the subsequent segments and need to be buffered. This can lead to increased queueing delay which adds to latency.
 
 ## [User datagram protocol (UDP)](https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b)
 ## [Summary](https://launchschool.com/lessons/2a6c7439/assignments/4ab0993c)
