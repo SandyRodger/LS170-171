@@ -276,7 +276,63 @@ Cons:
 - TCP's provision of in-order delivery or segments can cause HOL blocking. If one segment goes missing, it jams transmission for the subsequent segments and need to be buffered. This can lead to increased queueing delay which adds to latency.
 
 ## [User datagram protocol (UDP)](https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b)
+
+- If TCP implements reliable data transfer through sequencing and re-transmission of lost data, how does UDP do this? It doesn't.
+- The PDU of UDP is a datagram.
+- Gatagram headers look like this:
+<p align="center">
+<img width="873" alt="Screenshot 2023-04-11 at 12 17 01" src="https://user-images.githubusercontent.com/78854926/231144645-799e39a8-4cef-41de-9ae8-ddb5d55de526.png">
+</p>
+- So only 4 fields:
+  - Source port
+  - Destination port
+  - Checksum (optional if using ipv4 at Network level)
+  - Length
+- With the source and destination ports UDP can multiplex in the same way TCP does. But unlike TCP it doesn't do anything to resolve the unreliability of lower layers.
+- What UDP *doesn't* do:
+  - provide a guarantee of message delivery.
+  - provide a guarantee of message delivery order.
+  - prove a built in congestion avoidance or flow control mechanism.
+  - Provide connection-state tracking (since it is a connectionless protocol).
+
+### The case for UDP
+
+- UDP provides simplicity, which means:
+  - speed
+  - flexibility
+- As a connectionless protocol applications using UDP can just start sending data straight away, without having to wait for a connection to be established.
+- The lack of acknowledgements and retransmission means the actual data delivery is faster. Once a datagram is sent, it doesn't need to be sent again.
+- Latency is less of an issue since without retransmission data essentially travels only one way.
+- The lack of in-order delivery also prevents HOL blocking.
+- It's probable that someone using UDP will implement for themselves some of the features UDP lacks. Which services those would be and how they are implemented would be up to the person writing the application code.
+- For example you might want to implement in-order delivery, but not worry too much about losing the odd bit of data. In this case you would implement sequencing, but not re-transmission or lost data. These services can be implemented at the application layer. This is like using UDP as a base template on which to build.
+- An example of this would be a voice/video calling app. The occasional lost piece of data means glitching, but its worth it for the speed of the connection over long distances (which would normally mean higher latency). ONoine gaming is another good example.
+- So UDP provides all this freedom, but comes with responsibility. Various practices should be adhered to, like implementing your own congestion avoidance in order to prevent it overwhelming the network.
+
 ## [Summary](https://launchschool.com/lessons/2a6c7439/assignments/4ab0993c)
+
+- Multiplexing/demultiplexing allow multiple signals to be sent over a single channel
+- Multiplexing is enabled through the use of network ports.
+- Network sockets are a combination of network port and IP address.
+- At the implementation level network sockets can also be socket objects.
+- the underlying network is inherently unreliable, so if we want reliable data transfer we should implement a system of rules (at the application layer?)
+- TCP
+  - is a connection-oriented protocol. It establishes a connection using a three-way handshake.
+  - provides reliability through message acknowledgement/retransmission and in-order delivery.
+  - provides Flow-control and congestion avoidance.
+  - has the disadvantages of 
+    - high latency overhead in establishing a connection.
+    - potential HOL blocking as a result of in-order delivery
+- UDP is
+  - Very simple compared to TCP
+  - Provides multiplexing, but 
+    - no reliability.
+    - no in-order delivery.
+    - no congestion/flow-control
+  - Is connectionless, so doesn't need to establish a connection before it starts sending data.
+  - Despite its unreliability it is
+    -  fast
+    -  flexible
 
 Overview:
 
@@ -285,8 +341,8 @@ Overview:
 |2. What to Focus on| 6th April | 8th April | 
 |3.  Communication between processes| 6th April | 9th April 
 |4.  Network Reliability| 6th April |10th April
-|5. Transmission Control Protocol| 6th April |
-|6.  User Datagram Protocol| 6th April |
-|7.  Summary|6th April |
+|5. Transmission Control Protocol| 6th April |10th April
+|6.  User Datagram Protocol| 6th April |11th April|
+|7.  Summary|6th April |11th April|
 |8. Quiz |
 | + Read through Discussions |
