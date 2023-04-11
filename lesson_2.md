@@ -23,9 +23,9 @@ I MADE GREAT NOTES FOR THIS ON SUNDAY, 9TH APRIL, BUT FAILED TO SAVE THEM.
 https://www.youtube.com/watch?v=IP-rGJKSZ3s&vl=en
 
 - Protocols such as the ethernet and internet protocols contain checksum data to prove to the receiver that the data after transmission is the same as when it was sent. But is the data is corrupt they just drop the packet. We need a system that guarantees that a packet of information will be replaced if it becomes lost or corrupt. 
-- The possibility of losing data means that the network uo to and including the Internet Protocol is effectively an unreliable communication channel.
+- The possibility of losing data means that the network up to and including the Internet Protocol is effectively an unreliable communication channel.
 - As developers we need a reliable communication channel.
-- At lower levels out communication channel is unreliable, so how to we ensure reliability.
+- At lower levels our communication channel is unreliable, so how to we ensure reliability.
 
 ### Building a reliable protocol
 
@@ -59,7 +59,7 @@ Solution 3:
 
 - Add a sequence of numbers (idempotency token) to the message.
   - Sender sends one message at a time with a timer and an idempotency token.
-  - If received the receiver sends back an acknowledgement conaining the idempotency token, to indicate which message was received.
+  - If received the receiver sends back an acknowledgement containing the idempotency token, to indicate which message was received.
   - When acknowledgement is received the sender sends the next part of the sequence.
   - If acknowledgement is not received in time the sender re-sends the message with the same idempotency token.
   - If the receiver receives a duplicated token, it resends an acknowledgement with that token and discards the duplicated message.
@@ -73,7 +73,7 @@ Solution 3:
   - Error detection: Corrupt data is detected with a checksum.
   - Handling data-loss: Lost data is resent using a system of acknowledgements and time-outs.
   - Handling duplication: duplicate data is eliminated with an idempotency token system.
-- The solution is effective, but inefficient. The solution is:
+- The solution is effective, but inefficient. We can mitigate this inefficiency with:
 
 ### Pipelining:
   - Sending multiple messages before receiving acknowledgements.
@@ -344,5 +344,5 @@ Overview:
 |5. Transmission Control Protocol| 6th April |10th April
 |6.  User Datagram Protocol| 6th April |11th April|
 |7.  Summary|6th April |11th April|
-|8. Quiz |
+|8. Quiz | 11th April (100%)|
 | + Read through Discussions |
