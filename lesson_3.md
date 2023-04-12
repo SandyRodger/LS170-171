@@ -2,7 +2,7 @@
 
 ## [What to focus on](https://launchschool.com/lessons/cc97deb5/assignments/cd70ff6d)
 
-- Develop a clear understanding of the role of HTTP (not in isolation, but in context). THe web as a combination of inter-woven technologies of which HTTP is one.
+- Develop a clear understanding of the role of HTTP (not in isolation, but in context). The web as a combination of inter-woven technologies of which HTTP is one.
 - Break things down into individual components. Break concepts like HTTP and URLs into parts in order to ensure clarity of each part's purpose.
 
 ## [The Application Layer](https://launchschool.com/lessons/cc97deb5/assignments/c604eb60)
@@ -16,7 +16,7 @@
 ### Application layer protocols
 
 - Application layer protocols are rules for how applications talk to each other at a syntactical level.
-- As a result there are many different protocols that exist at this level. Fopr example the rules of how an email client communicates with a web-server because emails and web pages are fundamentally different things.
+- As a result there are many different protocols that exist at this level. For example the rules of how an email client communicates with a web-server because emails and web pages are fundamentally different things.
 - If you were building an application for transferring files it would likely work with FTP. If you were building an email client it would almost certainly have to use some SMTP along with either POP or IMAP. In this lesson we'll just look at HTTP. That is the primary protocol used in communication on the web.
 
 ## [HTTP and the web](https://launchschool.com/lessons/cc97deb5/assignments/e3d85587)
@@ -37,10 +37,15 @@
   - How such a request would be responded to.
 - The way this was achieved combined three technologies: HTML, URIs and HTTP. This was the earliest incarnation of the internet.
 
-- HyperText Markup Language:  The means by which resources in this system would be uniformly structured. This early version of HTML was intended for structuring text documents using headings, paragraphs and lists. It was very basic containing only 18 elements. Of these the most revolutionary was the anchor. `<A>` this used a `href` attribute to provide a link from one resource to another.
-  - A Uniform Resource Identifier (URI) is a string of characters which identifies a particular resource. It is part of a system by which resources should be uniformly addressed on the web
+- HyperText Markup Language:  The means by which resources in this system would be uniformly structured. This early version of HTML was intended for structuring text documents using headings, paragraphs and lists. It was very basic containing only 18 elements. Of these the most revolutionary was the anchor, `<A>` this used a `href` attribute to provide a link from one resource to another.
+  - A Uniform Resource Identifier (URI) is a string of characters which identifies a particular resource. It is part of a system by which resources should be uniformly addressed on the web:
+    - The web is an information space. Human beings have a lot of mental machinery for manipulating, imagining and finding their way in spaces. URIs are the points in that space.
+  - "URI" and "URL" are often used interchangeably, but they are distinct. (more later).
+  - HTTP: is the set of rules which provide uniformity to the way resources on the web are transferred between applications
+  - In the beginning it was just text files on the internet, since then it has adapted to include lots more.  
 
 ## Assignment: read HTTP book
+[my notes](https://github.com/SandyRodger/launch_school_books/blob/main/http_book.md)
 ## Some background diagrams
 ## URLs
 ## Practice problems: URL components
@@ -53,8 +58,8 @@ Overview:
 | :--- | :---: | :---: | :---: | :--- | :---
 |1. What to Focus on|11th April|
 |2. The Application Layer|11th April|
-|3.  HTTP and the web|
-|4. Assignment: read HTTP book|
+|3.  HTTP and the web|12th April|
+|4. Assignment: read HTTP book|12th April|
 |5. Some background diagrams|
 |6.  URLs|
 |7. Practice problems: URL components|
