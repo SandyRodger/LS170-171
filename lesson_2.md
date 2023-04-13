@@ -12,9 +12,40 @@
   - A direct connection between applications
   - Reliable network communication.
 - The IPs system of addressing is designed to provide communication between *hosts*. These hosts can be on the same network or on the other side of the world. IP is great for getting a message from Host A to Host B, but not more than that. 
+- Within each host there are multiple applications running.
 
-I MADE GREAT NOTES FOR THIS ON SUNDAY, 9TH APRIL, BUT FAILED TO SAVE THEM. 
+### Multiplexing and Demultiplexing
 
+- Different apps need to send and receive data simultaneously. We can think of these different processes as channels.
+
+- An IP packet contains one destination MAC address, so everything bundled into that packet is going to the same host. We need a way to transmit these channels all together and then unpack them on the receiving end.
+
+- Multiplexing: Sending multiple signals over one channel.
+
+- Demultiplexing: reversing the multiplexing on the receiving end.
+
+- These processes take place through the use of **network ports**.
+
+<p align="center">
+26
+<img width="918" alt="Screenshot 2023-04-08 at 16 43 09" src="https://user-images.githubusercontent.com/78854926/230730288-d8e42e71-38af-450e-8de7-dfa6652cf45d.png">
+
+### Ports
+
+- A port is an identifier (represented by a number between 0 and 65535) for a specific process on a host.
+
+- Sections of this range are reserved for specific things:
+
+| port| purpose| Explanation| Example
+| :--- | :---: | :---: | :---: 
+| 0 -1023 | Well-known ports| Assigned to processes that provide commonly used network service| HTTP is port 80, FTP is 20, SMTP is 25
+|1024 - 49151|Registered ports|Assigned as requested by private entities| Microsoft, IBM and Cisco all have ports assigned that they use to provide specific services (On some operating systems ports in this range are also used for allocation as *ephemeral* ports)
+|49152 - 65535|dynamic (or private) ports|Ports in this range cannot be registered for a specific use. They can be used for customised services or for alloction as *ephemeral ports*|
+  
+- Services running on a server will most likely be assigned to a port in the well-known range. So if you want to connect via HTTP to a web-server running on a host machine, the web-server process will most likely have port 80 assigned to it.
+
+- This is known as the web server *listening* on port 80.
+  
 ## [Network reliability](https://launchschool.com/lessons/2a6c7439/assignments/89636ed4)
 
 - This chapter is all about how the sender and receiver of data in a network can reliably know whether the other end has successfully received the data.
