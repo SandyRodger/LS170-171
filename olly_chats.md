@@ -10,3 +10,4 @@ Questions:
 To Discuss:
 
 - How much effort should I be putting into retaining stuff from previous courses?
+- What do you think of [dan miessler](https://danielmiessler.com/blog/the-dangers-of-abruptly-destroying-meaning-structures/)
