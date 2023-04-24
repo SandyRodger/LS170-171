@@ -46,7 +46,10 @@
 
 ## Assignment: read HTTP book
 [my notes](https://github.com/SandyRodger/launch_school_books/blob/main/http_book.md)
-## Some background diagrams
+## [Some background diagrams](https://launchschool.com/lessons/cc97deb5/assignments/586769d9)
+
+- When you're coding or debugging a web application it's important to be able to see where you are
+
 ## URLs
 ## Practice problems: URL components
 ## The Request Response Cycle
@@ -59,7 +62,7 @@ Overview:
 |1. What to Focus on|11th April|
 |2. The Application Layer|11th April|
 |3.  HTTP and the web|12th April|
-|4. Assignment: read HTTP book|12th April|
+|4. Assignment: read HTTP book|12th - 23rd April|
 |5. Some background diagrams|
 |6.  URLs|
 |7. Practice problems: URL components|
