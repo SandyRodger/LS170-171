@@ -16,4 +16,6 @@ To Discuss:
 
 Questions:
 
-- Why can't i see the `set-cookies` line [here](https://www.brightonandhovealbion.com/)
+- Why can't I see the `set-cookies` line [here](https://www.brightonandhovealbion.com/)
+
+<img width="606" alt="Screenshot 2023-04-24 at 14 18 37" src="https://user-images.githubusercontent.com/78854926/234008160-36d2024b-fc19-4584-9162-8d655a1482a2.png">
