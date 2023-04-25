@@ -27,7 +27,6 @@
 - These processes take place through the use of **network ports**.
 
 <p align="center">
-26
 <img width="918" alt="Screenshot 2023-04-08 at 16 43 09" src="https://user-images.githubusercontent.com/78854926/230730288-d8e42e71-38af-450e-8de7-dfa6652cf45d.png">
 
 ### Ports
