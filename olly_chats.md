@@ -23,3 +23,12 @@ Questions:
 Another example of the material not matching my computer:
 
 <img width="691" alt="Screenshot 2023-04-24 at 15 09 26" src="https://user-images.githubusercontent.com/78854926/234021881-befdcdff-c10a-49fc-8b54-648cafc7a77a.png">
+
+
+We talk about:
+
+- curl
+- Let's encrypt non-profit organisation.
+- encryption, certificate authorities
+- Sinatra and Frankie
+- The two general problem.
