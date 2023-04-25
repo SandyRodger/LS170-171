@@ -101,21 +101,74 @@ In summary HTTP operates at the application layer and is concerned with structur
 
 ## [Practice problems: URL components](https://launchschool.com/lessons/cc97deb5/assignments/d69da941)
 
-|  | First go | result | second go | Comprehension | Retention
-| :--- | :---: | :---: | :---: | :--- | :---
-|1.|amazon.com|
-|2.|
-|3.|
-|4.|
-|5.|
-|6.|
-|7.|
+|  | First go | result | second go | third go 
+| :--- | :---: | :---: | :---: | :--- 
+|1.a) Host|amazon.com| correct
+|1.b) names of the query parameters|B60HON32?ie and qid and sr and keywords| the first one is just `ie`
+|1.c) values of the query parameters|UTF8 and 142952676 and 93 and commercial+fridge|correct
+|1.d) the scheme|https|correct
+|1.e) the path|/Double-Stainless-Commercial-Refrigerator| needs the `B60HON32` from above|
+|1.f) the port|443|correct
+|2.| http://amazon.com:3000/products/B60HON32?qid=142952676&sr=93| correct
+|3.a) the query parameters| none| correct
+|3.b)the scheme|http| correct
+|3.c)the path|/todos/15| correct
+|3.d) the host|localhost| correct
+|3.e) the port|:4567| correct
+|4.|%20 or +| correct
+|5.|?| correct
+|6.|=| correct
+|7.|&| correct
+|results|14/16 or 88%
 
-| + Read through Discussions |
+## [The Request Response Cycle](https://launchschool.com/lessons/cc97deb5/assignments/83ae67aa)
+
+1. What are the required components of an HTTP request? What are the additional optional components?
+2. What are the required components of an HTTP response? What are the additional optional components?
+3. What determines whether a request should use GET or POST as its HTTP method?
 
 
-## The Request Response Cycle
-## Summary
+|  | First go | result | second go | third go 
+| :--- | :---: | :---: | :---: | :--- 
+|1.| Method, (Path, Parameters are optional) Headers, Body| wrong|
+|2.| Status, Headers, Body| not exactly
+|3.| Get is for fetching data from the server and post is for sending data to the server| Correct
+|results|
+
+1. The HTTP method and the path are required, and form part of what is known as the start-line or request-line. As of HTTP 1.0, the HTTP version also forms part of the request-line. The Host header is a required component since HTTP 1.1. Parameters, all other headers, and message body are optional.
+
+Technically speaking the 'path' portion of the request-line is known as the 'request-URI', and incorporates the actual path to the resource and the optional parameters if present. In practice, most people simply refer to this part of the request-line as the 'path'.
+
+2. A status line with a status code is required. Headers and body are optional.
+3. GET requests should only retrieve content from the server. They can generally be thought of as "read only" operations, however, there are some subtle exceptions to this rule. For example, consider a webpage that tracks how many times it is viewed. GET is still appropriate since the main content of the page doesn't change.
+
+POST requests involve changing values that are stored on the server. Most HTML forms that submit their values to the server will use POST. Search forms are a noticeable exception to this rule: they often use GET since they are not changing any data on the server, only viewing it.
+
+## [Summary](https://launchschool.com/lessons/cc97deb5/assignments/9f4e349a)
+
+I NEED TO RE-DO THIS PAGE NOTES
+
+- A DNS is a distributed database that maps a domain name to an IP address.
+- A URI is an identifier for a particular resource within an information space.
+- A URL is a type of URI, but also contains information about how to find the resource.
+- URLs are made of scheme, host, port, path and query string.
+- Query strings pass aditional data to the server in a HTTP request.
+- URL encoding encrypts certain chracters in a URL with an ASCII code.
+- URL encoding is used if a character has no corresponding character in the ASCII set, is unsafe because it is used for encoding other characters, or is reserved for special use within the url (I DON'T KLNOW WHAT THIS SENTENCE MEANS)
+- An HTTP messagetakes place between a client and a server and contains:
+  - A request:
+    - request line
+    - headers
+    - (optional) body
+  - A response
+    - status line
+    - (optional) headers
+    - (optional) body
+- Status codes are part of the status line in a response.
+- HTTP is a stateless protocol
+- Statefulness can be simulated.
+- HTTP is inherently insecure.
+
 
 Overview:
 
@@ -127,8 +180,8 @@ Overview:
 |4. Assignment: read HTTP book|12th - 23rd April|
 |5. Some background diagrams|24th April|
 |6.  URLs|24th April|
-|7. Practice problems: URL components|
-|8. The Request Response Cycle|
-|9. Summary|
+|7. Practice problems: URL components|24th April|
+|8. The Request Response Cycle|24th April|
+|9. Summary|24th April|
 |10. Quiz |
 | + Read through Discussions |
