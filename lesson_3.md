@@ -48,10 +48,72 @@
 [my notes](https://github.com/SandyRodger/launch_school_books/blob/main/http_book.md)
 ## [Some background diagrams](https://launchschool.com/lessons/cc97deb5/assignments/586769d9)
 
-- When you're coding or debugging a web application it's important to be able to see where you are
+- When you're coding or debugging a web application it's important to be able to see where you are.
+- The ability to zoom in to a section of code, while understanding where you are on a larger scale is key to web development.
 
-## URLs
-## Practice problems: URL components
+### Client - server
+
+HTTP: A stateless protocol for how clients communicate with servers.
+
+<p align="center">
+<img width="730" alt="Screenshot 2023-04-25 at 14 31 32" src="https://user-images.githubusercontent.com/78854926/234292904-f57fa633-ff6d-46c5-9e4f-22e8c2310af5.png">
+</p>
+
+This is every interaction you have with a website.
+
+Here is what is happening at the server:
+
+<p align="center">
+<img width="889" alt="Screenshot 2023-04-25 at 14 34 53" src="https://user-images.githubusercontent.com/78854926/234293794-344a2813-8ca3-4b07-8b56-e3783cd25b21.png">
+</p>
+
+This is very simplified. Each of these components could be shared across multiple machines, with intermediary machines (like load balancers). So the word 'server' is an umbrella term. Let's look at the three parts in the diagram above:
+  - The web server
+  - The application server
+  - The data store
+
+- A webserver: A server that responds to requests for static assets (files, images, javascript, css). These requests don'trequire any processing, so can be handled by a simple web-server.
+- An application server: Where application or business logic resides. Here, more complicated requests are handled. This is where your server side-code lives when deployed.
+- The application server will consult a persistent data-store, like a relational database, to retrieve or create data. Data stores can also be simple files or key-data stores, document stores or something else -  as long as it can save data in some format.
+- Regardless of how it is stored, it can be used to *persist* data between stateless request/response cycles.
+
+### HTTP over TCP/IP
+
+<p align="center">
+<img width="902" alt="Screenshot 2023-04-25 at 14 48 52" src="https://user-images.githubusercontent.com/78854926/234297513-d971ea76-5f25-4ba9-9b1b-8e540f6bb1dd.png">
+</p>
+
+- This diagram shows that HTTP is actually relying on a TCP/IP connection most of the time, even though they are different protocols operating at different levels.
+
+In summary HTTP operates at the application layer and is concerned with structuring the messages that are exchanged between applications, but it's actually TCP/IP that is doing all the heavy lifting and ensuring that the response/request cycle gets completed between your browser and the server.
+
+## [URLs](https://launchschool.com/lessons/cc97deb5/assignments/a28ccb6f)
+
+- Distinction between URL and URI
+
+### Schemes and protocols
+
+- Scheme names lower-case, Protocol names upper-case.
+
+### URLs and Filepaths
+
+- Much of the content on the web now is generated dynamically.
+
+## [Practice problems: URL components](https://launchschool.com/lessons/cc97deb5/assignments/d69da941)
+
+|  | First go | result | second go | Comprehension | Retention
+| :--- | :---: | :---: | :---: | :--- | :---
+|1.|amazon.com|
+|2.|
+|3.|
+|4.|
+|5.|
+|6.|
+|7.|
+
+| + Read through Discussions |
+
+
 ## The Request Response Cycle
 ## Summary
 
@@ -63,8 +125,8 @@ Overview:
 |2. The Application Layer|11th April|
 |3.  HTTP and the web|12th April|
 |4. Assignment: read HTTP book|12th - 23rd April|
-|5. Some background diagrams|
-|6.  URLs|
+|5. Some background diagrams|24th April|
+|6.  URLs|24th April|
 |7. Practice problems: URL components|
 |8. The Request Response Cycle|
 |9. Summary|
