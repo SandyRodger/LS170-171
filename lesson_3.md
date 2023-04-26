@@ -169,6 +169,27 @@ I NEED TO RE-DO THIS PAGE NOTES
 - Statefulness can be simulated.
 - HTTP is inherently insecure.
 
+## [Quiz](https://launchschool.com/quizzes/7544b995)
+
+|  | First Attempt | Second attempt | Third Attempt |
+| :--- | :---: | :---: | :---: |
+|1.|correct
+|2.|correct
+|3.|correct
+|4.|correct
+|5.|correct
+|6.|correct
+|7.|correct
+|8.|correct
+|9.|wrong
+|10.|correct
+|11.|correct
+|12.|wrong
+|13.|correct
+| Results| 11/13 (85%)|
+
+9. Get requests are also used to retrieve information. POST is also used to submit forms.
+12. Statefulness is also simulated by sending data as parameters through a URL
 
 Overview:
 
@@ -183,5 +204,5 @@ Overview:
 |7. Practice problems: URL components|24th April|
 |8. The Request Response Cycle|24th April|
 |9. Summary|24th April|
-|10. Quiz |
+|10. Quiz |25th April|
 | + Read through Discussions |
