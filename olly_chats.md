@@ -32,3 +32,9 @@ We talk about:
 - encryption, certificate authorities
 - Sinatra and Frankie
 - The two general problem.
+
+8th May:
+
+Questions:
+
+- Why is my `code` command all messed up in my LS180 folder? How do I (and should I even both to) fix this?
