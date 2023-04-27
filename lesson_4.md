@@ -143,33 +143,223 @@ then
 fi
 ```
 
-- The square brackets are in fact shorthand for running the `test` command. The test command, whoich provides operators for evaluating things. See below:
+- The double square-brackets are in fact shorthand for running the `test` command. The test command, which provides operators for evaluating things. See below:
 
-Strings
+|Operator|Description|
+| :--- | :---: |
+|**Strings**|
+|-n string|Length of string is greater than 0|
+|-z string|Length of string is 0 (string is an empty string)|
+|string_1 = string_2|	string_1 is equal to string_2|
+|string_1 != string_2|	string_1 is not equal to string_2|
+|**Integers**|
+|integer_1 -eq integer_2|	integer_1 is equal to integer_2|
+|integer_1 -ne integer_2|	integer_1 is not equal to integer_2|
+|integer_1 -gt integer_2|	integer_1 is greater than integer_2|
+|integer_1 -ge integer_2|	integer_1 is greater than or equal to integer_2|
+|integer_1 -lt integer_2|	integer_1 is less than integer_2|
+|integer_1 -le integer_2|	integer_1 is less than or equal to integer_2|
+|**Files**|
+|-e path/to/file|	file exists|
+|-f path/to/file|	file exists and is a regular file (not a directory)|
+|-d path/to/file|	file exists and is a directory|
 
-Operator	Description
--n string	Length of string is greater than 0
--z string	Length of string is 0 (string is an empty string)
-string_1 = string_2	string_1 is equal to string_2
-string_1 != string_2	string_1 is not equal to string_2
-Integers
+- Example1: String longer than 0?
 
-Operator	Description
-integer_1 -eq integer_2	integer_1 is equal to integer_2
-integer_1 -ne integer_2	integer_1 is not equal to integer_2
-integer_1 -gt integer_2	integer_1 is greater than integer_2
-integer_1 -ge integer_2	integer_1 is greater than or equal to integer_2
-integer_1 -lt integer_2	integer_1 is less than integer_2
-integer_1 -le integer_2	integer_1 is less than or equal to integer_2
-Files
+```
+string='Hello'
 
-Operator	Description
--e path/to/file	file exists
--f path/to/file	file exists and is a regular file (not a directory)
--d path/to/file	file exists and is a directory
+if [[ -n $string ]]
+then
+  echo $string
+fi
+```
 
-## [Working with Netcat]
-## [Implementing our own HTTP server: Basic Program Structure]
+- Example 2: two integers are equal?
+
+```
+integer_1=10
+integer_2=10
+
+if [[ $integer_1 -eq $integer_2 ]]
+then
+  echo $integer_1 and $integer_2 are the same!
+fi
+```
+
+- Example 3: Tests is file exists:
+
+```
+if [[ -e ./hello_world.sh ]]
+then
+  echo 'File exists'
+fi
+```
+
+### Testing multiple conditions:
+
+- We can:
+  - Nest `if` statements
+  - `else` and `elif`
+  - Use boolean operators like `&&` and `||`
+
+Example 1: Nested `if` statement:
+
+```
+integer=4
+
+if [[ $integer -lt 10 ]]
+then
+  echo $integer is less than 10
+
+  if [[ $integer -lt 5 ]]
+  then
+    echo $integer is also less than 5
+  fi
+fi
+```
+
+Example 2: two conditional branches with `if` and `else`
+
+```
+integer=15
+
+if [[ $integer -lt 10 ]]
+then
+  echo $integer is less than 10
+else
+  echo $integer is not less than 10
+fi
+```
+
+Example 3:
+
+```
+integer=15
+
+if [[ $integer -lt 10 ]]
+then
+  echo $integer is less than 10
+elif [[ $integer -gt 20 ]]
+then
+  echo $integer is greater than 20
+else
+  echo $integer is between 10 and 20
+fi
+```
+
+Example 4:
+
+```
+integer=15
+
+if [[ $integer -gt 10 ]] && [[ $integer -lt 20 ]]
+then
+  echo $integer is between 10 and 20
+fi
+```
+
+Example 5:
+
+```
+integer=12
+
+if [[ $integer -lt 5 ]] || [[ $integer -gt 10 ]]
+then
+  echo $integer is less than 5 or greater than 10.
+fi
+```
+
+Example 6:
+
+```
+integer=8
+
+if [[ ! ($integer -lt 5 || $integer -gt 10) ]]
+then
+  echo $integer is between 5 and 10.
+fi
+```
+
+- In bash the `!` can be used in multiple different ways.
+
+### Loops
+
+- Bash has `for`, `until` and `while` loops. The second 2 are as you know them, but the `for` loop iterates through a list.
+- while loops:
+
+```
+counter=0
+max=10
+
+while [[ $counter -le $max ]]
+do
+  echo $counter
+  ((counter++))
+done
+```
+
+### Funtions
+
+- You can save multiple commands in a chunk of code called a 'function'
+- Functions can take 0, 1 or more arguments.
+
+Example 1:
+```
+greeting () {
+  echo Hello $1
+}
+
+greeting 'Peter' # outputs 'Hello Peter'
+```
+- The variable is scoped to the function, which means we can access this variable within the function body but not outside it.
+- Subsequent arguments would have 2, 3, 4 etc. assigned to them:
+
+```
+greeting () {
+  echo "Hello $1"
+  echo "Hello $2"
+}
+```
+- Variables can be interpolated in double quoted strings.
+
+greeting 'Peter' 'Paul' # outputs 'Hello Peter' 'Hello Paul' on separate lines
+
+## [Working with Netcat](https://launchschool.com/lessons/0e67d1ce/assignments/7989eb3f)
+
+- Netcat is a Network utility used for ereading and writing data accross network connections using TDP or UDP. (It's like Telnet from before).
+
+```
+$ netcat -v google.com 80
+```
+- The verbose flag means netcat will print messages when certain things happen, like a connection opening and closing.
+
+- This is the command for installing netcat:
+
+```
+sudo yum -y install netcat
+```
+
+- As well as connecting to a domain and port, netcat also allows you to listen to that doman/port for incoming connections:
+
+```
+$ netcat -lv 2345 #              => Warning: Inverse name lookup failed for `0.0.9.41'
+# LS said the message should be: => Listening on [0.0.0.0] (family 0, port 2345)
+```
+but it does work on AWS Cloud9:
+
+<img width="431" alt="Screenshot 2023-04-27 at 16 30 57" src="https://user-images.githubusercontent.com/78854926/234911862-1ed46d66-85f6-4008-8e14-da5680ae7f90.png">
+
+`netcat -v localhost 2345` does work `=> localhost [127.0.0.1] 2345 (dbm) open`
+
+This will be our client instance.
+You should now have two terminal windows.; One acting as a client, the other as a server. Typing text into either one will appear in the other as well. Congratulations, you have made A TCP connection.
+- terminate the Netcat session with `command + C`
+
+## [Implementing our own HTTP server: Basic Program Structure](https://launchschool.com/lessons/0e67d1ce/assignments/2e3c6bc3)
+
+ - In the previous exercise we sent arbitrary messages. HTTP rquires a certain structure and now we will attempt to achieve that.
+
 ## [Implementing our own HTTP server: Sending a simple response]
 ## [Implementing our own HTTP server: Processing the request]
 ## [Implementing our own HTTP server: Serving HTML]
