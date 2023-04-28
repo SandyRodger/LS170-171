@@ -4,7 +4,7 @@
 
 - HTTP: This chapter uses Bash and other network utilities, but this is all to better understand HTTP an how it enables network connections between client and server.
 -  HTTP and the structure of messages: HTTP can be seen as a set of rules for structuring messages exchanged between applications. Understand these rules and how to apply them.
--  HTTP is a request-response protocol: One of the fundamental aspects of HTTP is its request-response behaviour. Try to form a solid mental model aruond this.
+-  HTTP is a request-response protocol: One of the fundamental aspects of HTTP is its request-response behaviour. Try to form a solid mental model around this.
 
 ## [Using Telnet to explore HTTP](https://launchschool.com/lessons/0e67d1ce/assignments/20d4226d)
 
@@ -18,9 +18,10 @@
 
 - I installed Netcat with `yum install nc`
 - I then ran `nc --recv-only -v launchschool.com 80`
-- But after that I can't seem to get it to repsond, so I switch to using Netcat in VSCode:
 
 <img width="497" alt="Screenshot 2023-04-27 at 09 50 35" src="https://user-images.githubusercontent.com/78854926/234810875-43460fad-60f7-4d4f-a1f2-804db4c6f334.png">
+
+- But after that I can't seem to get it to repsond, so I switch to using Netcat in VSCode:
 
 ### In VSCode
 
@@ -90,8 +91,8 @@ Although it does work with the Google homepage:
 
 - Like any other scripting language, Bash stores temporary data in variables, like this: `name='Sandy'` (no spaces) 
 - Case sensitive:
-  - `Cat='Maggy'` has to be called with `Cat`§
-- Variable references must be prepended with $
+  - `Cat='Maggy'` has to be called with `$Cat`
+- Variable references must be prepended with `$`
   - `$Cat`
 - We can pass bash variables as arguments to commands:
   - `echo $Cat`
@@ -143,7 +144,7 @@ then
 fi
 ```
 
-- The double square-brackets are in fact shorthand for running the `test` command. The test command, which provides operators for evaluating things. See below:
+- The double square-brackets are in fact shorthand for running the `test` command. The test command provides operators for evaluating things. See below:
 
 |Operator|Description|
 | :--- | :---: |
@@ -187,7 +188,7 @@ then
 fi
 ```
 
-- Example 3: Tests is file exists:
+- Example 3: Tests if file exists:
 
 ```
 if [[ -e ./hello_world.sh ]]
@@ -310,7 +311,7 @@ greeting () {
   echo Hello $1
 }
 
-greeting 'Peter' # outputs 'Hello Peter'
+greeting 'Peter' #=> 'Hello Peter'
 ```
 - The variable is scoped to the function, which means we can access this variable within the function body but not outside it.
 - Subsequent arguments would have 2, 3, 4 etc. assigned to them:
@@ -320,14 +321,15 @@ greeting () {
   echo "Hello $1"
   echo "Hello $2"
 }
+
+greeting 'Peter' 'Paul' # => 'Hello Peter'
+                        # => 'Hello Paul'
 ```
 - Variables can be interpolated in double quoted strings.
 
-greeting 'Peter' 'Paul' # outputs 'Hello Peter' 'Hello Paul' on separate lines
-
 ## [Working with Netcat](https://launchschool.com/lessons/0e67d1ce/assignments/7989eb3f)
 
-- Netcat is a Network utility used for ereading and writing data accross network connections using TDP or UDP. (It's like Telnet from before).
+- Netcat is a Network utility used for reading and writing data accross network connections using TDP or UDP. (It's like Telnet from before).
 
 ```
 $ netcat -v google.com 80
@@ -339,26 +341,31 @@ $ netcat -v google.com 80
 ```
 sudo yum -y install netcat
 ```
+### Setting up a server
 
 - As well as connecting to a domain and port, netcat also allows you to listen to that doman/port for incoming connections:
-
+- VSCode:
 ```
 $ netcat -lv 2345 #              => Warning: Inverse name lookup failed for `0.0.9.41'
 # LS said the message should be: => Listening on [0.0.0.0] (family 0, port 2345)
 ```
-but it does work on AWS Cloud9:
-
+- Alternative command:
+<img width="614" alt="Screenshot 2023-04-28 at 08 30 02" src="https://user-images.githubusercontent.com/78854926/235083434-0af81c2a-caba-45a8-955a-5e68a845f12e.png">
+- AWS Cloud9:
 <img width="431" alt="Screenshot 2023-04-27 at 16 30 57" src="https://user-images.githubusercontent.com/78854926/234911862-1ed46d66-85f6-4008-8e14-da5680ae7f90.png">
 
-`netcat -v localhost 2345` does work `=> localhost [127.0.0.1] 2345 (dbm) open`
+### Setting up a client:
+
+- Alternative VSCode command: `netcat -v localhost 2345`: 
+<img width="659" alt="Screenshot 2023-04-28 at 08 20 18" src="https://user-images.githubusercontent.com/78854926/235081295-cdb3a12c-adcf-4ac3-baf0-218f9d25cb01.png">
 
 This will be our client instance.
-You should now have two terminal windows.; One acting as a client, the other as a server. Typing text into either one will appear in the other as well. Congratulations, you have made A TCP connection.
+You should now have two terminal windows; one acting as a client, the other as a server. Typing text into either one will appear in the other as well. Congratulations, you have made A TCP connection.
 - terminate the Netcat session with `command + C`
 
 ## [Implementing our own HTTP server: Basic Program Structure](https://launchschool.com/lessons/0e67d1ce/assignments/2e3c6bc3)
 
- - In the previous exercise we sent arbitrary messages. HTTP rquires a certain structure and now we will attempt to achieve that.
+ - In the previous exercise we sent arbitrary messages. HTTP rquires a certain structure and now we will work on that.
 
 ## [Implementing our own HTTP server: Sending a simple response]
 ## [Implementing our own HTTP server: Processing the request]
