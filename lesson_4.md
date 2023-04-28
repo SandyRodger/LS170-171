@@ -366,7 +366,36 @@ You should now have two terminal windows; one acting as a client, the other as a
 ## [Implementing our own HTTP server: Basic Program Structure](https://launchschool.com/lessons/0e67d1ce/assignments/2e3c6bc3)
 
  - In the previous exercise we sent arbitrary messages. HTTP rquires a certain structure and now we will work on that.
+ - Our server should:
+   - Receive messages from the client
+   - Process HTTP messages
+   - Issue a response created according to the logic within the server
+ - The next few lessons are for building that logic.
 
+Step 1:
+
+Create a file called `http_server.sh` inside a directory called `simple_http_server`, and paste this code into it:
+
+```bash
+#!/bin/bash
+
+function server () {
+ #this is where we will add the processing logic for our HTTP server program.
+}
+
+coproc SERVER_PROCESS { server; }
+
+netcat -lv 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]} # => netcat listen verbosely on port 2345
+# the second part of the line redirects STDOUT and STDIN, taking the input from the netcat process and redirecting it to the SERVER_PROCESS
+```
+- `coproc` is a co-process, which runs our `server` function asynchronously with our `netcat` command. In this code we name it `SERVER_PROCESS` and tell it to run the `server` command.
+- `echo "${BASH_VERSION}"` reveals that my bash is `3.2.57(1)-release` and since the `coproc` command was only introduced in Bash v4 I will need to update.
+  - `brew install bash`
+  - `exec bash`
+  - `bash --version` => `version 5.2.15(1)`
+- The code in this file means:
+  - Any input received by `netcat` can be accessed within the server function with the `read` command.
+  - Any output produced by `echo` within the server function will be output by `netcat`.
 ## [Implementing our own HTTP server: Sending a simple response]
 ## [Implementing our own HTTP server: Processing the request]
 ## [Implementing our own HTTP server: Serving HTML]
