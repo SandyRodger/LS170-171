@@ -396,8 +396,71 @@ netcat -lv 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]} # => netcat listen
 - The code in this file means:
   - Any input received by `netcat` can be accessed within the server function with the `read` command.
   - Any output produced by `echo` within the server function will be output by `netcat`.
-## [Implementing our own HTTP server: Sending a simple response]
-## [Implementing our own HTTP server: Processing the request]
+
+## [Implementing our own HTTP server: Sending a simple response](https://launchschool.com/lessons/0e67d1ce/assignments/1787cbb1)
+
+Step 2: Writing some logic for the `server` function
+
+Aim: For our server funtion to be able to receive some input via `netcat` and then use that data as part of a response.
+
+- Create a loop within server
+- Inside the loop 
+  - save input to a variable called 'message'.
+  - Output 'you said'+ message
+
+I did:
+
+- `netcat -lvp 2345` in client terminal 
+- `bash http_server.sh` in server terminal
+
+It's not working on VSCode:
+
+<img width="649" alt="Screenshot 2023-04-28 at 10 03 24" src="https://user-images.githubusercontent.com/78854926/235104852-91a97cca-bda6-476a-9147-2199d7ec36ad.png">
+
+I'm trying AWS Cloud9 again:
+
+OK, I can't get this to run, I'm moving on. Here's what was in my file:
+
+```
+#!/bin/bash
+
+function server () {
+  message=$1
+  counter=0
+  max=1
+
+  while [[ $counter -le $max ]]
+  do
+    echo "you said" + message
+    ((counter++))
+  done
+}
+
+coproc SERVER_PROCESS { server; }
+
+netcat -v 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]}
+```
+LS code:
+```
+#!/bin/bash
+
+function server () {
+  while true
+  do
+    read message
+    echo "You said: $message"
+  done
+}
+
+coproc SERVER_PROCESS { server; }
+
+netcat -lv 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]}
+```
+
+## [Implementing our own HTTP server: Processing the request](https://launchschool.com/lessons/0e67d1ce/assignments/13c19d80)
+
+- 
+
 ## [Implementing our own HTTP server: Serving HTML]
 ## [Implementing our own HTTP server: Working with the browser]
 ## [Implementing our own HTTP server: adding Hyperlinks]
