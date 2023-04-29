@@ -9,6 +9,5 @@
 ## Resources
  - [Ginni's notes](https://github.com/gcpinckert/ls170_171)
  - Coding with others
-  -[Greg Chase](https://github.com/SandyRodger/LS170-171/blob/main/greg_chase_chats.md)
-  -[Olly chats](https://github.com/SandyRodger/LS170-171/blob/main/olly_chats.md)
+  - [Olly chats](https://github.com/SandyRodger/LS170-171/blob/main/olly_chats.md)
  
