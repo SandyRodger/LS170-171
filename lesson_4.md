@@ -419,8 +419,14 @@ It's not working on VSCode:
 
 I'm trying AWS Cloud9 again:
 
-OK, I can't get this to run, I'm moving on. Here's what was in my file:
+- Sometimes it works. I have to change ports though. 
+- I get a lot of:
 
+```
+hello there: netcat -lvp 2345
+Error: Couldn't setup listening socket (err=-3)
+```
+- My attempt at the exercise on this page : Sending a Simple Response
 ```
 #!/bin/bash
 
@@ -457,12 +463,84 @@ coproc SERVER_PROCESS { server; }
 netcat -lv 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]}
 ```
 
+- [This discussion thread](https://launchschool.com/posts/abc85a9a) explains why I might be getting weird responses to my things.
+
+- I eventually got this to work on AWS like so:
+
+Client:
+
+<img width="1108" alt="Screenshot 2023-04-29 at 08 48 13" src="https://user-images.githubusercontent.com/78854926/235291427-9b3ea0ee-b5ce-4781-98f4-900ab83ff879.png">
+
+Server:
+<img width="1099" alt="Screenshot 2023-04-29 at 08 49 06" src="https://user-images.githubusercontent.com/78854926/235291463-9fdbcaad-71cd-4282-8d1d-d5c2812fe793.png">
+
+Bash file:
+
+<img width="757" alt="Screenshot 2023-04-29 at 08 49 26" src="https://user-images.githubusercontent.com/78854926/235291477-55bb3308-8946-46f5-bc4f-08f6310975fa.png">
+
+
 ## [Implementing our own HTTP server: Processing the request](https://launchschool.com/lessons/0e67d1ce/assignments/13c19d80)
 
-- 
+- In the previous assignment we were just sending text, now we will add some structure to the messages.
+- We will break any messages received into:
+  - Request method
+  - path
+  - HTTP version
+- The method will be GET.
 
-## [Implementing our own HTTP server: Serving HTML]
-## [Implementing our own HTTP server: Working with the browser]
+My attempt:
+
+```bash
+function server () {
+  while true
+  do
+    read method, path, version
+    if method == GET
+      echo HTTP/1.1 200 OK
+    else
+     echo HTTP/1.1 400 Bad Request
+    fi
+  done
+}
+```
+
+LS solution:
+
+```bash
+#!/bin/bash
+
+function server () {
+  while true
+  do
+    read method path version
+    if [[ $method = 'GET' ]]
+    then
+      echo 'HTTP/1.1 200 OK'
+    else
+      echo 'HTTP/1.1 400 Bad Request'
+    fi
+  done
+}
+
+coproc SERVER_PROCESS { server; }
+
+netcat -lv 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]}
+```
+
+<img width="634" alt="Screenshot 2023-04-29 at 09 03 04" src="https://user-images.githubusercontent.com/78854926/235291935-424d5bf8-f877-4ddb-a37d-da0825b0e23a.png">
+
+## [Implementing our own HTTP server: Serving HTML](https://launchschool.com/lessons/0e67d1ce/assignments/3d0e0a8b)
+
+- At this point the `code` command is not working on AWS, so I'm manipulating files with `cat >` to write and `cat` to read.
+
+### Updating our program logic
+
+-  I looked at the solution pretty early on here
+
+## [Implementing our own HTTP server: Working with the browser](https://launchschool.com/lessons/0e67d1ce/assignments/c884da8a)
+
+- My brain is dead and it's only 10am. Am I not sleeping properly? Am I not relaxing properly? 
+
 ## [Implementing our own HTTP server: adding Hyperlinks]
 ## [Summary]
 
@@ -475,12 +553,12 @@ Overview:
 |3. Speaking the same language|27th April|
 |4. Implementing your own HTTP server: Project overview|27th April|
 |5. Bash Basics|27th April|
-|6. Working with Netcat
-|7. Implementing our own HTTP server: Basic Program Structure
-|8. Implementing our own HTTP server: Sending a simple response
-|9. Implementing our own HTTP server: Processing the request
-|10. Implementing our own HTTP server: Serving HTML
-|11. Implementing our own HTTP server: Working with the browser
+|6. Working with Netcat|28th April|
+|7. Implementing our own HTTP server: Basic Program Structure|28th April|
+|8. Implementing our own HTTP server: Sending a simple response|28th April|
+|9. Implementing our own HTTP server: Processing the request|29th April|
+|10. Implementing our own HTTP server: Serving HTML|29th April|
+|11. Implementing our own HTTP server: Working with the browser|29th April|
 |12. Implementing our own HTTP server: adding Hyperlinks
 |13. Summary
 | + Read through Discussions |
