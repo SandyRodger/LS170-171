@@ -540,6 +540,149 @@ netcat -lv 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]}
 ## [Implementing our own HTTP server: Working with the browser](https://launchschool.com/lessons/0e67d1ce/assignments/c884da8a)
 
 - My brain is dead and it's only 10am. Am I not sleeping properly? Am I not relaxing properly? 
+- [After a nap...]
+- Recap:
+  -  Our client is currently a terminal window running Netcat
+  -  It sends one line requests.
+  -  The client outputs theresponse from the server without tampering at all.
+-  If our client was a browser, we would have to adapt out code for:
+  -  Most browsers automatically include multiple headers, over multiple lines.
+    -  The initial request header.
+    -  Then other headers.
+  -  Broswers don't just output the response without tampering, they process it. This is how HTML becomes a displayable web-page. So our response needs more information.
+  -  A browser might terminate the connection after receiving a response. We want to keep our netcat process open.
+
+### Parsing the response
+
+- The current logic reads one line at a time, ie `GET /lion.html HTTP/1.1`
+- But a bnrowser response would be multiple lines:
+```
+GET /lion.html HTTP/1.1
+Host: localhost:2345
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:67.0) Gecko/20100101 Firefox/67.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-GB,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Pragma: no-cache
+Cache-Control: no-cache
+```
+- Like this our server would read each line as a seperate request and return a 400 response code.
+- So we need to read everything, and then process it. The end of the message can be identified by the empty line after the final header.
+- Here is LS's code for doing this:
+
+```
+#!/bin/bash
+
+function server () {
+  while true
+  do
+    message_arr=() #  This is how you initialize an array in bash.
+    check=true
+    while $check # will cease when $check is false
+    do
+      read line
+      message_arr+=($line) # Apparently this adds each element of $line to the array seperately, so that it can be index accessed. So 0 is the method, 1 is the path etc.
+      if [[ "${#line}" -eq 1 ]] # this is returning the length of the line and if it is 1 then reassigning check to false, because that is the last line.
+      then
+        check=false
+      fi
+    done
+    method=${message_arr[0]} # we assign the element at index 0 to `method`
+    path=${message_arr[1]} # we assign the element at index 1 to `path`
+    if [[ $method = 'GET' ]]
+    then
+      if [[ -f "./www/$path" ]]
+      then
+        echo -ne 'HTTP/1.1 200 OK\r\n\r\n'; cat "./www/$path"
+      else
+        echo -ne 'HTTP/1.1 404 Not Found\r\n\r\n'
+      fi
+    else
+      echo -ne 'HTTP/1.1 400 Bad Request\r\n\r\n'
+    fi
+  done
+}
+
+coproc SERVER_PROCESS { server; }
+
+netcat -lv 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]}
+```
+
+### Improving the response
+
+- To help our browser process this response we're going to add some headers.
+
+#### Content length
+
+- Key question: where does the message end?
+  - The first empty line after the headers for:
+    - 1xx responses
+    - 204
+    - 304
+    - Any response to a HEAD request.
+- Other types of responses are assumed to have a body even if its empty.
+- For messages weith a body, the size of the body can be used to determine the end of the message.
+- How to calculate the size of the message body:
+  - Send a `transfer encoding` header as part of the response. It's beyond the scope of this course.
+  - Send a `content length` header, which says the body lenght in bytes. We'll do this (but set it to 0 for the 400 and 404 responses)
+
+#### Content type
+
+- The value of this header indicates the media type of the resource.
+- Browsers can sometimes ignore this header and determine the header in another way. 
+- It's good practice to include it.
+- We will include a content-type header for out `200` response, with a value of `text/html; charset=utf-8`.
+
+#### Implementing the Changes
+
+- Add a content-type header
+- Add a content-length header.
+
+LS code:
+
+```
+#!/bin/bash
+
+function server () {
+  while true
+  do
+    my_arr=()
+    check=true
+    while $check
+    do
+      read line
+      my_arr+=($line)
+      if [[ "${#line}" -eq 1 ]]
+      then
+        check=false
+      fi
+    done
+    method=${my_arr[0]}
+    path=${my_arr[1]}
+    if [[ $method = 'GET' ]]
+    then
+      if [[ -f "./www/$path" ]]
+      then
+        echo -ne "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\nContent-Length: $(wc -c <'./www/'$path)\r\n\r\n"; cat "./www/$path"
+      else
+        echo -ne 'HTTP/1.1 404 Not Found\r\nContent-Length: 0\r\n\r\n'
+      fi
+    else
+      echo -ne 'HTTP/1.1 400 Bad Request\r\nContent-Length: 0\r\n\r\n'
+    fi
+  done
+}
+
+coproc SERVER_PROCESS { server; }
+
+netcat -lkv 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]}
+```
+
+### Testing the code:
+
+
 
 ## [Implementing our own HTTP server: adding Hyperlinks]
 ## [Summary]
