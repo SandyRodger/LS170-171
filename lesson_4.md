@@ -25,11 +25,11 @@
 
 ### In VSCode
 
-- LaunchSchool's homepage does not respond to `GET /` because I haven't specified the version of HTTP to use.
+- Launch School's homepage does not respond to `GET /` because I haven't specified the version of HTTP to use.
 
 <img width="858" alt="Screenshot 2023-04-27 at 09 37 14" src="https://user-images.githubusercontent.com/78854926/234807364-f5a81b32-e295-41b1-b47a-15c256d7a4cd.png">
 
-- Asking for the LaunchSchool Homepage in an outdated HMTL 0.9 returns a 400 error code:
+- Asking for the Launch School Homepage in an outdated HMTL 0.9 returns a 400 error code:
 
   <img width="704" alt="Screenshot 2023-04-27 at 09 27 02" src="https://user-images.githubusercontent.com/78854926/234804706-d554d76c-892e-4562-a044-4bea4e47850b.png">
 
@@ -165,7 +165,7 @@ fi
 |-f path/to/file|	file exists and is a regular file (not a directory)|
 |-d path/to/file|	file exists and is a directory|
 
-- Example1: String longer than 0?
+- Example 1: String longer than 0?
 
 ```
 string='Hello'
@@ -287,6 +287,30 @@ fi
 ### Loops
 
 - Bash has `for`, `until` and `while` loops. The second 2 are as you know them, but the `for` loop iterates through a list.
+- for loops:
+
+```bash
+numbers='1 2 3 4 5 6 7 8 9 10'
+
+for number in $numbers
+do
+  echo $number
+done
+```
+
+- until loops
+
+```bash
+counter=0
+max=10
+
+until [[ $counter -gt $max ]]
+do
+  echo $counter
+  ((counter++))
+done
+```
+
 - while loops:
 
 ```
@@ -542,9 +566,9 @@ netcat -lv 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]}
 - My brain is dead and it's only 10am. Am I not sleeping properly? Am I not relaxing properly? 
 - [After a nap...]
 - Recap:
-  -  Our client is currently a terminal window running Netcat
+  -  Up till now our client has been a terminal window running Netcat
   -  It sends one line requests.
-  -  The client outputs theresponse from the server without tampering at all.
+  -  The client outputs the response from the server without tampering at all.
 -  If our client was a browser, we would have to adapt out code for:
   -  Most browsers automatically include multiple headers, over multiple lines.
     -  The initial request header.
@@ -555,7 +579,7 @@ netcat -lv 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]}
 ### Parsing the response
 
 - The current logic reads one line at a time, ie `GET /lion.html HTTP/1.1`
-- But a bnrowser response would be multiple lines:
+- But a browser response would be multiple lines:
 ```
 GET /lion.html HTTP/1.1
 Host: localhost:2345
@@ -568,7 +592,7 @@ Upgrade-Insecure-Requests: 1
 Pragma: no-cache
 Cache-Control: no-cache
 ```
-- Like this our server would read each line as a seperate request and return a 400 response code.
+- Like this, our server would read each line as a seperate request and return a 400 response code.
 - So we need to read everything, and then process it. The end of the message can be identified by the empty line after the final header.
 - Here is LS's code for doing this:
 
@@ -584,7 +608,7 @@ function server () {
     do
       read line
       message_arr+=($line) # Apparently this adds each element of $line to the array seperately, so that it can be index accessed. So 0 is the method, 1 is the path etc.
-      if [[ "${#line}" -eq 1 ]] # this is returning the length of the line and if it is 1 then reassigning check to false, because that is the last line.
+      if [[ "${#line}" -eq 1 ]] # this is called a 'parameter expansion' and is returning the length of the line. If it is 1 then it reassigns check to false, because that is the last line.
       then
         check=false
       fi
@@ -623,17 +647,17 @@ netcat -lv 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]}
     - 304
     - Any response to a HEAD request.
 - Other types of responses are assumed to have a body even if its empty.
-- For messages weith a body, the size of the body can be used to determine the end of the message.
+- For messages with a body, the size of the body can be used to determine the end of the message.
 - How to calculate the size of the message body:
-  - Send a `transfer encoding` header as part of the response. It's beyond the scope of this course.
-  - Send a `content length` header, which says the body lenght in bytes. We'll do this (but set it to 0 for the 400 and 404 responses)
+  - Send a `transfer encoding` header as part of the response. (Beyond the scope of this course).
+  - Send a `content length` header, which says the body length in bytes. We'll do this (but set it to 0 for the 400 and 404 responses)
 
 #### Content type
 
 - The value of this header indicates the media type of the resource.
 - Browsers can sometimes ignore this header and determine the header in another way. 
 - It's good practice to include it.
-- We will include a content-type header for out `200` response, with a value of `text/html; charset=utf-8`.
+- We will include a content-type header for our `200` response, with a value of `text/html; charset=utf-8`.
 
 #### Implementing the Changes
 
@@ -682,12 +706,50 @@ netcat -lkv 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]}
 
 ### Testing the code:
 
+- it's not working:
 
+```
+dial tcp: lookup www.localhost.com on 127.0.0.1:53: server misbehaving
+```
+- Also a signal saying "not secure".
+- Perhaps this is caused by my DNS blocker...
+- I'm going to ask Olly about this, there are many things in this lesson that are not working for me at all.
 
-## [Implementing our own HTTP server: adding Hyperlinks]
+## [Implementing our own HTTP server: adding Hyperlinks](https://launchschool.com/lessons/0e67d1ce/assignments/1e7bc560)
+
+- Hypertext is text containing references (AKA hyperlinks).
+
+### HTML anchors
+
+- the `<a>` element when used with a reference creates a hyperlink. Like this:
+```
+<a href="/path/to/target">Click here!</a>
+```
+- In the above example `path/to/target` could be a complete URL or a file on that server or a file elsewhere.
+
+### Browsers and Hyperlinks
+
+- When you click on a hyperlink the browser automatically sends a GET request for the location specified in the `href` attribute. If no scheme and path is provided the browser will use that of the current page.
+
+### Updating our HTML file
+
+- Add hyperlinks to the html files
+- Jesus Christ this is depressing.
+
+LS solution:
+```
+<ul>
+  <li><a href="/leopard.html">Leopard</a></li>
+  <li><a href="/tiger.html">Tiger</a></li>
+</ul>
+```
+
 ## [Summary]
 
-Overview:
+- HTTP is a text-based protocol for sending Requestrs and responses between client and server.
+- 
+
+## Overview:
 
 |  | Once | Twice | Thrice | Comprehension | Retention
 | :--- | :---: | :---: | :---: | :--- | :---
@@ -702,6 +764,6 @@ Overview:
 |9. Implementing our own HTTP server: Processing the request|29th April|
 |10. Implementing our own HTTP server: Serving HTML|29th April|
 |11. Implementing our own HTTP server: Working with the browser|29th April|
-|12. Implementing our own HTTP server: adding Hyperlinks
-|13. Summary
+|12. Implementing our own HTTP server: adding Hyperlinks|5th May|
+|13. Summary|5th May|
 | + Read through Discussions |
