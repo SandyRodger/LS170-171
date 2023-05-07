@@ -2,7 +2,7 @@
 
 ## [Introduction](https://launchschool.com/lessons/74f1325b/assignments/d62c25d3)
 
-- The simplicity of HTTP (it's just plain text travelling across a network) are also the reason for it's relative insecurity.
+- The simplicity of HTTP (it's just plain text travelling across a network) is also the reason for it's relative insecurity.
 - If an HTTP request/response is intercepted it can be easily read.
 - It is also difficult to know if an HTTP message has been tampered with, or if its source is trustworthy.
 - Security isn't always important, but sometimes it's essential. ie Online shopping, banking etc.
@@ -159,11 +159,33 @@ A Brief history of Cryptography:
 
 ## [Summary](https://launchschool.com/lessons/74f1325b/assignments/238ff36f)
 
-- 
+- HTTP requests are sent in plain text which makes them INHERENTLY INSECURE.
+- We can use the TLS Protcol to add security to HTTP communications.
+- TLS encryption allows us to encrypt messages so that only those with an authorised means of decoding the message can read it.
+- TLS encryptioin uses a combination of symmetric and asymmetric encryption.
+- The TLS handshake is the way that a client and server exchange encryption keys.
+- A TLS handshake must be performed before secure data transfer can begin. It envolves several round-trips of latency and therefore has an impact on performance.
+- A Cipher suite is an agreed set of algorithms used by the client and the servers during the secure message exchange.
+- TLS authentication is a means of verifying the identity of a participant in a message exchange.
+- TLS authentication is impolemented through the u=se of Digital Certificates.
+- Certificates are signed by a certificate authority and work on the basis of a chain of trust, which leads uop to a small group of root Certificate Authorities.
+- The server's certificate is sent during the TLS handshake.
+- TLS integrity allows a way of testing whether a message has been altered during transit.
+- TLS integrity is implemented with the use of a MAC (Message Authentication Code).
 
-## [Quiz]
+## [Quiz](https://launchschool.com/lessons/74f1325b/assignments/b0fe5989)
 
+|  | Once | Twice | Thrice | 
+| :--- | :---: | :---: | :---: |
+|1. | tick |
+|2.| tick |
+|3.|C, D|
+|4. | tick |
+|5. | tick |
+|6. | tick |
+|7. | tick |
 
+3. But also A: The TLS Handshake is used to agree which version of TLS to us.
 
 ## Overview:
 
@@ -174,7 +196,7 @@ A Brief history of Cryptography:
 |3.The Transport Layer Security Protocol|7/5/23|||70%|70%|
 |4. TLS Encryption|7/5/23|||70%|70%|
 |5. TLS Authentication|7/5/23|||70%|70%|
-|6. TLS Integrity|7/5/23|
-|7. Summary|
-|8. Quiz|
+|6. TLS Integrity|7/5/23|||60%|70%|
+|7. Summary|7/5/23|||60%|70%|
+|8. Quiz|86%|
 | + Read through Discussions |
