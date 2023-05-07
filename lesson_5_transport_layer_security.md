@@ -200,3 +200,4 @@ A Brief history of Cryptography:
 |7. Summary|7/5/23|||60%|70%|
 |8. Quiz|86%|
 | + Read through Discussions |
+.
