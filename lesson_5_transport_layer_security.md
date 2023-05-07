@@ -142,11 +142,24 @@ A Brief history of Cryptography:
 
 ## [TLS Integrity](https://launchschool.com/lessons/74f1325b/assignments/a88271cf)
 
+- TLS is a "session-layer-protocol" (according to the OSI). So it exists between the Application Layer (where HTTP resides) and the Transport Layer (where TCP resides). Don't get too bogged down with this, but remember TLS operates between HTTP and TCP.
+- Just like other protocols TLS sends messages in a definite format. The format can vary deopending on the particular function that TLS is performing, but when transporting application data, TSL does it the same way other PDUs do. This means meta-data in the header and footer with a Data Payload.
 
+<img width="863" alt="Screenshot 2023-05-07 at 13 11 06" src="https://user-images.githubusercontent.com/78854926/236676664-0421a8a4-e592-43b4-8ad4-63ca4eecda8a.png">
 
-## [Summary]
+- For proving Message integrity we mainly want to be looking at the `MAC` field (Message Authentication Code). This is different to the MAC address on a computer (Media Access Control Address)
 
+### Message Authentication Code
 
+  - This field is similar to the checksum fields we've found in other PDUs. However there is a different in implementation adn intention. The Checksum field in a TCP segment is meant to check for errors, which arise from corruption during transit. But the MAC fieeld in a TLS record is to establish an added layer of security. It means we can check that the message wasn't tampered with in transit.
+  - This is done with a hashing algorithm, that works thusly:
+ 1. The sender creates a 'digest' of the data payload. This is like a small amount of data taken from the actual data that will be sent in the MAC field. It is created using a hashing algorithm combined with a pre-agreed hash-value. These are decided during the TLS handshake.
+ 2. The sender encodes the data-payload using the symmetric key and encapsulate it into a TLS record. Then pass this down to the Transport layer to be sent to the other party.
+ 3. When the other party gets the message they decrypt it with the symmetric key. They will also create a digest using the agreed hashing algorithm. If the two digests match then it confirms the integrity of the message.
+
+## [Summary](https://launchschool.com/lessons/74f1325b/assignments/238ff36f)
+
+- 
 
 ## [Quiz]
 
@@ -157,11 +170,11 @@ A Brief history of Cryptography:
 |  | Once | Twice | Thrice | Comprehension | Retention
 | :--- | :---: | :---: | :---: | :--- | :---
 |1. Introduction|7/5/23|||70%|70%|
-|2. What to focus on|||70%|70%|
-|3.The Transport Layer Security Protocol|||70%|70%|
-|4. TLS Encryption|||70%|70%|
-|5. TLS Authentication|||70%|70%|
-|6. TLS Integrity|
+|2. What to focus on|7/5/23|||70%|70%|
+|3.The Transport Layer Security Protocol|7/5/23|||70%|70%|
+|4. TLS Encryption|7/5/23|||70%|70%|
+|5. TLS Authentication|7/5/23|||70%|70%|
+|6. TLS Integrity|7/5/23|
 |7. Summary|
 |8. Quiz|
 | + Read through Discussions |
