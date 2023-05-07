@@ -744,26 +744,28 @@ LS solution:
 </ul>
 ```
 
-## [Summary]
+## [Summary](https://launchschool.com/lessons/0e67d1ce/assignments/dcae7f89)
 
-- HTTP is a text-based protocol for sending Requestrs and responses between client and server.
-- 
+- HTTP is a text-based protocol for sending Requests and Responses between client and server.
+- In order for each side to understand the message it has to be structured in a certain way.
+- With HTTP/1.1 the end of the message is indicated by an empty line.
+- The `content-length` header tells us the size of the body. So the reader knows where the message should end.
 
 ## Overview:
 
 |  | Once | Twice | Thrice | Comprehension | Retention
 | :--- | :---: | :---: | :---: | :--- | :---
-|1. What to Focus on|26th April|
-|2. Using Telnet to explore HTTP|27th April|
-|3. Speaking the same language|27th April|
-|4. Implementing your own HTTP server: Project overview|27th April|
-|5. Bash Basics|27th April|
-|6. Working with Netcat|28th April|
-|7. Implementing our own HTTP server: Basic Program Structure|28th April|
-|8. Implementing our own HTTP server: Sending a simple response|28th April|
-|9. Implementing our own HTTP server: Processing the request|29th April|
-|10. Implementing our own HTTP server: Serving HTML|29th April|
-|11. Implementing our own HTTP server: Working with the browser|29th April|
-|12. Implementing our own HTTP server: adding Hyperlinks|5th May|
-|13. Summary|5th May|
+|1. What to Focus on|26th April|||10%|0%|
+|2. Using Telnet to explore HTTP|27th April|||10%|0%|
+|3. Speaking the same language|27th April|||10%|0%|
+|4. Implementing your own HTTP server: Project overview|27th April|||10%|0%|
+|5. Bash Basics|27th April|||10%|0%|
+|6. Working with Netcat|28th April|||10%|0%|
+|7. Implementing our own HTTP server: Basic Program Structure|28th April|||10%|0%|
+|8. Implementing our own HTTP server: Sending a simple response|28th April|||10%|0%|
+|9. Implementing our own HTTP server: Processing the request|29th April|||10%|0%|
+|10. Implementing our own HTTP server: Serving HTML|29th April|||10%|0%|
+|11. Implementing our own HTTP server: Working with the browser|29th April|||10%|0%|
+|12. Implementing our own HTTP server: adding Hyperlinks|5th May|||10%|0%|
+|13. Summary|7th May|||10%|0%|
 | + Read through Discussions |
