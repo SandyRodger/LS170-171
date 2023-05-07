@@ -751,6 +751,8 @@ LS solution:
 - With HTTP/1.1 the end of the message is indicated by an empty line.
 - The `content-length` header tells us the size of the body. So the reader knows where the message should end.
 
+- No quiz. If there was one, after the first go through I would certainly score very low.
+
 ## Overview:
 
 |  | Once | Twice | Thrice | Comprehension | Retention
