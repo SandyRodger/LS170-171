@@ -11,7 +11,7 @@ To Discuss:
 
 - How much effort should I be putting into retaining stuff from previous courses?
 - What do you think of [dan miessler](https://danielmiessler.com/blog/the-dangers-of-abruptly-destroying-meaning-structures/)
-
+-----------------
 20:30 - 24th April 2023
 
 Questions:
@@ -32,7 +32,7 @@ We talk about:
 - encryption, certificate authorities
 - Sinatra and Frankie
 - The two general problem.
-
+-----------------
 8th May:
 
 Questions:
@@ -47,4 +47,4 @@ Discuss:
 
 Mini-ideas for Olly's business:
 
-- An AI program that takes your schedule/productivity information and advises on what's working/not working. ie "I see that on days when you skip breakfast you get 0.45 hours more work done.Maybe you should skip breakfast".
+- An AI program that takes your schedule/productivity information and advises on what's working/not working. ie "I see that on days when you skip breakfast you get 0.45 hours more work done. Maybe you should skip breakfast".
