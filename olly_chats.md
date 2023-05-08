@@ -37,4 +37,14 @@ We talk about:
 
 Questions:
 
-- Why is my `code` command all messed up in my LS180 folder? How do I (and should I even both to) fix this?
+- Why is my `code` command all messed up in my LS180 folder? How do I (and should I even bother to) fix this?
+- Basically all of LS170:lesson 4 doesn't work on my AWS - can we look at that
+
+Discuss:
+
+- chapter days
+- 
+
+Mini-ideas for Olly's business:
+
+- An AI program that takes your schedule/productivity information and advises on what's working/not working. ie "I see that on days when you skip breakfast you get 0.45 hours more work done.Maybe you should skip breakfast".
