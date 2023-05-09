@@ -1,8 +1,9 @@
 (These are derived from [the study guide](https://launchschool.com/lessons/f48bf303/assignments/adbc20a4))
 
-1. What is the internet is and how does it work?
+1. [What is the internet](https://launchschool.com/lessons/4af196b9/assignments/268243e5) is and how does it work?
 
- - The internet is a network of networks
+ -  - The internet is a network of networks. Devices are connected to each other in various ways that enable them to transfer data. The first network your device connects to is the Local Area Network, which could be a home or office. At this point the data travels from your device to a network bridging device, such as a hub or switch. To connect your LAN to the wider internet your switch/hub sends the data on to a router. Routers are devices that exist to send data on to other machines on the internet. All of this data transferred is formatted according to protocols so that all devices know the agreed ways to read the messages. There are many protocols, but the first and most famous is Hyper Text Transfer Protocol (HTTP). Each message (or ‘packet’) between devices is a combination of different messages doing different jobs and these are organised in layers like Russian-nesting-dolls. Each layer will have a header (containing information about the packet) and a pay-load (which is the actual message). The packet is sent on a physical network as light signals or electrical signals or radio-waves. There’s much more to talk about such as DNS servers,  the client-server model, URLs and encryption, but I’l stop there.
+
 
 2. How does the internet differ from the world wide web?
 3. What are the characteristics of the physical network such as latency and bandwidth?	
