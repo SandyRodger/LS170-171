@@ -5,9 +5,8 @@
 ## [Lesson 3: Intro to HTTP](https://github.com/SandyRodger/LS170-171/blob/main/lesson_3.md)
 ## [Lesson 4: Working with HTTP](https://github.com/SandyRodger/LS170-171/blob/main/lesson_4.md)
 ## [Lesson 5: Transport Layer Security (TLS)](https://github.com/SandyRodger/LS170-171/blob/main/lesson_5_transport_layer_security.md)
-## Lesson 6: The Evolution of Network Layer Technologies
+## [Lesson 6: The Evolution of Network Layer Technologies](https://github.com/SandyRodger/LS170-171/blob/main/lesson_6_the_evolution_of_network_technologies.md)
 ## Resources
- - [Ginni's notes](https://github.com/gcpinckert/ls170_171)
  - Coding with others
   - [Olly chats](https://github.com/SandyRodger/LS170-171/blob/main/olly_chats.md)
  
