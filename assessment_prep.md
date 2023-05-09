@@ -40,15 +40,9 @@
 |  | Once | Twice | Thrice | 
 | :--- | :---: | :---: | :---: | 
 |1. Write article about the internet from lesson 6|
-|2. re-read Github notes: Lesson 1|
-|3. re-read Github notes: Lesson 2|
-|4. re-read Github notes: Lesson 3|
-|5. re-read Github notes: Lesson 4|
-|6. re-read Github notes: Lesson 5|
-|7. re-read Github notes: Lesson 6|
-|8. re-read Github notes: book|
-|9. Find other LS students notes|
-|10. Check out the [Spot Wiki](https://fine-ocean-68c.notion.site/LS170-09792b25c5824b79bf97ca27fdd8c9aa)|
+|2. Write out answers to study-guide questions|
+|3. Find other LS students notes|
+|4. 120 Questions [here](https://fine-ocean-68c.notion.site/LS170-09792b25c5824b79bf97ca27fdd8c9aa) to be answered|
 
 ## Target Date
 
