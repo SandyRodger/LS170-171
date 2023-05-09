@@ -11,7 +11,7 @@
 |4.[Vahid pt.1](https://vahid.blog/post/2020-12-15-how-the-internet-works-part-i-infrastructure/)|
 |5.[Vahid pt.2](https://vahid.blog/post/2020-12-21-how-the-internet-works-part-ii-layers/)|
 |6.[Vahid pt.3](https://vahid.blog/post/2020-12-24-how-the-internet-works-part-iii-reliability-and-security/)|
-|7.[Write my own]()|
+|7.[Write my own](https://github.com/SandyRodger/LS170-171/blob/main/how_the_internet_works.md)|
 
 Structures:
 
@@ -29,4 +29,31 @@ Structures:
   - The HTTP Request/response cycle
 - Conclusion
 
-2. 
+2. LS course:
+
+1.
+- What is the Internet?
+- Protocols
+- A Layered System
+- The Physical Network
+- The Link/ Data Link Layer
+- The Internet/ Network Layer
+2.
+- Communication Between Processes
+- Network Reliability 
+- Transmission Control Protocol (TCP)
+- User Datagram Protocol (UDP)
+3.
+- The Application Layer
+- HTTP and the Web
+- Assignment: Read HTTP Book
+- Some Background and Diagrams
+- URLs
+- Practice Problems: URL Components
+- The Request Response Cycle
+4. [skip]
+5. 
+- The Transport Layer Security (TLS) Protocol
+- TLS Encryption
+- TLS Authentication
+- TLS Integrity
