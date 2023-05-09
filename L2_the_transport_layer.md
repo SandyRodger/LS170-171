@@ -68,6 +68,7 @@ Solution 1:
  <p align="center">
   <img width="855" alt="Screenshot 2023-04-10 at 16 24 26" src="https://user-images.githubusercontent.com/78854926/230932176-575db796-872d-4546-ba3e-bfbb3b05821b.png">
 </p>
+  
   - Problem 1: If the receiver never gets the message the system fails.
   - Problem 2: If the acknowledgement message is corrupted/lost the system fails.
 
@@ -101,7 +102,7 @@ Solution 3:
 - This solution covers the fundamental principles of reliable data-transfer
   - In-order delivery: Data is received in the order it was sent.
   - Error detection: Corrupt data is detected with a checksum.
-  - Handling data-loss: Lost data is resent using a system of acknowledgements and time-outs.
+  - Handling data-loss: Lost data is re-sent using a system of acknowledgements and time-outs.
   - Handling duplication: duplicate data is eliminated with an idempotency token system.
 - The solution is effective, but inefficient. We can mitigate this inefficiency with:
 
