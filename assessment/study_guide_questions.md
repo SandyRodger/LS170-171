@@ -11,7 +11,7 @@
 
 3. What are the characteristics of the physical network such as latency and bandwidth?	
 
-- -	As data travels between points on the internet the efficiency with which it can do so is measured in these two ways. Latency is the amount of time it takes. Bandwidth is how much data can be sent in a given time-frame. It’s comparable to a train having a maximum speed, but how many parallel train tracks there are also affects total passengers transported.
+-	As data travels between points on the internet the efficiency with which it can do so is measured in these two ways. Latency is the amount of time it takes. Bandwidth is how much data can be sent in a given time-frame. It’s comparable to a train having a maximum speed, but how many parallel train tracks there are also affects total passengers transported.
 
 4. Explain how lower level protocols operate.
 
@@ -22,22 +22,34 @@
 
 5. What is a port address and an IP address	?
 
-- [Answer here](https://launchschool.com/lessons/2a6c7439/assignments/41113e98)
-- 
+- [Relevant LS page here](https://launchschool.com/lessons/2a6c7439/assignments/41113e98)
+- -	An IP address is a device’s address on the internet. It is what is used to direct traffic to the required destination. It only takes the information as far as the host. Once it has arrived the data needs to know which application it should go to. This is what ports are for. The PDU is directed to a specific port on a host so that multiple channels of communications can be maintained at once.  This allows multiple channels of communication between applications to be maintained on a single channel between hosts, which is called multiplexing.
 
 6. How does DNS work?
+
+- [DNS](https://github.com/SandyRodger/launch_school_books/blob/main/http_book.md#dns)
+- DNS (Domain Name System) is a distributed database that takes a website name and finds its corresponding IP address. DNS databases are stored on DNS servers.
+-	If a DNS server doesn’t contain the address it passes it up the hierarchy chain to the next one.
+-	It then sends back the IP address to be used in your PDUs. IP addresses are often saved in a browser cache, so if your browser already has the IP address it won’t search the DNS database.
+
 7. What is the client-server model of web interactions and the role of HTTP protocol as a protocol within that model?
-8. Explain the TCP and UDP protocols, their similarities and differences	
-9. Explain the three-way handshake and its purpose.
-10. What are flow control and congestion avoidance?
-11. What are the components of a URL, including query strings	
-12. Construct a valid URL.
-13. What is URL encoding and when it might be used?
-14. What are HTTP requests and responses? Identify the components of each.
-15. Describe the HTTP request/response cycle
-16. Explain what status codes are, and provide examples of different status code types.
-17. What is meant by 'state' in the context of the web, and explain some techniques that are used to simulate state.
-18. Explain the difference between GET and POST. When is each appropriate?
-19. What are the various security risks that can affect HTTP?
-20. What measures can be used to mitigate against these risks?
-21. What are the different services that TLS can provide, give a broad description of each of those services
+
+- Most data transfer on the internet happens between two hosts where one host is requesting something and the other is responding to that request. This is called the client-server model. HTTP is a set of rules for how messages between points on the internet should be formatted so that each side knows how to parse the Protocol Data Unit.
+
+9. Explain the TCP and UDP protocols, their similarities and differences	
+
+- TCP and UDP are protocols for data at the transport layer. 
+
+11. Explain the three-way handshake and its purpose.
+12. What are flow control and congestion avoidance?
+13. What are the components of a URL, including query strings	
+14. Construct a valid URL.
+15. What is URL encoding and when it might be used?
+16. What are HTTP requests and responses? Identify the components of each.
+17. Describe the HTTP request/response cycle
+18. Explain what status codes are, and provide examples of different status code types.
+19. What is meant by 'state' in the context of the web, and explain some techniques that are used to simulate state.
+20. Explain the difference between GET and POST. When is each appropriate?
+21. What are the various security risks that can affect HTTP?
+22. What measures can be used to mitigate against these risks?
+23. What are the different services that TLS can provide, give a broad description of each of those services
