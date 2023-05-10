@@ -1,7 +1,7 @@
 # [The Transport Layer](https://launchschool.com/lessons/2a6c7439/home)
 
 - This layer deals with how networked applications communicate with each other:
-  - how transport layer protocols enable communication between processes (?!)
+  - how transport layer protocols enable communication between processes.
   - Network reliability is engineered. Peel back the abstraction of the internet to reveal tangible processes that result in the internet we take for granted.
   - Understand the trade-offs (particularly between TCP and UDP).
 
@@ -9,7 +9,7 @@
 
 - The Internet Protocol provides the inter-network communication services necessary for "minimum viable internet".
 - But to create networked applications we need more than IP.
-  - A direct connection between applications
+  - A direct connection between applications.
   - Reliable network communication.
 - The IPs system of addressing is designed to provide communication between *hosts*. These hosts can be on the same network or on the other side of the world. IP is great for getting a message from Host A to Host B, but not more than that. 
 - Within each host there are multiple applications running.
@@ -37,7 +37,7 @@
 
 | port| purpose| Explanation| Example
 | :--- | :---: | :---: | :---: 
-| 0 -1023 | Well-known ports| Assigned to processes that provide commonly used network service| HTTP is port 80, FTP is 20, SMTP is 25
+| 0 - 1023 | Well-known ports| Assigned to processes that provide commonly used network service| HTTP is port 80, FTP is 20, SMTP is 25
 |1024 - 49151|Registered ports|Assigned as requested by private entities| Microsoft, IBM and Cisco all have ports assigned that they use to provide specific services (On some operating systems ports in this range are also used for allocation as *ephemeral* ports)
 |49152 - 65535|dynamic (or private) ports|Ports in this range cannot be registered for a specific use. They can be used for customised services or for alloction as *ephemeral ports*|
   
@@ -130,9 +130,9 @@ Solution 3:
  - Pipelining is a more efficient use of bandwidth. Less time is spent waiting. More time is spent transmitting.
  - Finding a balance between reliability and performance is a key part of the Transmission Control Protocol(TCP)
 
-## [Transmission Control Protocol(TCP](https://launchschool.com/lessons/2a6c7439/assignments/d09ddd52)
+## [Transmission Control Protocol(TCP)](https://launchschool.com/lessons/2a6c7439/assignments/d09ddd52)
 
-- The transmission control protocol is one of the corner-stones of the internet and one of its keyfeatures is providing reliable data transfer.
+- The transmission control protocol is one of the corner-stones of the internet and one of its key features is providing reliable data transfer.
 - TCP provides the abstraction of reliable data-transfer on top of an unreliable channel.
 - What this abstraction does is to hide the complexity of reliable network communication from the application layer:
   - Data integrity.
@@ -304,13 +304,13 @@ Cons:
   - Head-of-Line (HOL) blocking.
 
 - HOL blocking isn't specific to TCP. Basically it is about how processing one message in a sequence can block the processing of subsequent messages in the sequence.
-- TCP's provision of in-order delivery or segments can cause HOL blocking. If one segment goes missing, it jams transmission for the subsequent segments and need to be buffered. This can lead to increased queueing delay which adds to latency.
+- TCP's provision of in-order delivery or segments can cause HOL blocking. If one segment goes missing, it jams transmission for the subsequent segments and needs to be buffered. This can lead to increased queueing delay which adds to latency.
 
 ## [User datagram protocol (UDP)](https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b)
 
 - If TCP implements reliable data transfer through sequencing and re-transmission of lost data, how does UDP do this? It doesn't.
 - The PDU of UDP is a datagram.
-- Gatagram headers look like this:
+- Datagram headers look like this:
 <p align="center">
 <img width="873" alt="Screenshot 2023-04-11 at 12 17 01" src="https://user-images.githubusercontent.com/78854926/231144645-799e39a8-4cef-41de-9ae8-ddb5d55de526.png">
 </p>
@@ -337,8 +337,8 @@ Cons:
 - The lack of in-order delivery also prevents HOL blocking.
 - It's probable that someone using UDP will implement for themselves some of the features UDP lacks. Which services those would be and how they are implemented would be up to the person writing the application code.
 - For example you might want to implement in-order delivery, but not worry too much about losing the odd bit of data. In this case you would implement sequencing, but not re-transmission or lost data. These services can be implemented at the application layer. This is like using UDP as a base template on which to build.
-- An example of this would be a voice/video calling app. The occasional lost piece of data means glitching, but its worth it for the speed of the connection over long distances (which would normally mean higher latency). ONoine gaming is another good example.
-- So UDP provides all this freedom, but comes with responsibility. Various practices should be adhered to, like implementing your own congestion avoidance in order to prevent it overwhelming the network.
+- An example of this would be a voice/video calling app. The occasional lost piece of data means glitching, but its worth it for the speed of the connection over long distances (which would normally mean higher latency). Online gaming is another good example.
+- So UDP provides all this freedom, but comes with responsibility. Various practices should be adhered to, for example: implementing your own congestion avoidance in order to prevent it overwhelming the network.
 
 ## [Summary](https://launchschool.com/lessons/2a6c7439/assignments/4ab0993c)
 
