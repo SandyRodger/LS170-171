@@ -94,12 +94,23 @@
 - When the server receives the request it will perform any necessary checks, like verifying the user session. Then look up the requested information and format it as a HTTP response.
 - The client then receives this HTTP response and renders it for the user.
 
-18. Explain what status codes are, and provide examples of different status code types.
+18. Explain what [status codes](https://launchschool.com/books/http/read/processing_responses#statuscode) are, and provide examples of different status code types.
 
-- Status codes are elements in a HTTP response 
+- Status codes are a 3 digit code with some text in a HTTP response indicating whether the server was able to retrieve the requested information. A `200 OK` status code means the request was handled successfully. `302 Found` indicates that the requested resource has changed, but was found. This usually results in a redirect to another URL. `404 Not Found` means the resource was not found. `500` means the server encountered an error, which could be anything from a  bug to a misconfiguration.
 
 19. What is meant by 'state' in the context of the web, and explain some techniques that are used to simulate state.
+
+- HTTP is a stateless protocol. This means that it does not hold on to information between request/response cycles and HTTP request/responses are not aware of each other. However, sometimes it is necessary for a website to behave as though it does retain this information. For example navigating from one part of a website to another involves sending a new HTTP request, but you don't want to log in every time you do this. 
+- Web developers simulate stateful websites in a few ways. Three common tools for this are sessions, cookies and Asynchronous Javascript calls (AJAX).
+- Sessions are when the client sends a 'session identifier' token which the server remembers and then uses to load the webpage settings specific to that user.
+- Cookies are pieces of data that are sent from the server and stored on the client's browser during a request/response cycle. These files contain information about the session. The actual session data is saved on the server, but the cookie contains information used to identify the client to the server so it can load the right page.
+- AJAX is a system that allows broiwsers to issue requests and process responses without refreshing the entire web-page. It means that client requests are performed asynchronously, whioch means that the page doesn't refresh. A good example of AJAX is typing each letter into the google search bar, which generates new suggestions after each letter, even though we aren't refreshing the entire page. These suggestions are the result of a 'call back', which is a piece of logic that is triggered when the response is returned instead of rendering a whole HTML webpage.
+
 20. Explain the difference between GET and POST. When is each appropriate?
+
+- GET and POST are HTML request methods. GET is used for retrieving a resource and can be initialized by clicking on a link or entering an address into a web-browser. The response to this can be anything, but if it's HTML and references another resource your browser with automatically request that resource.
+- POST is for initiating an action on the server, or submitting information. POST requests allow us to send much larger and more sensitive information to the server.
+
 21. What are the various security risks that can affect HTTP?
 22. What measures can be used to mitigate against these risks?
 23. What are the different services that TLS can provide, give a broad description of each of those services
