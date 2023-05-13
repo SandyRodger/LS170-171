@@ -34,7 +34,7 @@
 
 7. What is the client-server model of web interactions and the role of HTTP protocol as a protocol within that model?
 
-- Most data transfer on the internet happens between two hosts where one host is requesting something and the other is responding to that request. This is called the client-server model. HTTP is a set of rules for how messages between points on the internet should be formatted so that each side knows how to parse the Protocol Data Unit.
+- Most data transfer on the internet happens between two hosts where one host is requesting something and the other is responding to that request. This is called the client-server model. HTTP is a set of rules for how messages between points on the internet should be formatted so that each side knows how to parse the information is receives.
 
 9. Explain the TCP and UDP protocols, their similarities and differences	
 
@@ -48,12 +48,12 @@
 
 11. Explain the three-way handshake and its purpose.
 
--  This is a process of establishing a connection between application processes. It is implemented with TCP To do this the sender sends a SYN segment (to synchronise), the receiver sends back a SYN ACK segment (acknowledging receipt of the SYN segment) and the sender sends back an ACK segment and starts transmitting data.
+-  This is a process of establishing a connection between application processes. It is implemented with TCP. To do this the sender sends a SYN segment (to synchronise), the receiver sends back a SYN ACK segment (acknowledging receipt of the SYN segment) and the sender sends back an ACK segment and starts transmitting data.
 
 12. What are flow control and congestion avoidance?
 
 -  Flow control is a mechanism to prevent the sender from overwhelming the receiver with too much information sent too quickly.
- -  Congestion avoidance is everything done to avoid network congestion, such as monitoring retransmission, which indicates data-loss from routers, to detect congestion. In response it decreases the transmission window which is the amount of data it is transmitting in a given time. 
+-  Congestion avoidance is everything done to avoid network congestion, such as monitoring retransmission, which indicates data-loss from routers, to detect congestion. In response it decreases the transmission window which is the amount of data it is transmitting in a given time. 
 
 13. What are the components of a [URL](https://launchschool.com/lessons/cc97deb5/assignments/a28ccb6f), including query strings([also here](https://launchschool.com/books/http/read/what_is_a_url))
 
@@ -65,10 +65,39 @@
  - the query string (made of query parameters)
 
 14. Construct a valid URL.
-15. What is URL encoding and when it might be used?
+
+ - `http://www.website-name.com:400/home?member=one&admin=first`
+ - `http` :  this is the scheme
+ - `://`  :  the scheme is always followed by a colon and two forward slashes
+ - `www.website-name.com` : this is the host name. It tells the client where the resource is located.
+ - `:400` : this is the port name. It is optional and the default port is 80.
+ - `/home` : this is the path, indicating what local resource is indicated. It is optional.
+ - `?member=one` and `admin=first` : These are the query parameters, used to send data to the server. It is optional. `?` marks the start of the query string. `member=one` and `admin=first` are parameter name/value pairs. `&` is a reserved character used when adding more parameters to the query string.
+
+15. What is [URL encoding](https://launchschool.com/books/http/read/what_is_a_url#urlencoding) and when it might be used?
+
+- URLs can only be written with the 128 ASCII characters so if a URL requires a character other than these there is a code to include them. The code is a `%` symbol followed by two hexadecimal numbers that represent the desired character as UTF-8 code. For example `%20` is space. 
+- Characters must be encoded if they don't exist in the ASCII set, but also if the character has a special function or could be misinterpreted some systems.
+
 16. What are HTTP requests and responses? Identify the components of each.
-17. Describe the HTTP request/response cycle
+
+ - A HTTP request is what is sent when you look up a resource on the internet and the response is what you get back. The response is then parsed by the host and displayed as a webpage.
+- A HTTP request must include a HTTP method, such as GET, and a path, for example `www.launchschool.com`. These form the 'start-line' of the request and also include the HTTP version. The host header is also a required component, since HTTP 1.1.  Parameters, all other headers and the message body can then be included, but are optional.
+- The HTTP response must include a status line with a status code (for example `200 OK`). Headers and body can be included after that, but are optional. 
+- A header could be `Content-type: text/html`. A Body would be written in HTML, so `<html><body>...>
+
+17. Describe the [HTTP request/response cycle](https://launchschool.com/lessons/cc97deb5/assignments/83ae67aa)
+
+- When a browser wants to look up a web-page it sends a HTTP request to a server. The sender is the client in this relationship.
+- This is the first step in a HTTP request/response cycle and is usually initialized by a user interaction.
+- The server is the software running on the machine hosting the information requested.
+- When the server receives the request it will perform any necessary checks, like verifying the user session. Then look up the requested information and format it as a HTTP response.
+- The client then receives this HTTP response and renders it for the user.
+
 18. Explain what status codes are, and provide examples of different status code types.
+
+- Status codes are elements in a HTTP response 
+
 19. What is meant by 'state' in the context of the web, and explain some techniques that are used to simulate state.
 20. Explain the difference between GET and POST. When is each appropriate?
 21. What are the various security risks that can affect HTTP?
