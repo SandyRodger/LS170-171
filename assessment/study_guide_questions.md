@@ -104,13 +104,24 @@
 - Web developers simulate stateful websites in a few ways. Three common tools for this are sessions, cookies and Asynchronous Javascript calls (AJAX).
 - Sessions are when the client sends a 'session identifier' token which the server remembers and then uses to load the webpage settings specific to that user.
 - Cookies are pieces of data that are sent from the server and stored on the client's browser during a request/response cycle. These files contain information about the session. The actual session data is saved on the server, but the cookie contains information used to identify the client to the server so it can load the right page.
-- AJAX is a system that allows broiwsers to issue requests and process responses without refreshing the entire web-page. It means that client requests are performed asynchronously, whioch means that the page doesn't refresh. A good example of AJAX is typing each letter into the google search bar, which generates new suggestions after each letter, even though we aren't refreshing the entire page. These suggestions are the result of a 'call back', which is a piece of logic that is triggered when the response is returned instead of rendering a whole HTML webpage.
+- AJAX is a system that allows broiwsers to issue requests and process responses without refreshing the entire web-page. It means that client requests are performed asynchronously, which just means that the page doesn't refresh. A good example of AJAX is typing each letter into the google search bar, which generates new suggestions after each letter, even though we aren't refreshing the entire page. These suggestions are the result of a 'call back', which is a piece of logic that is triggered when the response is returned instead of rendering a whole HTML webpage.
 
 20. Explain the difference between GET and POST. When is each appropriate?
 
-- GET and POST are HTML request methods. GET is used for retrieving a resource and can be initialized by clicking on a link or entering an address into a web-browser. The response to this can be anything, but if it's HTML and references another resource your browser with automatically request that resource.
-- POST is for initiating an action on the server, or submitting information. POST requests allow us to send much larger and more sensitive information to the server.
+- GET and POST are HTML request methods.
+- GET is used for retrieving a resource and can be initialized by clicking on a link or entering an address into a web-browser. The response to this can be anything, but if it's HTML and references another resource your browser with automatically request that resource.
+- POST is for initiating an action on the server, or submitting information. POST requests allow us to send much larger and more sensitive information to the server, like images or videos. The reason it'sbetter than putting the same information into a GET query string is that the information would be exposed in the URL. (There is also a query string size-limit).
+- When issueing a POST request from a browser the following sequence of actions are hidden:
+ - Browser issues the original POST request.
+ - The server sends back a responce with a `location` header.
+ - The browser then sends another POST request (without any input from the user)
+ - Browser receives second response and displays it.
 
-21. What are the various security risks that can affect HTTP?
+21. What are the various [security](https://launchschool.com/books/http/read/security#securehttp) risks that can affect HTTP?
+
+- Session Hijacking
+- Packet sniffing techniques: Requests and responses are sent as strings, so if hacker had access to the network they could use packet-sniffing techniques to read the packets. Requests contain the session id, so the hacker would be able to pretend to be you on the server. This would be like being logged in as you, without the need for your username or password. The best way to protect against this is using the `https` protocol, which encrypts every request/response before it is sent. These encryptions rely on TLS, the cryptographic protocol.
+- Same origin policy is a security policy that restricts certain interactions between cross-orgin resources.
+
 22. What measures can be used to mitigate against these risks?
 23. What are the different services that TLS can provide, give a broad description of each of those services
