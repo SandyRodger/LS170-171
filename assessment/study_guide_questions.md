@@ -110,7 +110,7 @@
 
 - GET and POST are HTML request methods.
 - GET is used for retrieving a resource and can be initialized by clicking on a link or entering an address into a web-browser. The response to this can be anything, but if it's HTML and references another resource your browser with automatically request that resource.
-- POST is for initiating an action on the server, or submitting information. POST requests allow us to send much larger and more sensitive information to the server, like images or videos. The reason it'sbetter than putting the same information into a GET query string is that the information would be exposed in the URL. (There is also a query string size-limit).
+- POST is for initiating an action on the server, or submitting information. POST requests allow us to send much larger and more sensitive information to the server, like images or videos. The reason it's better than putting the same information into a GET query string is that the information would be exposed in the URL. (There is also a query string size-limit).
 - When issueing a POST request from a browser the following sequence of actions are hidden:
  - Browser issues the original POST request.
  - The server sends back a responce with a `location` header.
@@ -118,10 +118,20 @@
  - Browser receives second response and displays it.
 
 21. What are the various [security](https://launchschool.com/books/http/read/security#securehttp) risks that can affect HTTP?
-
-- Session Hijacking
-- Packet sniffing techniques: Requests and responses are sent as strings, so if hacker had access to the network they could use packet-sniffing techniques to read the packets. Requests contain the session id, so the hacker would be able to pretend to be you on the server. This would be like being logged in as you, without the need for your username or password. The best way to protect against this is using the `https` protocol, which encrypts every request/response before it is sent. These encryptions rely on TLS, the cryptographic protocol.
-- Same origin policy is a security policy that restricts certain interactions between cross-orgin resources.
-
 22. What measures can be used to mitigate against these risks?
+
+- Session Hijacking is when a hacker gains access to the session id token, which allows them to access the same web application as the user. There are a few ways of preventing session hijacking:
+  - Resetting sessions: This typically happens when a user is entering a part of the website with sensitive information or performing a task which requires greater security. For instance transferring money. The new session would have a new session id token and render the previous session invalid.
+  - Having an expiraton time on sessions limits the access hackers have to exploit a session.
+  - Using https across the app.
+- Packet sniffing techniques: Requests and responses are sent as strings, so if hacker had access to the network they could use packet-sniffing techniques to read the packets. Requests contain the session id, so the hacker would be able to pretend to be you on the server. This would be like being logged in as you, without the need for your username or password. The best way to protect against this is using the `https` protocol, which encrypts every request/response before it is sent. These encryptions rely on TLS, the cryptographic protocol.
+- Same origin policy is a security policy that restricts certain interactions between cross-orgin resources. That means that resources with the same scheme, host and port are granted unrestricted access accross the website, but not if any of these three are different. Bear in mind it's not all cross origin requests. Linking, redirects and form-submissions are generally allowed. The things which are restricted are more often trying to access information.
+- XSS (cross site scripting) is an attack that happens when you allow users to input html or javascript that ends up being displayed by the site directly. If the server-side code doesn't protect against this the browser will interpret this as html/javascript. This can be used to do great damage, like grabbing the session id of every visitor to the page and then coming back to assume their identity.
+- XSS can be fought in a few ways:
+  - Making sure to always sanitize the user input. This is done by disallowing languages like html and javascript and illiminating script tags like <script>.
+  - Another way is to escape all user input. Escaping here means replacing html characters with a combination of ASCII characters. These combinations of ASCII characters are called html entities.
+
+
 23. What are the different services that TLS can provide, give a broad description of each of those services
+ 
+Transport Layer Security ?
