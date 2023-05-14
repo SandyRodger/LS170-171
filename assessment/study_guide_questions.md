@@ -131,7 +131,13 @@
   - Making sure to always sanitize the user input. This is done by disallowing languages like html and javascript and illiminating script tags like <script>.
   - Another way is to escape all user input. Escaping here means replacing html characters with a combination of ASCII characters. These combinations of ASCII characters are called html entities.
 
-
 23. What are the different services that TLS can provide, give a broad description of each of those services
  
-Transport Layer Security ?
+- Encryption: this is encrypting a message so that only the person with the corresponding key can decrypt it.
+  - TLS uses asymmetric and symmetric key encryption. 
+    - Asymmetric is when a user generates a public and a private encryption key. The public encryption key is used to encypt a message by the sender but the message can then only be decrypted with the private key. So only the messages can only securely go one way.
+    - Symmetric is when both parties use the same private key. The way that both parties can have access to this key without it having been intercepted is by exchanging the key with asymmetric encryption.
+- Authentication: A process of checking the identity of a person in an exchange.
+- Integrity checks: Checking if the message is kosher - ie, has been tampered with or faked completely.
+ 
+ 
