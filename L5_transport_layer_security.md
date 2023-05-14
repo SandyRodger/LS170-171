@@ -12,7 +12,7 @@
 
 - TLS is the special sauce we rub on HTTP to make it secure.
 - It's too big a topic to cover completely, so to begin with remember these points:
-  - TLS allows for secure messages over insecure channels. Begin with an understanding of what a naked HTTP message looks like and then you'll have a better idea of waht TLS brings to the table.
+  - TLS allows for secure messages over insecure channels. Begin with an understanding of what a naked HTTP message looks like and then you'll have a better idea of what TLS brings to the table.
   - There are multiple aspects to security. TLS provides a number of services and each one tackles a specific problem.
 
 ## [The Transport Layer Security Protocol](https://launchschool.com/lessons/74f1325b/assignments/83bf156b)
@@ -42,7 +42,7 @@ A Brief history of Cryptography:
 
 <img width="879" alt="Screenshot 2023-05-07 at 11 08 54" src="https://user-images.githubusercontent.com/78854926/236671235-2c0d72c6-bf76-458c-a2ed-81ed0a6e88ba.png">
 
-- So how to sender and receiver exchange encryption keys in the first place?
+- So how do sender and receiver exchange encryption keys in the first place?
 - The most secure way would be in person. But over the internet this isn't an option. So we sort of need to encrypt the encryption.
 
 ### Asymmetric key encryption:
@@ -50,14 +50,15 @@ A Brief history of Cryptography:
 - (AKA Public key encryption) Uses a pair of keys:
   - A Public key 
   - A Private key.
-- Unlike symetric key encryption, where encryption and decryption both happen with the same key, in asymmetric key encryption the public key is used for encryption and the private key is used for decryption.
+- Unlike symmetric key encryption, where encryption and decryption both happen with the same key, in asymmetric key encryption the public key is used for encryption and the private key is used for decryption.
+- THE MESSAGE IN ENCRYPTED WITH THE PUBLIC KEY, BUT CAN ONLY BE DECRYPTED WITH THE PRIVATE KEY.
 - So the public key is visible to everyone, but the private key is only read by the message receiver.
 - For example:
   - Crispian wants to receive encrypted messages, so he generates a public and private encryption key.
   - He makes the public key publicly available, but keeps the private key to himself.
-  - Ellen writes a message and encrypts it with the poublic encryption key.
+  - Ellen writes a message and encrypts it with the public encryption key.
   - She then sends it to Crispian.
-  - Crispian has the private encryption key and uses it to read Ellen's message.
+  - Crispian has the public encryption key and uses it to read Ellen's message.
   - These keys can't work in the opposite direction. Ellen would have to generate her own keys to receive an encrypted response from Crispian.
 
 ### The TLS Handshake
