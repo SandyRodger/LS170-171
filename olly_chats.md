@@ -52,3 +52,4 @@ Mini-ideas for Olly's business:
 15th May:
 
 - Let's go over how private/public key encyption works.
+- In the TLS handshake, the second step ion the server deciding which protocol version to use. Why not always use the latest possible version?
