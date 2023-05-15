@@ -48,3 +48,7 @@ Discuss:
 Mini-ideas for Olly's business:
 
 - An AI program that takes your schedule/productivity information and advises on what's working/not working. ie "I see that on days when you skip breakfast you get 0.45 hours more work done. Maybe you should skip breakfast".
+
+15th May:
+
+- Let's go over how private/public key encyption works.
