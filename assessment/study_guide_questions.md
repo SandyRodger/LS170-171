@@ -134,10 +134,20 @@
 23. What are the different services that TLS can provide, give a broad description of each of those services
  
 - Encryption: this is encrypting a message so that only the person with the corresponding key can decrypt it.
+- A secure connection is formed by performing the TLS handshake, after the TCP handshake.
+  - The TLS connection is established with the TLS 3-way handshake. This goes as follows:
+    1. After the TCP handshake is complete and the TCP ACK message has been sent a `ClientHello` message is sent by the client. The `ClientHello` message contains:
+      - the maximum version of the TLS protocol that the client can support and 
+      - a list of cipher-suites that the client can perform.
+    2. The server responds with a message, including a `ServerHello` message. The `serverHello` message sets the protocol version and the cipher-suite. Also this message contains the server's certificate (containing the opublic key) and a `serverHelloDone` mearker, which indicates that this part of the handshake is complete.
+    3. This is when the client begins the key exchange process.
   - TLS uses asymmetric and symmetric key encryption. 
-    - Asymmetric is when a user generates a public and a private encryption key. The public encryption key is used to encypt a message by the sender but the message can then only be decrypted with the private key. So only the messages can only securely go one way.
+    - Asymmetric is when a user generates a public and a private encryption key. The public encryption key is used to encrypt a message by the sender but the message can then only be decrypted with the private key. So the messages can only securely go one way.
     - Symmetric is when both parties use the same private key. The way that both parties can have access to this key without it having been intercepted is by exchanging the key with asymmetric encryption.
+
+ 
+ 
 - Authentication: A process of checking the identity of a person in an exchange.
-- Integrity checks: Checking if the message is kosher - ie, has been tampered with or faked completely.
+- Integrity checks: Checking if the message has been tampered with or faked completely.
  
  
