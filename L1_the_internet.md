@@ -286,7 +286,6 @@ Some of the more important header fields are:
 
 ## [Summary](https://launchschool.com/lessons/4af196b9/assignments/6b7df8fb)
 ## [Quiz](https://launchschool.com/lessons/4af196b9/assignments/d810a100)
-## [Ginni's notes](https://github.com/gcpinckert/ls170_171/blob/main/study_guide/the_internet.md)
 
  
 Overview:
@@ -296,13 +295,13 @@ Overview:
 |1. Introduction|4th April| 7th April||
 |2. What to Focus on|4th April|7th April||
 |3.  AWS Cloud 9|4th April|7th April||
-|4.  What is the internet?|4th April|7th April || 90%|70%
-|5. Protocols|4th April|7th April||80%|40%
-|6.  A layered system|4th April|7th April ||85%|50%
-|7. The Physical network|4th April|7th April ||85%|55%
-|8.  The data/link layer|4th April|7th April ||80%|60%
-|9.  The internet/network layer |4th April| 8th April||70%|50%
-|10.  Summary|4th April|8th April||90%|70%
+|4.  What is the internet?|4th April|7th April |15th May| 90%|70%
+|5. Protocols|4th April|7th April|15th May|80%|40%
+|6.  A layered system|4th April|7th April |15th May|85%|50%
+|7. The Physical network|4th April|7th April |15th May|85%|55%
+|8.  The data/link layer|4th April|7th April |15th May|80%|60%
+|9.  The internet/network layer |4th April| 8th April|15th May|70%|50%
+|10.  Summary|4th April|8th April|15th May|90%|70%
 |11. Quiz |4th April (44%)|7th April (89%) |15th May (100%)
 | + Read through Discussions |
 
