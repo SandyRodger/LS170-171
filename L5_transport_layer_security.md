@@ -68,7 +68,7 @@ A Brief history of Cryptography:
 - The set-up with asymetric keys is called the 'TLS Handshake'.
 - TLS assumes that TCP is being used at the Transport Layer. The TLS handshake happens after the TSL handshake.
 - The TLS handshake is as follows:
-  - A `ClientHello` message is sent after the TCp `ACK`. This contains the maximum version of the TLS protocol that the client can support and a list of cipher suites that the client is able to use.
+  - A `ClientHello` message is sent after the TCP `ACK`. This contains the maximum version of the TLS protocol that the client can support and a list of cipher suites that the client is able to use.
   - On receiving the `ClientHello` message, the server responds with its own message. This message includes a `ServerHello` message which sets the protocol version and Cipher Suite as well as other related information. The server incliudes its certificate (which contains its public key) and a `ServerHelloDone`, which tells the client that it is finished with the first part of the handshake.
   - Once the client has received this `ServerHelloDone` marker it will star the key exchange process. This is the process that allows client and server to securely obtain a copy of the symmetric encryption key. The exact process for generating this key varies, depending on which exchange algorithms were chosen as part of the cipher suite. You don't need to worry about these key exchange algorithms, but they give an example anyway.
   - The server also sends a message with `ChangeCipherSpec` and `Finished` flags. The client and server can now begin communicating using their symmetric key.
