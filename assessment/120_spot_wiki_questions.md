@@ -44,6 +44,9 @@
 44. **What is pipe-lining protocols? What are the benefits of it?**
 45. **What is a network port?**
 46. **What is a port number?**
+
+- A port number is an identifier between 0 and 65535 for a specific process on a host. They allow data packets to be multiplexed into one transmission and demultiplexed by the receiver into individual packets for each port and its application. The Transport layer deals with transporting data from one machine to another, but once it gets there it needs to be delivered to a specific port in order to be funneled to a particular process.
+
 47. **What is a network socket?**
 48. **Is TCP connectionless? Why?**
 49. **How do sockets on the implementation level relate to the idea of protocols being connectionless or connection-oriented?** 
@@ -54,9 +57,21 @@
 54. **What are multiplexing and demultiplexing?**
 55. **How does TCP facilitate efficient data transfer?**
 56. **What is flow control? How does it work and why do we need it?**
-57. **How TCP prevents from receiver's buffer to get overloaded with data?**
-58. **What is congestion avoidance?**
+
+Flow control is a mechanism which aims to prevent the sender from overwhelming the receiver. The WINDOW field of a TCP segment indicates how much data it is willing to receive. This number is dynamic and can be reduced if the receiver is at risk of being overwhelmed, ie if the buffer is getting too full. Flow control means that the sender and receiver don't overwhelm each other, but doe not address the problem of overwhelming the network.
+
+57. **How does TCP prevent the receiver's buffer from getting overloadeded with data?**
+
+- Fow control. See previous question
+
+58. **What is congestion avoidance?**  
+
+- A way of vaoiding network congestion.
+
 59. **What is network congestion?**
+
+- To make data transfer as efficient as possible TCP employs flow-control and congestion avoidance. Congension happens when there is more traffic on a network than can be processed. This is different to flow control which tries to prevent the sender from overloading the receiver with too much data. IP packets moving across the network in hops need to be processed at each stage of their journey. If the machine processing them has more data than it can manage the packet is dropped and disappears. Routers have buffers to store queued data, but overflow is dropped. If data is lost then TCP retransmits the data. Losing lots of data is used as a metric to control the flow of data in order to avoid congestion. It does this by reducing the transmission window.
+
 60. **How do transport layer protocols enable communication between processes?**
 61. **Compare UDP and TCP. What are similarities, what are differences? What are pros and cons of using each one?** 
 62. **What does it mean that network reliability is engineered?**
