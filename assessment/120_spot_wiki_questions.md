@@ -76,6 +76,9 @@
 76. **Describe the HTTP request/response cycle.**
 77. **What is a** s**tate in the context of the 'web'?**
 78. **What is** s**tatelessness?**
+
+A protocol is said to be [stateless](https://launchschool.com/books/http/read/background#statelessness) when each request/response cycle is completely independent of each other. HTTP is a stateless protocol which means that stateful web applications must implement statefulness with things like sessions, cookies and AJAX. These can allow a user to remain logged in for example while accessing different parts of a website.
+
 79. **What is a stateful Web Application?**
 80. **How can we mimic a stateful application?**
 81. **What is the difference between stateful and stateless applications?**
@@ -103,6 +106,9 @@
 103. **How insecure HTTP message transfer looks like?**
 104. **What services does HTTP provide and what are the particular problems each of them aims to address?**
 105. **What is TLS Handshake?**
+
+The Transport Layer Security Handshake is a 3 way exchange that uses symmetric and asymmetric encryption to add a layer of security onto HTTP, an otherwise insecure protocol. The first part of this handshake is the `ClientHello` message which is sent after the final message of the TCP exchange, namely the `ACK` message. The `ClientHello` message contains the maximum version of TLS the client can support and a list of cypher suites the client is able to use. Then the server sends back a message containing a `ServerHello` message, which sets the protocol and the cypher suite to be used. It also sends its certificate which contains its public key and a `ServerHelloDone` which tells the client that this part of the handshake is finished. Once the Client receives this it knows it can begin the exchange process.
+
 106. **What is symmetric key encryption? What is it used for?**
 107. **What is asymmetric key encryption? What is it used for?**
 108. **Describe SSL/TLS encryption process.**
