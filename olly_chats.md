@@ -55,6 +55,7 @@ Mini-ideas for Olly's business:
 - In the TLS handshake, the second step in the server deciding which protocol version to use. Why not always use the latest possible version?
 - So, the layered system, isn't literally layered - it's a way to help us think about it. What does that actually look like? Like, atre we sending packets, frames, datagrams, segments or binary data?
 - Ethernet frames at the Link layer organize bytes so they can be identified by length and order. But then at the physical layer the bytes have no logical order, so how do I reconcile these two things[?](https://launchschool.com/lessons/4af196b9/assignments/81df3782)
-- 
+- Go through TLS handshake
+- look at [these questions](https://github.com/SandyRodger/LS170-171/edit/main/assessment/120_spot_wiki_questions.md).
 
 
