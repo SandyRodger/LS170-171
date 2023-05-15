@@ -303,7 +303,7 @@ Overview:
 |8.  The data/link layer|4th April|7th April ||80%|60%
 |9.  The internet/network layer |4th April| 8th April||70%|50%
 |10.  Summary|4th April|8th April||90%|70%
-|11. Quiz |4th April (44%)|7th April (89%) |
+|11. Quiz |4th April (44%)|7th April (89%) |15th May (100%)
 | + Read through Discussions |
 
 # Quiz Mistakes:
