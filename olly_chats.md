@@ -53,3 +53,4 @@ Mini-ideas for Olly's business:
 
 - Let's go over how private/public key encyption works.
 - In the TLS handshake, the second step ion the server deciding which protocol version to use. Why not always use the latest possible version?
+- So, the layered system, isn't literally layered - it's a way to help us think about it. What does that actually look like?
