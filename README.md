@@ -167,7 +167,7 @@ Quiz Mistakes:
 
 ## [L5: Transport Layer Security](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md)
 - [Introduction](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#introduction)
-- [What to focus on](https://launchschool.com/lessons/74f1325b/assignments/3daa92d0](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#what-to-focus-on)
+- [What to focus on](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#what-to-focus-on)
 - [The Transport Layer Security Protocol](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#the-transport-layer-security-protocol)
 - [TLS Encryption](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#tls-encryption)
   - [Symmetric Key encryption](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#symmetric-key-encryption)
