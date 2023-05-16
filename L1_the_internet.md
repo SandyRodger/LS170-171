@@ -275,6 +275,7 @@ Some of the more important header fields are:
   <img width="906" alt="Screenshot 2023-04-08 at 15 21 47" src="https://user-images.githubusercontent.com/78854926/230726283-ec6bf8fe-3177-4b6e-aa41-46c8bab02cd1.png">
  </p>
 
+- IPv6 uses 128 bit addresses. (8 16-bit blocks)
 - The splitting of networks like this is called sub-netting. Sub-nets can be split into even smaller sub-nets to create more tiers in the hierarchy.
 
 ### Routing and routing tables
