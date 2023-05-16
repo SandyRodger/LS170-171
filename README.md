@@ -48,7 +48,7 @@ Quiz Mistakes:
   - [Pipelining:](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#pipelining)
  - [Transmission Control Protocol(TCP)](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#transmission-control-protocoltcp)
   - [TCP segments](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#tcp-segments)
-  - [TCP Connections](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#tcp-connections)
+  - [TCP Connections - AKA the three way handshake](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#tcp-connections)
   - [Flow Control](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#flow-control)
   - [Congestion Avoidance](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#congestion-avoidance)
   - [Disadvantages of TCP](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#disadvantages-of-tcp)
