@@ -21,6 +21,7 @@
   - [Limitations of physical networks](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#limitations-of-physical-networks)
 - [The data/link layer](https://launchschool.com/lessons/4af196b9/assignments/81df3782)
   - [Ethernet frames](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#ethernet-frames)
+    - [Checksums](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#checksums)
   - [Interframe Gap](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#interframe-gap)
   - [Differences between ethernet standards:](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#differences-between-ethernet-standards)
   - [MAC addresses](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#mac-addresses)
