@@ -5,7 +5,7 @@
 - [What to focus on](https://launchschool.com/lessons/4af196b9/assignments/a6f8ef54)
 - [AWS Cloud9](https://launchschool.com/lessons/4af196b9/assignments/fe5b1fbe)
 - [What is the internet?](https://launchschool.com/lessons/4af196b9/assignments/268243e5)
-- Inter-network communication:
+- Inter-network communication (routers):
 - A network of networks:
 - [Protocols](https://launchschool.com/lessons/4af196b9/assignments/a53e65ce)
 - [A layered system](https://launchschool.com/lessons/4af196b9/assignments/21ef33af)
