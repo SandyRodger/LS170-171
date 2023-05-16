@@ -1,6 +1,6 @@
-Olly Chats:
+# Olly Chats:
 
-20:30 - 17th April 2023 
+## 20:30 - 17th April 2023 
 
 Questions:
 
@@ -12,7 +12,7 @@ To Discuss:
 - How much effort should I be putting into retaining stuff from previous courses?
 - What do you think of [dan miessler](https://danielmiessler.com/blog/the-dangers-of-abruptly-destroying-meaning-structures/)
 -----------------
-20:30 - 24th April 2023
+## 20:30 - 24th April 2023
 
 Questions:
 
@@ -33,7 +33,7 @@ We talk about:
 - Sinatra and Frankie
 - The two general problem.
 -----------------
-8th May:
+## 8th May:
 
 Questions:
 
@@ -49,7 +49,7 @@ Mini-ideas for Olly's business:
 
 - An AI program that takes your schedule/productivity information and advises on what's working/not working. ie "I see that on days when you skip breakfast you get 0.45 hours more work done. Maybe you should skip breakfast".
 
-15th May:
+## 15th May:
 
 - Let's go over how private/public key encyption works.
 - In the TLS handshake, the second step in the server deciding which protocol version to use. Why not always use the latest possible version?
