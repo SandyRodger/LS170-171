@@ -6,7 +6,7 @@
 - [AWS Cloud9](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#aws-cloud9)
 - [What is the internet?](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#what-is-the-internet)
   - [Inter-network communication (routers):](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#inter-network-communication)
-    - Local Area Network 
+    - Local Area Network (LAN)
   - [A network of networks:](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#a-network-of-networks)
 - [Protocols](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#protocols)
 - [A layered system](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#a-layered-system)
