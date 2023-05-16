@@ -42,6 +42,7 @@
 - [Communication between processes](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#communication-between-processes)
   - [Multiplexing and Demultiplexing](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#multiplexing-and-demultiplexing)
   - [Ports](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#ports)
+  - [sockets](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#sockets)
 - [Network reliability](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#network-reliability)
   - [Building a reliable protocol](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#building-a-reliable-protocol)
   - [Pipelining:](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#pipelining)
