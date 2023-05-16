@@ -24,8 +24,8 @@
   - [Interframe Gap](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#interframe-gap)
   - [Differences between ethernet standards:](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#differences-between-ethernet-standards)
   - [MAC addresses](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#mac-addresses)
-    - hubs
-    - switches
+    - [hubs](https://github.com/SandyRodger/LS170-171/edit/main/L1_the_internet.md#hubs)
+    - [switches](https://github.com/SandyRodger/LS170-171/edit/main/L1_the_internet.md#switches)
   - [A Problem of scale](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#a-problem-of-scale)
 - [The internet/network layer](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#the-internetnetwork-layer)
   - [Data Packets](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#data-packets)
