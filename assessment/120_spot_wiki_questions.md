@@ -256,3 +256,9 @@ The Transport Layer Security Handshake is a 3 way exchange that uses symmetric a
 118. **What is server-side infrastructure? What are its basic components?**
 119. **What is a server? What is its role?** 
 120. **What are optimizations that developers can do in order to improve performance and minimize latency?**
+
+- get ride of unnecessary round-trips, by reducing the number of resources to be fetched. SO for instance if a javascript file is only used on one page, make sure it isn;’t loaded by all pages. This reduces ‘page-bloat’.
+- minimise the size of resources to be fetched by using data-compression techiques. Programs like gzip can reduce data size on text-based assets by 60 – 80 %. This could be by reducing white-space and code-comments.
+- Re-use TCP connections with keepalive connections.
+- DNS optimisations. Reduce the number of host names that need to be looked up. Download external resources and host them locally. Get a faster DNS provider.
+- Caching. These are short term memory banks on the server. They store content that has been recently accessed by a user
