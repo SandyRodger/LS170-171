@@ -14,11 +14,14 @@
 - A network: 2 or more devices connected in such a way that they can communicate or exchange data.
   - At its most basic this is 2 computers connected by a LAN cable.
   - At its most complex it is the whole internet. 
+### LAN
 - Local Area Network (LAN): A bunch of computers physically near to each other connected by network cables. An office for instance.
 
 <p align="center">
 <img width="627" alt="Screenshot 2023-04-07 at 14 11 06" src="https://user-images.githubusercontent.com/78854926/230614563-05bb1e8a-a747-4313-b757-92dce966ad13.png">
 </p>
+
+### WLAN
 - Your home network is the same, probably with a wireless hub or switch. This is a WLAN.
 - The hub or switch is the "local" in LAN.
 
