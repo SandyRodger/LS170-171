@@ -193,7 +193,8 @@
 
 - When a network is made of many devices the problem of how to identify where a message came from or is going to becomes real.
 - Situation A: Many devices connected by a hub.
-  - A hub recevies a message and forwards it to all of the devices on the network. If the message wasn't intended for all devices then this isn't ideal.
+#### Hubs
+- A hub recevies a message and forwards it to all of the devices on the network. If the message wasn't intended for all devices then this isn't ideal.
   - This is where addressing comes in.
   - Every network enabled device has a MAC address. These are intended to be unique.
   - MAC addresses are formatted as a sequence of 6 two-digit hexidecimal numbers. eg. `00:40:96:9d:68:0a` with different ranges being assigned to different network hardware-manufacturers. 
@@ -202,6 +203,8 @@
  <p align="center">
  <img width="880" alt="Screenshot 2023-04-07 at 19 02 25" src="https://user-images.githubusercontent.com/78854926/230655981-355bd43c-d6c6-49c8-94e1-b8eca776a197.png">
 </p>
+
+#### Switches
 
 - So obviously hubs are not great. Inefficient. Modern systems rarely use them. They use instead: Switches.
 - Switches are devices which connect devices to form a network, BUT they use destination addresses to direct data only to the destination they were intended for.
