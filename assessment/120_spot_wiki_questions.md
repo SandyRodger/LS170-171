@@ -1,22 +1,76 @@
 1. **What is a network?**
+
+A network is 2 or more points of communication connected in a way that allows them to send and receive information to the other connected machines. This can be as small as two computers connected by an ethernet cable and as vast as the entire internet of laptops, smart watches and robots world-wide,
+
 2. **What is the Internet?**
+
+The internet is a network of networks. At a local level we have devices connected on a LAN, usually wirelessly, to a switch or less commonly a hub. The switch/hub then sends on the transmission to a router which sends the transmission to its destination. This is usually a DNS server, which finds the IP address and sends it back. The originating device then uses this IP address to find the server it requires.
+
 3. **Is the Internet the same thing as a network?** 
+
+- No. The internet is a network, but not all networks are the internet. 
+
 4. **What is WEB (world wide web)**
+
+The World Wide Web is a service accessible on the internet. It is comprised of the websites and online services you use, and the internet is the network of computers that host them.
+
 5. **What is the difference between network, Internet, and WEB?**
+
+The Internet is a network of networks and the World Wide Web is a service provided on the internet. A single network can be two computers linked to each other, but to be connected to the internet those computers need to be connected to a device such as a switch or hub which can traffic their data to a router and on to a server. At the server, by a system of DNS
+
 6. **What are LAN and WLAN?**
+
+Local Area Networks are the networks formed by computers relatively near each other, for example in an office or a home. A WLAN is a Wireless Local Area Network and just means that the transmissions aren't travelling by physical cable, but by wireless signals like bluetooth or radiowaves. This is with a wireless Switch or hub as the central device. This will send on the signal to a router connecting it to the wider internet.
+
 7. **What is a protocol?**
+
+- Protocols are agreed standards for communication which mean that both parties in a network exchange know how to format outgoing signals and read incoming signals. They are comparable to the rules of language which facilitate communication between people. HTTP is a commonly used protocol for sending information between applications on the internet.
+
 8. **What is the role of protocols?** 
+
+- A protocol exists to deal with an aspect of communication between two points on the web. This could be two processes on the same device, or between devices thousands of miles away. Higher protocols deal with how Applications communicate and lower protocols are concerned with the successful transporting of the PDUs.
+
 9. **Why there are many different types of protocols?**
+
+- Different protocols address different aspects of communications on the web. For example for applications communicating at the Application layer, HTTP is commonly used, but at the Link layer HTTP cannot be used and the Ethernet protocol is the most commonly used protocol. Protocols also address the same aspect of communication in different ways. For example HTTP is used at the Application layer to communicate between applications on the web, but for file trsansfer FTP is more suitable and for email, SMTP. 
+
 10. **What does it mean that a protocol is stateless?**
+
+ With a stateless protocol, like HTTP, each PDU has no knowledge of the previous or next PDUs being sent. The stateless nature of HTTP means the following:
+  - it is what makes the internet distributed and so difficult to control. 
+  - It means that servers do not need to hang on to information between requests. 
+  - It means that when a request breaks on the way to a server no clean-up is required
+  - It makes HTTP a resilient protocol
+  - It means that developers have to work hard to simulate statefulness, for example allowing a user to remain logged in to a website despite the HTTP packets having no connection to previous request/response cycles.
+  - A negative is that it makes communications hard to secure and difficult to build on top of.
+
 11. **Explain briefly what are OCI and TCP/IP models? What is the purpose of having models like that?** 
+
+- The Open Systems Interconnection model and the Transmission Control Protocol/Internet Protocol are conceptual models for seperating different layers/aspects of communication between points on the internet. The OCI model has more layers. They are Physical, Data-link (these map to the Link layer in the TCP/IP model), Network (this maps to the Internet in the TCP/IP model), Transport (the same in the TCP/IP model), Session, Presentation and Application layers (these map to the Application layer in the TCP/IP model). The TCP/IP model defines each layer by the scope of its communication within each layer. So between networks, or within a LAN.THe OCI model on the other hand focuses on teh function of each layer, ie physical addressing and logical functioning.
+
 12. **What is PDU? What is its role?**
+
+- A Protocol data unit is a general term for the units of data that are generated by each layer of a transmission on the internet. At the application layer the data payload, which is the actual message to be delivered, is encapsulated in meta-data, most probably using HTTP. This is passed to the transport layer which encapsultates the message in meta-data relating to how to reliably transmit the message from one application to another. This PDU is called a segment. This is then encapsulated by the Internet layer which adds meta data to facilitate communication between hosts on different networks. This PDU uses IP and is called a packet. After this at the ethernet layer the data is encapsulated in a frame and sent on to the physical layer (in the OSI model), which is the information travelling in bits over the physical network.
+
 13. **What is Data Payload?** 
+
+The data payload is the part of a PDU containing the data that needs to arrive and be read by the receiver. It is the actual message, whereas the rest of the transmission contains meta-data to protect and direct the message.
+
 14. **What is the relationship between PDU and Data Payload?** 
+
+The data payload in encapsulated with meta-data by each PDU, making it the centre of a many layered message.
+
 15. **Explain How lower-level protocols work in general?**
+
+Lower level protocols encapsulate the data received from higher levels and then pass the PDU on to the layer below. So for example at the transport layer the data received is coming from the application layer and is most likely a HTTP request/response. This data has a header added to it and possibly a footer. If the transport layer is using TCP it will encapsulate the data in a segment, so the meta-data will relate to how to create a reliable data transfer and multiplex the data. This segment will then be passed to the lower layer, which in the TCP/IP model is the Internet layer.
+
 16. **What is encapsulation in the context of networking?**
+
+- In this context encapsulation relates to 
+
 17. **Why do we need encapsulation?** 
 18. **What are the characteristics of a physical network?** 
-19. **How can we as developers deals with the limitations of physical network?**
+19. **How can we as developers deal with the limitations of physical network?**
 20. **What is Latency?**
 21. **What is** **Bandwidth?**
 22. **What are** **Network 'Hops'?**
@@ -24,9 +78,19 @@
 24. **What is a switch and what is it used for?**
 25. **What is a hub and what is it used for?**
 26. **What is a modem and what it is used for?**
+
+- Modems (modulator-demodulators) are devices that allow digital communication devices, like computers or local networks, to connect to the internet by converting digital signals  into analog signals for transmission over a specific medium, and the same in the other direction.
+
 27. **What is a router and what is it used for?**
+
+- Routers are machines that receive network traffic, process it and forward it to other networks. Within a LAN they act as gateways in and out.
+
 28. **What is the difference between a switch, hub, modem, and router?**
-29. **How does the Internet works?**
+
+- A switch, modem or hub act as the central device in a LAN. Hubs are inefficient because they forward any transmission to all devices on the network and depend on these devices to discard messages not intended for them. Switches are preferable in modern systems because they use destination addresses to direct data to their intended destination. They do this by using a MAC address table to send data through the coresponding data-port.
+- Modems (modulator-demodulators) and routers are devices that allow devices or local networks, to connect to the internet by converting digital signals into analog signals for transmission and the same in the other direction. They are like gateways into and out of LANs.
+
+29. **How does the Internet work?**
 30. **What is a MAC address and what is its role in network communication?** 
 31. **Give an overview of the Link/Data Layer**
 32. **What is included in an Ethernet frame?**
@@ -34,18 +98,24 @@
 34. **What is IP?**
 35. **What is IP address?** 
 36. **What are the components of IP addresses?** 
+
+- IPv4 addresses (32bits) are composed 4 sections of 8 bits. When converted from binary to decimal these sections represent numbers between 0 and 255. It could look like this: `101.05.244.99`. IPv6 addresses (128 bits) are composed of 8 sets of hexadecimal characters, each set representing different aspects of a location on the network. It could look like this: `2001:0db8:85a3:0000:0000:8a2e:0370:7334` .
+
 37. **What is a packet in computer networking?**
 38. **Why do we need both MAC addresses and IP addresses?** 
 39. **What is DNS and how does it work?**
 40. **How do port numbers and IP addresses work together?**
 41. **What is a checksum and what is it used for? How is it used?**
+
+A checksum is a window in a PDU, for xample the Frame Check Sequence in an Ethernet frame. The function of a checksum is to check that the data received is the same as the data sent. THis is done by using an agreed upon algorithm to generate the checksum based on the data in the PDU. This guards against corrupted or falsified transmissions. If the checksums do not match then the PDU is dropped. TCP segments also use checksums.
+
 42. **Give an overview of the Transport Layer.** 
 43. **What are the fundamental elements of reliable protocol?**
 44. **What is pipe-lining protocols? What are the benefits of it?**
 45. **What is a network port?**
 46. **What is a port number?**
 
-- A port number is an identifier between 0 and 65535 for a specific process on a host. They allow data packets to be multiplexed into one transmission and demultiplexed by the receiver into individual packets for each port and its application. The Transport layer deals with transporting data from one machine to another, but once it gets there it needs to be delivered to a specific port in order to be funneled to a particular process.
+- A port number is an identifier between 0 and 65535 for a specific process on a host. Each process will expect to send and receive data-packets, but for the sake of efficiency these packets will be multiplexed so that more can be sent at the same time. They are then demultiplexed at the receiving end into individual packets for each port and its application. The Transport layer deals with transporting data from one machine to another, but once it gets there it needs to be delivered to a specific port in order to be funneled to a particular process. The application layer is where the Request/response payload is generated and the Transport layer deals with multiplexing these into segments ((or datagrams)
 
 47. **What is a network socket?**
 48. **Is TCP connectionless? Why?**
@@ -53,6 +123,9 @@
 50. **What are sockets on implementation and on a theoretical level?** 
 51. **What does it mean that the protocol is connection-oriented?**
 52. **What is a three-way handshake? What is it used for?**
+
+- 
+
 53. **What are the advantages and disadvantages of a Three-way handshake?** 
 54. **What are multiplexing and demultiplexing?**
 55. **How does TCP facilitate efficient data transfer?**
@@ -62,7 +135,7 @@ Flow control is a mechanism which aims to prevent the sender from overwhelming t
 
 57. **How does TCP prevent the receiver's buffer from getting overloadeded with data?**
 
-- Fow control. See previous question
+- Flow control. See previous question
 
 58. **What is congestion avoidance?**  
 
@@ -74,6 +147,9 @@ Flow control is a mechanism which aims to prevent the sender from overwhelming t
 
 60. **How do transport layer protocols enable communication between processes?**
 61. **Compare UDP and TCP. What are similarities, what are differences? What are pros and cons of using each one?** 
+
+- Broadly speaking TCP is more reliable, but UDP is faster and more flexible. TCP deals with transferring data reliably while using an unreliable channel. It deals with data-integrity, de-duplication, in-order delivery and retransmission of lost data. Also multiplexing and data-encapsulation. TCP uses flow control and congestion avoiddance techniques. This comprehensive list of roles comes with a cost in terms of performance and complexity and can cause Head-of -Line blocking on top of a larger latency overhead. UDP (User Datagram Protocol) on the other hand is much faster because it leaves out many of the services described above. The datagrams only have 4 fields: source port, destination port, checksum (optional) and length. It leaves outa guarantee of message delivery or message delivery order and leaves out any congestion avoidance/flow control mechanisms and connection-state tracking (as it is a connectionless protocol). The benefit of this is that UDP can start sending data immediately and needn't wait for a connection to be established.The lack of acknowledgement means all messages are assumed to have gone through and nothing  is retransmitted. So traffic is one way and therfore latency is much lower. The lack of in-order delivery prevents HOL blocking. 
+
 62. **What does it mean that network reliability is engineered?**
 63. **Give an overview of the Application Layer.** 
 64. **What is HTML?**
