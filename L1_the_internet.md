@@ -165,6 +165,8 @@
 
 - Ethernet frames are composed of:
 
+#### checksums
+
 | Name | length (bytes) | length (bits) |explanation|
 | :--- | :---: | :---: |:--- |
 |A preamble| 7 |56|Not really considered part of the frame, but sent just before the frame as a synchronisation measure, which notifies the receiving device to expect frame data and identify the start point of that data. Both preamble and SFD use a repeated pattern that can be identified by the receiving device.
