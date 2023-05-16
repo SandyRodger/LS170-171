@@ -1,73 +1,76 @@
 # LS170-171
 
 ## L1: The Internet
-- [Introduction](https://launchschool.com/lessons/4af196b9/assignments/89b5fc88)
-- [What to focus on](https://launchschool.com/lessons/4af196b9/assignments/a6f8ef54)
-- [AWS Cloud9](https://launchschool.com/lessons/4af196b9/assignments/fe5b1fbe)
-- [What is the internet?](https://launchschool.com/lessons/4af196b9/assignments/268243e5)
-- Inter-network communication (routers):
-- A network of networks:
-- [Protocols](https://launchschool.com/lessons/4af196b9/assignments/a53e65ce)
-- [A layered system](https://launchschool.com/lessons/4af196b9/assignments/21ef33af)
-- Data encapsulation
-- Protocol Data Units
-- [The physical network](https://launchschool.com/lessons/4af196b9/assignments/097d7577)
-- Bits and Signals
-- Characteristics of a physical network.
-- Network Hops
-- Bandwidth
-- Limitations of physical networks
+- [Introduction](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#introduction)
+- [What to focus on](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#what-to-focus-on)
+- [AWS Cloud9](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#aws-cloud9)
+- [What is the internet?](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#what-is-the-internet)
+- [Inter-network communication (routers):](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#inter-network-communication)
+- Local Area Network 
+- [A network of networks:](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#a-network-of-networks)
+- [Protocols](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#protocols)
+- [A layered system](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#a-layered-system)
+- [Data encapsulation](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#data-encapsulation)
+- [Protocol Data Units](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#protocol-data-units)
+- [The physical network](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#the-physical-network)
+- [Bits and Signals](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#bits-and-signals)
+- [Characteristics of a physical network.](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#characteristics-of-a-physical-network)
+- [Network Hops](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#network-hops)
+- [Bandwidth](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#bandwidth)
+- [Limitations of physical networks](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#limitations-of-physical-networks)
 - [The data/link layer](https://launchschool.com/lessons/4af196b9/assignments/81df3782)
-- Ethernet frames
-- Interframe Gap
-- Differences between ethernet standards:
-- MAC addresses
-- A Problem of scale
-- [The internet/network layer](https://launchschool.com/lessons/4af196b9/assignments/b222ecfb)
-- Data Packets
-- IP Addresses:
-- Routing and routing tables
-- IPv6
-- Networked Applications
-- [Summary](https://launchschool.com/lessons/4af196b9/assignments/6b7df8fb)
-- [Quiz](https://launchschool.com/lessons/4af196b9/assignments/d810a100)
+  - [Ethernet frames](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#ethernet-frames)
+  - [Interframe Gap](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#interframe-gap)
+  - [Differences between ethernet standards:](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#differences-between-ethernet-standards)
+  - [MAC addresses](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#mac-addresses)
+    - hubs
+    - switches
+  - [A Problem of scale](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#a-problem-of-scale)
+- [The internet/network layer](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#the-internetnetwork-layer)
+- [Data Packets](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#data-packets)
+- [IP Addresses:](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#ip-addresses)
+- [Routing and routing tables](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#routing-and-routing-tables)
+- [IPv6](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#ipv6)
+- [Networked Applications](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#networked-applications)
+- [Summary](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#summary)
+- [Quiz](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#quiz)
 Quiz Mistakes:
 
 
-## L2: [The Transport Layer](https://launchschool.com/lessons/4af196b9/assignments/d810a100)
-- [Communication between processes](https://launchschool.com/lessons/2a6c7439/assignments/41113e98)
-- Multiplexing and Demultiplexing
-- Ports
-- [Network reliability](https://launchschool.com/lessons/2a6c7439/assignments/89636ed4)
-- Building a reliable protocol
-- Pipelining:
-- [Transmission Control Protocol(TCP)](https://launchschool.com/lessons/2a6c7439/assignments/d09ddd52)
-- TCP segments
-- TCP Connections
-- Flow Control
-- Congestion Avoidance
-- Disadvantages of TCP
-- [User datagram protocol (UDP)](https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b)
-- The case for UDP
-- [Summary](https://launchschool.com/lessons/2a6c7439/assignments/4ab0993c)
+## L2: [The Transport Layer](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#the-transport-layer)
+- [Communication between processes](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#communication-between-processes)
+- [Multiplexing and Demultiplexing](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#multiplexing-and-demultiplexing)
+- [Ports](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#ports)
+- [Network reliability](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#network-reliability)
+- [Building a reliable protocol](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#building-a-reliable-protocol)
+- [Pipelining:](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#pipelining)
+- [Transmission Control Protocol(TCP)](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#transmission-control-protocoltcp)
+- [TCP segments](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#tcp-segments)
+- [TCP Connections](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#tcp-connections)
+- [Flow Control](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#flow-control)
+- [Congestion Avoidance](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#congestion-avoidance)
+- [Disadvantages of TCP](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#disadvantages-of-tcp)
+- [User datagram protocol (UDP)](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#user-datagram-protocol-udp)
+- [The case for UDP](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#the-case-for-udp)
+- [Summary](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#summary)
 
 ## L3: [Intro to HTTP](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md)
 - [What to focus on](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#what-to-focus-on)
-- [The Application Layer](https://launchschool.com/lessons/cc97deb5/assignments/c604eb60)
-- Application layer protocols
-- [HTTP and the web](https://launchschool.com/lessons/cc97deb5/assignments/e3d85587)
-- A brief history of the web
-- Assignment: read HTTP book
-- [Some background diagrams](https://launchschool.com/lessons/cc97deb5/assignments/586769d90
-- Client - server
-- HTTP over TCP/IP
-- [URLs](https://launchschool.com/lessons/cc97deb5/assignments/a28ccb6f)
-- Schemes and protocols
-- URLs and Filepaths
-- [Practice problems: URL components](https://launchschool.com/lessons/cc97deb5/assignments/d69da941)
-- [The Request Response Cycle](https://launchschool.com/lessons/cc97deb5/assignments/83ae67aa)
-- [Summary](https://launchschool.com/lessons/cc97deb5/assignments/9f4e349a)
-- [Quiz](https://launchschool.com/quizzes/7544b995)
+- [The Application Layer](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#the-application-layer)
+- [Application layer protocols](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#application-layer-protocols)
+- [HTTP and the web](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#http-and-the-web)
+- [A brief history of the web](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#a-brief-history-of-the-web)
+- [Assignment: read HTTP book](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#assignment-read-http-book)
+- [Some background diagrams](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#some-background-diagrams)
+- [Client - server](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#client---server)
+- [HTTP over TCP/IP](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#http-over-tcpip)
+- [URLs](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#urls)
+- [Schemes and protocols](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#schemes-and-protocols)
+- [URLs and Filepaths](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#urls-and-filepaths)
+- [Practice problems: URL components](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#practice-problems-url-components)
+- [The Request Response Cycle](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#the-request-response-cycle)
+- [Summary](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#summary)
+- [Quiz](https://github.com/SandyRodger/LS170-171/blob/main/L3_intro_to_http.md#quiz)
 
 ## [HTTP book](https://github.com/SandyRodger/launch_school_books/blob/main/http_book.md#http-book)
 - [Background](https://github.com/SandyRodger/launch_school_books/blob/main/http_book.md#background)
@@ -123,86 +126,86 @@ Quiz Mistakes:
   - [Conclusions and next steps](https://github.com/SandyRodger/launch_school_books/blob/main/http_book.md#conclusions-and-next-steps)
 
 ## [L4: Working with HTTP](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md)
-- [What to Focus on](https://launchschool.com/lessons/0e67d1ce/assignments/b9609f49)
-- [Using Telnet to explore HTTP](https://launchschool.com/lessons/0e67d1ce/assignments/20d4226d)
-- [Speaking the same language](https://launchschool.com/lessons/0e67d1ce/assignments/ea90d10b)
-- In AWS Cloud9
-- In VSCode
-- [Implementing your own HTTP server: Project overview](https://launchschool.com/lessons/0e67d1ce/assignments/be0e4401)
-- Bash
-- Netcat
-- Installing Netcat
-- [Bash Basics](https://launchschool.com/lessons/0e67d1ce/assignments/a0f37a79)
-- Input and Output
-- Variables
-- Bash Files
-- Conditional statements
-- Testing multiple conditions:
-- Loops
-- Funtions
-- [Working with Netcat](https://launchschool.com/lessons/0e67d1ce/assignments/7989eb3f)
-- Setting up a server
-- Setting up a client:
-- [Implementing our own HTTP server: Basic Program Structure](https://launchschool.com/lessons/0e67d1ce/assignments/2e3c6bc3)
-- Implementing our own HTTP server: Sending a simple response
-- [Implementing our own HTTP server: Processing the request](https://launchschool.com/lessons/0e67d1ce/assignments/1787cbb1)
-- [Implementing our own HTTP server: Serving HTML](https://launchschool.com/lessons/0e67d1ce/assignments/13c19d80)
-- Updating our program logic
-- [Implementing our own HTTP server: Working with the browser](https://launchschool.com/lessons/0e67d1ce/assignments/c884da8a)
-- Parsing the response
-- Improving the response
-- Content length
-- Content type
-- Implementing the Changes
-- Testing the code:
-- [Implementing our own HTTP server: adding Hyperlinks](https://launchschool.com/lessons/0e67d1ce/assignments/1e7bc560)
-- HTML anchors
-- Browsers and HyperlinkS
-- Updating our HTML file
-- [Summary](https://launchschool.com/lessons/0e67d1ce/assignments/dcae7f89)
-- Overview:
+- [What to Focus on](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#what-to-focus-on)
+- [Using Telnet to explore HTTP](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#using-telnet-to-explore-http)
+- [Speaking the same language](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#speaking-the-same-language)
+- [In AWS Cloud9](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#in-aws-cloud9)
+- [In VSCode](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#in-vscode)
+- [Implementing your own HTTP server: Project overview](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#implementing-your-own-http-server-project-overview)
+- [Bash](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#bash)
+- [Netcat](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#netcat)
+- [Installing Netcat](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#installing-netcat)
+- [Bash Basics](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#bash-basics)
+- [Input and Output](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#input-and-output)
+- [Variables](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#variables)
+- [Bash Files](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#bash-files)
+- [Conditional statements](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#conditional-statements)
+- [Testing multiple conditions:](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#testing-multiple-conditions)
+- [Loops](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#loops)
+- [Funtions](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#funtions)
+- [Working with Netcat](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#working-with-netcat)
+- [Setting up a server](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#setting-up-a-server)
+- [Setting up a client:](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#setting-up-a-client)
+- [Implementing our own HTTP server: Basic Program Structure](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#implementing-our-own-http-server-basic-program-structure)
+- [Implementing our own HTTP server: Sending a simple response](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#implementing-our-own-http-server-sending-a-simple-response)
+- [Implementing our own HTTP server: Processing the request](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#implementing-our-own-http-server-processing-the-request)
+- [Implementing our own HTTP server: Serving HTML](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#implementing-our-own-http-server-serving-html)
+- [Updating our program logic](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#updating-our-program-logic)
+- [Implementing our own HTTP server: Working with the browser](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#implementing-our-own-http-server-working-with-the-browser)
+- [Parsing the response](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#parsing-the-response)
+- [Improving the response](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#improving-the-response)
+- [Content length](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#content-length)
+- [Content type](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#content-type)
+- [Implementing the Changes](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#implementing-the-changes)
+- [Testing the code:](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#testing-the-code)
+- [Implementing our own HTTP server: adding Hyperlinks](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#implementing-our-own-http-server-adding-hyperlinks)
+- [HTML anchors](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#html-anchors)
+- [Browsers and Hyperlinks](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#browsers-and-hyperlinks)
+- [Updating our HTML file](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#updating-our-html-file)
+- [Summary](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#summary)
+- [Overview:](https://github.com/SandyRodger/LS170-171/blob/main/L4_working_with_http.md#overview)
 
 ## [L5: Transport Layer Security](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md)
-- [Introduction](https://launchschool.com/lessons/74f1325b/assignments/d62c25d3)
-- [What to focus on](https://launchschool.com/lessons/74f1325b/assignments/3daa92d0)
-- [The Transport Layer Security Protocol](https://launchschool.com/lessons/74f1325b/assignments/83bf156b)
-- [TLS Encryption](https://launchschool.com/lessons/74f1325b/assignments/54f6defc)
-- Symmetric Key encryption
-- Asymmetric key encryption:
-- The TLS Handshake
-- Cipher Suites
-- [TLS Authentication](https://launchschool.com/lessons/74f1325b/assignments/95e698ab)
-- Certificate Authorities.
-- Who are these CAs?
-- [TLS Integrity](https://launchschool.com/lessons/74f1325b/assignments/a88271cf)
-- Message Authentication Code
-- [Summary](https://launchschool.com/lessons/74f1325b/assignments/238ff36f)
-- [Quiz](https://launchschool.com/lessons/74f1325b/assignments/b0fe5989)
-- Overview:
+- [Introduction](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#introduction)
+- [What to focus on](https://launchschool.com/lessons/74f1325b/assignments/3daa92d0](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#what-to-focus-on)
+- [The Transport Layer Security Protocol](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#the-transport-layer-security-protocol)
+- [TLS Encryption](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#tls-encryption)
+- [Symmetric Key encryption](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#symmetric-key-encryption)
+- [Asymmetric key encryption:](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#asymmetric-key-encryption)
+- [The TLS Handshake](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#the-tls-handshake)
+- [Cipher Suites](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#cipher-suites)
+- [TLS Authentication](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#tls-authentication)
+- [Certificate Authorities](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#certificate-authorities)
+- [Who are these CAs?](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#who-are-these-cas)
+- [TLS Integrity](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#tls-integrity)
+- [Message Authentication Code](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#message-authentication-code)
+- [Summary](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#summary)
+- [Quiz](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#quiz)
+- [Overview](https://github.com/SandyRodger/LS170-171/blob/main/L5_transport_layer_security.md#overview)
 
 ## [L6: The Evolution of Network Technologies](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md)
-- [Introduction](https://launchschool.com/lessons/be1304f3/assignments/78a372ea)
-- [What to focus on](https://launchschool.com/lessons/be1304f3/assignments/7f0ab47d)
-- [HTTP: Past, Present, and Future](https://launchschool.com/lessons/be1304f3/assignments/a897d764)
-- HTTP 0.9
-- HTTP 1.0
-- HTTP 1.1
-- HTTP 2
-- HTTP 3
-- [Web Performance and HTTP Optimizations](https://launchschool.com/lessons/be1304f3/assignments/98ecce1c)
-- The birth of the modern web
-- Browser Optimisation
-- Latency as the main limiter
-- Further optimizations
-- [Browser Networking APIs](https://launchschool.com/lessons/be1304f3/assignments/2b0cef9f)
-- HTTP and Real-time data-synchronization
-- [Peer to Peer Networking](https://launchschool.com/lessons/be1304f3/assignments/5a9cbadb)
-- Use cases
-- Complexities
-- WebRTC
-- Optional: Blog Post
-- [Summary](https://launchschool.com/lessons/be1304f3/assignments/f4934607)
-- Overview:
+- [Introduction](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#introduction)
+- [What to focus on](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#what-to-focus-on)
+- [HTTP: Past, Present, and Future](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#http-past-present-and-future)
+- [HTTP 0.9](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#http-09)
+- [HTTP 1.0](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#http-10)
+- [HTTP 1.1](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#http-11)
+- [HTTP 2](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#http-2)
+- [HTTP 3](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#http-3)
+- [Web Performance and HTTP Optimizations](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#web-performance-and-http-optimizations)
+- [The birth of the modern web](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#the-birth-of-the-modern-web)
+- [Browser Optimisation](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#browser-optimisation)
+- [Latency as the main limiter](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#latency-as-the-main-limiter)
+- [Further optimizations](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#further-optimizations)
+- [Browser Networking APIs](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#browser-networking-apis)
+- [HTTP and Real-time data-synchronization](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#http-and-real-time-data-synchronization)
+- [Peer to Peer Networking](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#peer-to-peer-networking)
+- [Use cases](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#use-cases)
+- [Complexities](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#complexities)
+- [WebRTC](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#webrtc)
+- [Optional: Blog Post](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#optional-blog-post)
+- [Summary](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#summary)
+- [Overview:](https://github.com/SandyRodger/LS170-171/blob/main/L6_the_evolution_of_network_technologies.md#overview)
 
 ## Olly Chats:
 
