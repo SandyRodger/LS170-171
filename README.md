@@ -36,7 +36,6 @@
   - [Networked Applications](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#networked-applications)
 - [Summary](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#summary)
 - [Quiz](https://github.com/SandyRodger/LS170-171/blob/main/L1_the_internet.md#quiz)
-Quiz Mistakes:
 
 
 ## L2: [The Transport Layer](https://github.com/SandyRodger/LS170-171/blob/main/L2_the_transport_layer.md#the-transport-layer)
