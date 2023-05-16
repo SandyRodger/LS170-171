@@ -44,6 +44,19 @@
 - Services running on a server will most likely be assigned to a port in the well-known range. So if you want to connect via HTTP to a web-server running on a host machine, the web-server process will most likely have port 80 assigned to it.
 
 - This is known as the web server *listening* on port 80.
+
+## Sockets
+
+- In brief they are the combination of IP address and port number, for example 216.3.128.12:8080.  
+- It represents an end-point for communication between networked processes.
+- At an implementation level it can refer to a few things:
+  - A UNIX socket: a way of local processes on the same machine communicating
+  - Internet sockets: (like a TCP/IP socket) A way for networked processes on different machines to communicate.
+- Weirdly, two processes on the same machine could be using internet sockets to communicate, without actually going out onto the internet.
+- Just rememebr there's a difference between the concept of a socket and it's implementation in code.
+- In socket programming this involves instantiating a socket object.
+- These socket instances are what are created in a connection-oriented protocol to allow a machine to form specific connections for each channel. Every time a new message arrives with a new source address it will be assigned to a new socket. If the message is coming from a source that has already been assigned to a socket it will be passed to that socket. 
+- This adds to the reliability of the communication. and allows one to manage each communication uniquely, for instance acknowledgements and retransmission of lost messages.
   
 ## [Network reliability](https://launchschool.com/lessons/2a6c7439/assignments/89636ed4)
 
