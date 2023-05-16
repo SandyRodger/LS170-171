@@ -295,7 +295,7 @@ The three way handshake can look like this:
 - If lots of re-transmissions are occuring TCP reduces the size of the transmission window because congestion has been detected.
 - There are different algorithms for detecting and establishing the transmission window.
 
-### Disadvantages of TCP
+### pros and cons of TCP
 
 Pros:
   - Reliable data transfer
@@ -324,7 +324,7 @@ Cons:
 - What UDP *doesn't* do:
   - provide a guarantee of message delivery.
   - provide a guarantee of message delivery order.
-  - prove a built in congestion avoidance or flow control mechanism.
+  - provide a built in congestion avoidance or flow control mechanism.
   - Provide connection-state tracking (since it is a connectionless protocol).
 
 ### The case for UDP
