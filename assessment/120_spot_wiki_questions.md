@@ -107,24 +107,65 @@ Lower level protocols encapsulate the data received from higher levels and then 
 40. **How do port numbers and IP addresses work together?**
 41. **What is a checksum and what is it used for? How is it used?**
 
-A checksum is a window in a PDU, for xample the Frame Check Sequence in an Ethernet frame. The function of a checksum is to check that the data received is the same as the data sent. THis is done by using an agreed upon algorithm to generate the checksum based on the data in the PDU. This guards against corrupted or falsified transmissions. If the checksums do not match then the PDU is dropped. TCP segments also use checksums.
+A checksum is a window in a PDU, for example the Frame Check Sequence in an Ethernet frame implements a checksum. The function of a checksum is to check that the data received is the same as the data sent. This is done by using an agreed upon algorithm to generate the checksum based on the data in the PDU. This guards against corrupted or falsified transmissions. If the checksums do not match then the PDU is dropped. TCP segments also use checksums.
 
 42. **Give an overview of the Transport Layer.** 
+
+-	The Transport layer is concerned with facilitating reliable communication between networked applications. It receives data from the layer above it, which is the application layer (or session layer in OCI model) encapsulates that data, usually with TCP into a segment and passes the segment to the Network layer. This also happens in reverse when packets are received from the Network/internet layer. 
+
 43. **What are the fundamental elements of reliable protocol?**
+
+For a protocol to be considered reliable it must take care of:
+-	In-order delivery: Data must be received in the order it was sent.
+-	Error detection, using a checksum to check for corrupt data.
+-	Handling data-loss: Lost data is resent using a system of acknowledgements and time-outs.
+-	De-duplication: duplicate data should be eliminated by using an idempotency token system.
+
 44. **What is pipe-lining protocols? What are the benefits of it?**
+
+-	Pipe-lining is sending multiple messages before having received acknowledgements. It is a way of more efficiently using bandwidth. The number of messages that can be sent before an acknowledgement has been received is indicated in the Window field of a TCP segment.
+
 45. **What is a network port?**
+
+A network port is the same as a port number in the question below. It is a number between 0 and 65535 that identifies a specific process on a host. 0 – 1023 is for well-known ports, 1024 – 49151 is for registered ports assigned to private entities and 49152 to 65535 is for ephemeral ports, ie customised services.
+
 46. **What is a port number?**
 
-- A port number is an identifier between 0 and 65535 for a specific process on a host. Each process will expect to send and receive data-packets, but for the sake of efficiency these packets will be multiplexed so that more can be sent at the same time. They are then demultiplexed at the receiving end into individual packets for each port and its application. The Transport layer deals with transporting data from one machine to another, but once it gets there it needs to be delivered to a specific port in order to be funneled to a particular process. The application layer is where the Request/response payload is generated and the Transport layer deals with multiplexing these into segments ((or datagrams)
+- A port number is an identifier between 0 and 65535 for a specific process on a host. Each process will expect to send and receive data-packets, but for the sake of efficiency these packets will be multiplexed so that more can be sent at the same time. They are then demultiplexed at the receiving end into individual packets for each port and its application. The Transport layer deals with transporting data from one machine to another, but once it gets there it needs to be delivered to a specific port in order to be funnelled to a particular process. The application layer is where the Request/response payload is generated and the Transport layer deals with multiplexing these into segments (or datagrams)
 
 47. **What is a network socket?**
+
+- In brief they are the combination of IP address and port number, for example 216.3.128.12:8080.  
+- It represents an end-point for communication between networked processes.
+- At an implementation level it can refer to a few things:
+  - A UNIX socket: a way of local processes on the same machine communicating
+  - Internet sockets: (like a TCP/IP socket) A way for networked processes on different machines to communicate.
+- Weirdly, two processes on the same machine could be using internet sockets to communicate, without actually going out onto the internet.
+- Just remember there's a difference between the concept of a socket and it's implementation in code.
+- In socket programming this involves instantiating a socket object.
+- These socket instances are what are created in a connection-oriented protocol to allow a machine to form specific connections for each channel. Every time a new message arrives with a new source address it will be assigned to a new socket. If the message is coming from a source that has already been assigned to a socket it will be passed to that socket. 
+- This adds to the reliability of the communication. and allows one to manage each communication uniquely, for instance acknowledgements and retransmission of lost messages.
+
 48. **Is TCP connectionless? Why?**
+
+TCP is connection-oriented, which is essential because one of its main functions is to provide reliability on an unreliable channel. It does not start sending data until a connection has been established with the “three-way-handshake”. This involves sending a `SYN` segment (synchronising), the receiver responding with a `SYN ACK` segment and the first party responding with an `ACK` segment and beginning transmission of application data.
+This handshake process has a cost in latency since it means there is always a round-trip of latency before applications can begin to send data.
+
 49. **How do sockets on the implementation level relate to the idea of protocols being connectionless or connection-oriented?** 
+
+-	See q47
+
 50. **What are sockets on implementation and on a theoretical level?** 
+
+-	See q47
+
 51. **What does it mean that the protocol is connection-oriented?**
+
+-	A connection oriented protocol means that when the host receives a message it checks the source and if it is new source, ie if the Source/destination IP address and Source/destination port number are not yet assigned to a socket, the host will instantiate a new socket to listen for messages matching this four-tuple of information. This means that there will be unique sockets for each channel of communication between processes. A connectionless protocol on the other hand will rely on one socket to listen for all data sent to that particular IP address/destination port number pair.
+
 52. **What is a three-way handshake? What is it used for?**
 
-- 
+- see q48
 
 53. **What are the advantages and disadvantages of a Three-way handshake?** 
 54. **What are multiplexing and demultiplexing?**
