@@ -311,7 +311,7 @@ Overview:
 |8.  The data/link layer|4th April|7th April |15th May|7th September '23|80%|60%
 |9.  The internet/network layer |4th April| 8th April|15th May|7th September '23|70%|50%
 |10.  Summary|4th April|8th April|15th May|7th September '23|90%|70%
-|11. Quiz |4th April (44%)|7th April (89%) |15th May (100%)
+|11. Quiz |4th April (44%)|7th April (89%) |15th May (100%)|7th September(67%)|
 | + Read through Discussions |
 
 # Quiz Mistakes:
@@ -319,3 +319,18 @@ Overview:
   - An IP is a unique address that we can use to identify a device or host on the internet.
   - IP addresses are represented by 4 sets of numbers, each containing 8 bits of information. The first two sets of numbers usually references the network and sub-network, respectively. The third is the host, and the fourth part references a machine connected to that host. This choice represents the most widely used type of IP address used at the moment, IPv4.
   - There is also a new standard for IP addresses which is in the process of being adopted, IPv6. This representation of an IP address is broken into 8 sets of hexadecimal characters, each containing 16 bits of information. The first 4 sets are used to locate a specific network on the internet. The last 4 sets are typically used to identify a particular interface or device within that network.
+
+# Quiz 7.9.23:
+
+| Question | My answer | correct? | Correction |
+| :--- | :---: | :---: | :---: |
+|1.| A,B,C,D| yes|
+|2.|A,C,E|A,B,E| Different protocols are concerned with different aspects of network communication. + A single network communication typically uses multiple different protocols. The different protocols each provide different services or functionality, and can operate at different network 'layers'.|
+|3.|A,B|yes|
+|4.|B|yes|
+|5.|C| A|Bandwidth is a measure of capacity, in other words the amount of data that can be transmitted over a network connection in a set period of time.|
+|6.|A,D|A,C,D|Addressing is a key aspect of Ethernet.|
+|7.|A,C| yes|
+|8.|A,D| yes|
+|9.|A,B,D|yes|
+|total| 67%|
