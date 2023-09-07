@@ -185,9 +185,10 @@ Solution 3:
     - Handling Duplication
   -  Precisely how this happens is beyond the scope of this course (but it looks a lot like the reliable-protocol covered in lesson 1).
   -  WINDOW SIZE: relates to flow control.
-  -  FLAGS: sre one bit boolean fields.
+  -  FLAGS: are one bit boolean fields.
     -  URG and PSH relate to how the data contained in this segment should be treated in terms of its importance/urgency.
     -  The SYN, ACK, FIN and RST flags are used to establish and end a TCP connection plus manage that connection.
+
 ### TCP Connections
 
 - We covered connectionless v connection-based communication. TCP is connection-oriented.
