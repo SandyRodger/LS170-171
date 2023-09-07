@@ -96,7 +96,8 @@
 - **The header** provides protocol specific meta-data about the PDU.
   - For example an IP packet header would include fields for the Source IP address and the Destination IP address, which would be used to correctly route the packet.
 - **The Data Payload** Is the data we want to transfer.
-- The entire PDU from a protocol at one layer is set as the data payload for a protocol at the layer below ** 'below' might be an unhelpful word here. Think more like Russian nesting-dolls. The next layer is the oiuter-layer in a game of pass the parcel. **
+- The entire PDU from a protocol at one layer is set as the data payload for a protocol at the layer below
+    - 'below' might be an unhelpful word here. Think more like Russian nesting-dolls. The next layer is the outer-layer in a game of pass the parcel.
   - For example a HTTP request at the Application Layer could be set as the payload for a TCP segment at the Transport layer.
 <p align="center">
   <img width="874" alt="Screenshot 2023-04-07 at 15 56 18" src="https://user-images.githubusercontent.com/78854926/230629907-fe2f5ee4-4692-49bc-9274-a049b7999f8b.png">
@@ -141,8 +142,8 @@
 - However in many situations latency can be a greater impingement on the performance of a networked application.
 ### Limitations of physical networks
 - As developers we cannot really change the physical reality of the network, but understanding how it works will be useful in designing programs that can make best use of the physicial network.
-## [ The data/link layer](https://launchschool.com/lessons/4af196b9/assignments/81df3782)
-- Yes, the devices are physically connected now, but they don't know how to talk. 
+## [The data/link layer](https://launchschool.com/lessons/4af196b9/assignments/81df3782)
+- Yes, the devices are physically connected by cables etc, but they don't know how to talk or where to send their talking. 
 - How do we identify the device we want to send our data to? 
 - That's the concern of this layer. Finding the device on the physical network and moving the data there.
 - For OSI, this is layer 2 between the physical layer and the network layer. For IPS  the link-layer is level 1.
