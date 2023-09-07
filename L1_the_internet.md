@@ -234,7 +234,7 @@
 ## [The internet/network layer](https://launchschool.com/lessons/4af196b9/assignments/b222ecfb)
 
 - In the OSI the network layer is layer 3 between the data-link and transport layers.
-- In the IPS it is layer 2 (between link-layer and transport-layer).
+- In the IP it is layer 2 (between link-layer and transport-layer).
 - The primary function of protocols at this layer is to facilitate communication between hosts (eg. computers) on different networks.
 - The IP is the predominant protocol used at this layer for inter-network communication.
 - There are two versions of IP at the moment IPv4 and IPv6. This chapter mainly looks at IPv4. Their two main features are:
@@ -254,7 +254,7 @@
 Some of the more important header fields are:
 
 - **Version** : The version of IP being used.
-- **ID,flags, fragment offset** : These fields are related to fragmentation. Fragmentation occurs when the Tansport-layer PDU is too large to be sent as a single packet. It can be sent as multiple packets and then reassembled by the recipient.
+- **ID,flags, fragment offset** : These fields are related to fragmentation. Fragmentation occurs when the Transport-layer PDU is too large to be sent as a single packet. It can be sent as multiple packets and then reassembled by the recipient.
 - **TTL** : Every packet has a 'Time To Live' value. This is so that if a packet fails to reach its destination it doesn't get stuck bouncing around the network causing problems. The TTL indicates the maximum number of hops a packet can take before being dropped. At each hop the router will decrement the TTL value by one.
 - **Protocol** : The protocol used for the Data Payload.
 - **Checksum** : An error checking value generated with an algorithm.
@@ -286,7 +286,7 @@ Some of the more important header fields are:
 
 ### IPv6
 
-- The structure of IPv4 address means there is a limit to how many variatinos can occur. (about 4.3 billion). IPv6 is designed to allow for 340 undecillion addressed. The Internet Engineering Task Force (IETF) are creating it. IPv6 uses 128 bit addresses. There are other differences.
+- The structure of IPv4 address means there is a limit to how many variations can occur. (about 4.3 billion). IPv6 is designed to allow for 340 undecillion addressed. The Internet Engineering Task Force (IETF) are creating it. IPv6 uses 128 bit addresses. There are other differences.
 
 ### Networked Applications
 
@@ -301,16 +301,16 @@ Overview:
 
 |  | Once | Twice | Thrice | Comprehension | Retention
 | :--- | :---: | :---: | :---: | :--- | :---
-|1. Introduction|4th April| 7th April||
-|2. What to Focus on|4th April|7th April||
-|3.  AWS Cloud 9|4th April|7th April||
-|4.  What is the internet?|4th April|7th April |15th May| 90%|70%
-|5. Protocols|4th April|7th April|15th May|80%|40%
-|6.  A layered system|4th April|7th April |15th May|85%|50%
-|7. The Physical network|4th April|7th April |15th May|85%|55%
-|8.  The data/link layer|4th April|7th April |15th May|80%|60%
-|9.  The internet/network layer |4th April| 8th April|15th May|70%|50%
-|10.  Summary|4th April|8th April|15th May|90%|70%
+|1. Introduction|4th April| 7th April|7th September '23||
+|2. What to Focus on|4th April|7th April|7th September '23||
+|3.  AWS Cloud 9|4th April|7th April|7th September '23||
+|4.  What is the internet?|4th April|7th April |15th May|7th September '23| 90%|70%
+|5. Protocols|4th April|7th April|15th May|7th September '23|80%|40%
+|6.  A layered system|4th April|7th April |15th May|7th September '23|85%|50%
+|7. The Physical network|4th April|7th April |15th May|7th September '23|85%|55%
+|8.  The data/link layer|4th April|7th April |15th May|7th September '23|80%|60%
+|9.  The internet/network layer |4th April| 8th April|15th May|7th September '23|70%|50%
+|10.  Summary|4th April|8th April|15th May|7th September '23|90%|70%
 |11. Quiz |4th April (44%)|7th April (89%) |15th May (100%)
 | + Read through Discussions |
 
