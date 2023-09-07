@@ -56,7 +56,7 @@
 - Just rememebr there's a difference between the concept of a socket and it's implementation in code.
 - In socket programming this involves instantiating a socket object.
 - These socket instances are what are created in a connection-oriented protocol to allow a machine to form specific connections for each channel. Every time a new message arrives with a new source address it will be assigned to a new socket. If the message is coming from a source that has already been assigned to a socket it will be passed to that socket. 
-- This adds to the reliability of the communication. and allows one to manage each communication uniquely, for instance acknowledgements and retransmission of lost messages.
+- This adds to the reliability of the communication and allows one to manage each communication uniquely, for instance acknowledgements and retransmission of lost messages.
   
 ## [Network reliability](https://launchschool.com/lessons/2a6c7439/assignments/89636ed4)
 
