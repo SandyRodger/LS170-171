@@ -61,8 +61,7 @@
 ## [A layered system](https://launchschool.com/lessons/4af196b9/assignments/21ef33af)
 
 - Protocols are best grouped together by the aspect of communication they deal with.
-- Rather than trying to understand all aspects of communication simultaneously (language, physics, biology, etiquette) there are models for message th
-- transfer that aim to deal with everything in a manageable way. The two main ways are :
+- Rather than trying to understand all aspects of communication simultaneously (language, physics, biology, etiquette) there are models for message transfer that aim to deal with everything in a manageable way. The two main ways are :
   - The Internet Protocol Suite
   - The OSI model.
 <p align="center">
@@ -97,7 +96,7 @@
 - **The header** provides protocol specific meta-data about the PDU.
   - For example an IP packet header would include fields for the Source IP address and the Destination IP address, which would be used to correctly route the packet.
 - **The Data Payload** Is the data we want to transfer.
-- The entire PDU from a protocol at one layer is set as the data payload for a protocol at the layer below
+- The entire PDU from a protocol at one layer is set as the data payload for a protocol at the layer below ** 'below' might be an unhelpful word here. Think more like Russian nesting-dolls. The next layer is the oiuter-layer in a game of pass the parcel. **
   - For example a HTTP request at the Application Layer could be set as the payload for a TCP segment at the Transport layer.
 <p align="center">
   <img width="874" alt="Screenshot 2023-04-07 at 15 56 18" src="https://user-images.githubusercontent.com/78854926/230629907-fe2f5ee4-4692-49bc-9274-a049b7999f8b.png">
@@ -125,13 +124,13 @@
 - Latency is actually a collection of different types of delay. Here are the elements of latency:
   - Propagation delay: The amount of time it takes for a message to get from sender to receiver. 
     - Speed = distance/time
-  - Transmission delay: The route taken by the data will involve many didferent wires, cables, switches, routers etc. The time it takes to get onto the next part of the route adds up and makes the transmission delay. In the analogy of the road, this can be thought of as time spent at roundabouts and interchanges.
+  - Transmission delay: The route taken by the data will involve many different wires, cables, switches, routers etc. The time it takes to get onto the next part of the route adds up and makes the transmission delay. In the analogy of the road, this can be thought of as time spent at roundabouts and interchanges.
   - Processing delay: Data travelling across the physical network doesn't skip unimpeded from one stage to the next. It is processed in various ways. These processes take time and add up to the processing delay. In the road analogy this might be checkpoints along the route, or toll-booths.
   - Queueing delay: Networks can only handle so much data transfer. If the amount of traffic exceeds this then the network queues or buffers the data. This can be visualised as time spent in traffic waiting for the toll-booth/checkpoint.
   - Total latency is the combined milliseconds (ms) of the above.
 - Other Latency-related terms:
   -  Last-mile latency: Most of the delays often occur right at the end of the transfer. So entering the LAN. For this reason they are referred to thusly.
-  -  Round-trip-time(RTT): Lenght of time for a signal to be sent + for an acknowledgement/response to be received.
+  -  Round-trip-time(RTT): Length of time for a signal to be sent + for an acknowledgement/response to be received.
 ### Network Hops
 - `traceroute google.com` traceroute is a utility for displaying the route and latency of a path across a network. Running this command returns a list of the hops taken for the test data to get from your device to the google server. The values printed here are the RTT for each hop
 ### Bandwidth
