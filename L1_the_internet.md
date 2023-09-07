@@ -229,7 +229,7 @@
   - MAC addresses are physical, rather than logical. Each address is burned into a device.
   - MAC addresses are flat rather than hierarchical. The entire address is needed and can't be broken down into sections.
 - So keeping track of where each device is would be impossible and the lists necessary to know where to send data would be impossibly long.
-- If we weant to overcome these problems we need a different set of rules. Which is the Internet Protocol. 
+- If we want to overcome these problems we need a different set of rules. Which is the Internet Protocol. 
 
 ## [The internet/network layer](https://launchschool.com/lessons/4af196b9/assignments/b222ecfb)
 
@@ -245,7 +245,7 @@
 
 -  The PDU within the IP protocol is referred to as a packet.
 -  The data payload of a packet will be the datagram/segment from the Transport layer above.
--  The logical seperation of meta-data in the header is determined by the set size of each field and their order in the packet.
+-  The logical separation of meta-data in the header is determined by the set size of each field and their order in the packet.
 
  <p align="center">
 <img width="883" alt="Screenshot 2023-04-08 at 14 50 17" src="https://user-images.githubusercontent.com/78854926/230724752-cd8ad922-5b7c-4dd4-84bf-3ac644be6c61.png">
