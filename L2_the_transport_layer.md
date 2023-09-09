@@ -66,7 +66,7 @@
 - Protocols such as the ethernet and internet protocols contain checksum data to prove to the receiver that the data after transmission is the same as when it was sent. But if the data is corrupt they just drop the packet. We need a system that guarantees that a packet of information will be replaced if it becomes lost or corrupt. 
 - The possibility of losing data means that the network up to and including the Internet Protocol is effectively an unreliable communication channel.
 - As developers we need a reliable communication channel.
-- At lower levels our communication channel is unreliable, so how to we ensure reliability.
+- At lower levels our communication channel is unreliable, so how to we ensure reliability?
 
 ### Building a reliable protocol
 
@@ -151,7 +151,7 @@ Solution 3:
   - in-order delivery.
   - re-transmission of lost data.
 - TCP is the protocol of choice for many networked applications because it provides great services.
-- The disadvantage is that these services are the performance challenges that come with this complexity. (Just because the complexity is hidden from the dev working at the application layer doesn't mean its not there- it's real and does affect performance).
+- The disadvantages of these services are the performance challenges that come with this complexity. (Just because the complexity is hidden from the dev working at the application layer doesn't mean its not there- it's real and does affect performance).
 - TCP also provides:
   - Multiplexing
   - Data-encapsulation
