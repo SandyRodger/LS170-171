@@ -11,14 +11,14 @@
 - But to create networked applications we need more than IP.
   - A direct connection between applications.
   - Reliable network communication.
-- The IPs system of addressing is designed to provide communication between *hosts*. These hosts can be on the same network or on the other side of the world. IP is great for getting a message from Host A to Host B, but not more than that. 
+- The IP's system of addressing is designed to provide communication between *hosts*. These hosts can be on the same network or on the other side of the world. IP is great for getting a message from Host A to Host B, but not more than that. 
 - Within each host there are multiple applications running.
 
 ### Multiplexing and Demultiplexing
 
 - Different apps need to send and receive data simultaneously. We can think of these different processes as channels.
 
-- An IP packet contains one destination MAC address, so everything bundled into that packet is going to the same host. We need a way to transmit these channels all together and then unpack them on the receiving end.
+- An IP packet contains one destination MAC address, so everything bundled into that packet is going to the same host. We need a way to transmit these channels/processes/signals all together and then unpack them on the receiving end.
 
 - Multiplexing: Sending multiple signals over one channel.
 
@@ -61,9 +61,7 @@
 ## [Network reliability](https://launchschool.com/lessons/2a6c7439/assignments/89636ed4)
 
 - This chapter is all about how the sender and receiver of data in a network can reliably know whether the other end has successfully received the data.
-- The two genreals problem video (Tom Scott):
-
-https://www.youtube.com/watch?v=IP-rGJKSZ3s&vl=en
+- [The two genreals problem video by Tom Scott](https://www.youtube.com/watch?v=IP-rGJKSZ3s&vl=en)
 
 - Protocols such as the ethernet and internet protocols contain checksum data to prove to the receiver that the data after transmission is the same as when it was sent. But if the data is corrupt they just drop the packet. We need a system that guarantees that a packet of information will be replaced if it becomes lost or corrupt. 
 - The possibility of losing data means that the network up to and including the Internet Protocol is effectively an unreliable communication channel.
