@@ -339,7 +339,7 @@ Cons:
   - provide a guarantee of message delivery.
   - provide a guarantee of message delivery order.
   - provide a built in congestion avoidance or flow control mechanism.
-  - Provide connection-state tracking (since it is a connectionless protocol).
+  - provide connection-state tracking (since it is a connectionless protocol).
 
 ### The case for UDP
 
@@ -361,7 +361,7 @@ Cons:
 - Multiplexing is enabled through the use of network ports.
 - Network sockets are a combination of network port and IP address.
 - At the implementation level network sockets can also be socket objects.
-- the underlying network is inherently unreliable, so if we want reliable data transfer we should implement a system of rules (at the application layer?)
+- The underlying network is inherently unreliable, so if we want reliable data transfer we should implement a system of rules (at the application layer?)
 - TCP
   - is a connection-oriented protocol. It establishes a connection using a three-way handshake.
   - provides reliability through message acknowledgement/retransmission and in-order delivery.
@@ -384,11 +384,19 @@ Overview:
 
 |  | Once | Twice | Thrice | Comprehension | Retention
 | :--- | :---: | :---: | :---: | :--- | :---
-|2. What to Focus on| 6th April | 8th April | 
-|3.  Communication between processes| 6th April | 9th April 
-|4.  Network Reliability| 6th April |10th April
-|5. Transmission Control Protocol| 6th April |10th April
-|6.  User Datagram Protocol| 6th April |11th April|
-|7.  Summary|6th April |11th April|
-|8. Quiz | 11th April (100%)|
+|2. What to Focus on| 6th April | 8th April | 9th September |
+|3.  Communication between processes| 6th April | 9th April|  9th September |
+|4.  Network Reliability| 6th April |10th April|  9th September |
+|5. Transmission Control Protocol| 6th April |10th April|  9th September |
+|6.  User Datagram Protocol| 6th April |11th April|  9th September |
+|7.  Summary|6th April |11th April|  9th September |
+|8. Quiz | 11th April (100%)| 9th September |
 | + Read through Discussions |
+
+
+## Quiz (9th September 2023)
+
+| Question | My answer | Correct? | Correction |
+| :--- | :---: | :---: | :---: 
+|1.
+
