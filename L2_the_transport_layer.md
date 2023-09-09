@@ -390,7 +390,7 @@ Overview:
 |5. Transmission Control Protocol| 6th April |10th April|  9th September |
 |6.  User Datagram Protocol| 6th April |11th April|  9th September |
 |7.  Summary|6th April |11th April|  9th September |
-|8. Quiz | 11th April (100%)| 9th September |
+|8. Quiz | 11th April (100%) (open-book)| 9th September (14%) (closed-book)|
 | + Read through Discussions |
 
 
