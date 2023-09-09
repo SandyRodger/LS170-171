@@ -394,9 +394,17 @@ Overview:
 | + Read through Discussions |
 
 
-## Quiz (9th September 2023)
+## [Quiz](https://launchschool.com/quizzes/e539d784) (9th September 2023)
 
 | Question | My answer | Correct? | Correction |
 | :--- | :---: | :---: | :---: 
-|1.
+|1.| A,B | no, just B| Multiplexing and demultiplexing DO NOT provide communication between hosts, or devices, on a network.|
+|2.| B,D,E,F| no, just B, D, E | A port number is NOT part of an IP address.|
+|3.|B,C,D| no, A as well | A socket is the combination of IP address and port number.|
+|4.|A,D,E,F|no, also C and G| TCP provides multiplexing and demultiplexing AND TCP provides error detection |
+|5.|B,D| no, B, C, G| UDP provides multiplexing and demultiplexing AND UDP DOES NOT provide in-order delivery AND UDP provides error detection|
+|6.|E| yes |
+|7.|A| no, B | Congestion avoidance is a process by which TCP uses data loss (based on the volume of retransmissions required) as a feedback mechanism to determine how congested the network is, and adjusts the amount of data being sent accordingly.|
+|8.|B| no, A | Flow Control is a mechanism to prevent the sender overwhelming the receiver with more data than it can process. Each participant in a connection lets the other participant know how much data it is willing to accept using a field in the TCP header.|
+|total| 14%|
 
