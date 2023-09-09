@@ -318,7 +318,7 @@ Cons:
   - Head-of-Line (HOL) blocking.
 
 - HOL blocking isn't specific to TCP. Basically it is about how processing one message in a sequence can block the processing of subsequent messages in the sequence.
-- TCP's provision of in-order delivery (or segments) can cause HOL blocking. If one segment goes missing, it jams transmission for the subsequent segments and needs to be buffered. This can lead to increased queueing delay which adds to latency.
+- TCP's provision of in-order delivery (or segments) can cause HOL blocking. If one segment goes missing, it jams transmission for the subsequent segments and needs to be buffered. This can lead to increased queueing delay, which adds to latency.
 
 ## [User datagram protocol (UDP)](https://launchschool.com/lessons/2a6c7439/assignments/9bb82c9b)
 
@@ -328,6 +328,7 @@ Cons:
 <p align="center">
 <img width="873" alt="Screenshot 2023-04-11 at 12 17 01" src="https://user-images.githubusercontent.com/78854926/231144645-799e39a8-4cef-41de-9ae8-ddb5d55de526.png">
 </p>
+
 - So only 4 fields:
   - Source port
   - Destination port
