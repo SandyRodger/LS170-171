@@ -182,7 +182,7 @@
 
 ### Interframe Gap
 
-- On top of the Preamble and SFD, ethernet also stipulates an interframe gap of about 0.96 microseconds (about a millionth of a second). This gap allows the receiver to prepare to receive the next frame. The length of gap varies according the the ethernet connections capability.
+- On top of the Preamble and SFD, ethernet also stipulates an interframe gap of about 0.96 microseconds (about a millionth of a second). This gap allows the receiver to prepare to receive the next frame. The length of gap varies according the the ethernet connection's capability.
 - The interframe gap becomes part of the transmission delay and thus part of latency.
 
 ### Differences between ethernet standards:
