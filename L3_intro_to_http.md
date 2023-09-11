@@ -194,14 +194,14 @@ I NEED TO RE-DO THIS PAGE NOTES
 
 ## [Quiz 2nd attempt: 11th September 2023](https://launchschool.com/quizzes/7544b995)
 
-| Question |correct?|Correction |
-| :--- | :---: | :---: |
+| Question |my answer|correct?|Correction |
+| :--- | :---: |:---: | :--- |
 |1.|D| no|We use DNS to look up what is typed into a browser, to find a specific domain. DNS uses the domain in the URL typed into the browser to look up the IP address associated with that domain. The IP address is then used to look up the requested resource.
 |2.|C|correct|
 |3.|A|correct|
 |4.|B| correct|
 |5.|C|correct|
-|6.|B|corret|
+|6.|B|correct|
 |7.|B|incorrect| `+` is also used to signify spaces.|
 |8.|A|correct|
 |9.|B,C|correct|
