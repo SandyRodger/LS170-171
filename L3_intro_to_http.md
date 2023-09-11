@@ -72,10 +72,11 @@ This is very simplified. Each of these components could be shared across multipl
   - The application server
   - The data store
 
-- A webserver: A server that responds to requests for static assets (files, images, javascript, css). These requests don'trequire any processing, so can be handled by a simple web-server.
+- A webserver: A server that responds to requests for static assets (files, images, javascript, css). These requests don't require any processing, so can be handled by a simple web-server.
 - An application server: Where application or business logic resides. Here, more complicated requests are handled. This is where your server side-code lives when deployed.
-- The application server will consult a persistent data-store, like a relational database, to retrieve or create data. Data stores can also be simple files or key-data stores, document stores or something else -  as long as it can save data in some format.
-- Regardless of how it is stored, it can be used to *persist* data between stateless request/response cycles.
+    - The application server will consult a persistent data-store, like a relational database, to retrieve or create data. Data stores can also be simple files or key-data stores, document stores or something else
+    -  as long as it can save data in some format.
+    - Regardless of how it is stored, it can be used to *persist* data between stateless request/response cycles.
 
 ### HTTP over TCP/IP
 
@@ -154,8 +155,8 @@ I NEED TO RE-DO THIS PAGE NOTES
 - URLs are made of scheme, host, port, path and query string.
 - Query strings pass aditional data to the server in a HTTP request.
 - URL encoding encrypts certain chracters in a URL with an ASCII code.
-- URL encoding is used if a character has no corresponding character in the ASCII set, is unsafe because it is used for encoding other characters, or is reserved for special use within the url (I DON'T KLNOW WHAT THIS SENTENCE MEANS)
-- An HTTP messagetakes place between a client and a server and contains:
+- URL encoding is used if a character has no corresponding character in the ASCII set. It is unsafe because it is used for encoding other characters, or is reserved for special use within the url.
+- An HTTP message takes place between a client and a server and contains:
   - A request:
     - request line
     - headers
@@ -169,27 +170,47 @@ I NEED TO RE-DO THIS PAGE NOTES
 - Statefulness can be simulated.
 - HTTP is inherently insecure.
 
-## [Quiz](https://launchschool.com/quizzes/7544b995)
+## [Quiz - 25th April '23](https://launchschool.com/quizzes/7544b995)
 
-|  | First Attempt | Second attempt | Third Attempt |
-| :--- | :---: | :---: | :---: |
-|1.|correct
-|2.|correct
-|3.|correct
-|4.|correct
-|5.|correct
-|6.|correct
-|7.|correct
-|8.|correct
-|9.|wrong
-|10.|correct
-|11.|correct
-|12.|wrong
-|13.|correct
+| Question |correct?|Correction |
+| :--- | :---: | :---: |
+|1.|correct| D
+|2.|correct|C
+|3.|correct|A
+|4.|correct|B
+|5.|correct|C
+|6.|correct|C
+|7.|correct|B
+|8.|correct|C
+|9.|wrong|B,C,D
+|10.|correct|C
+|11.|correct|B
+|12.|wrong|B,C
+|13.|correct|A
 | Results| 11/13 (85%)|
 
 9. Get requests are also used to retrieve information. POST is also used to submit forms.
 12. Statefulness is also simulated by sending data as parameters through a URL
+
+## [Quiz 2nd attempt: 11th September 2023](https://launchschool.com/quizzes/7544b995)
+
+| Question |correct?|Correction |
+| :--- | :---: | :---: |
+|1.|D| no|We use DNS to look up what is typed into a browser, to find a specific domain. DNS uses the domain in the URL typed into the browser to look up the IP address associated with that domain. The IP address is then used to look up the requested resource.
+|2.|C|correct|
+|3.|A|correct|
+|4.|B| correct|
+|5.|C|correct|
+|6.|B|corret|
+|7.|B|incorrect| `+` is also used to signify spaces.|
+|8.|A|correct|
+|9.|B,C|correct|
+|10.|A|incorrect|. HTTP headers are name-value pairs included in a HTTP request or response. Headers act as metadata that provides supplemental information about the request or response to aid the server or client in processing the request or response.
+|11.|A,B|incorrect| statelessness also means that each request should contain all the information necessary for the request to be fulfilled.|
+|12.|B,C| incorrect| statefulness can also be simulated by sending data as parameters through the URL.|
+|13.|B,C,D|correct|
+|results|7/13 = 54%|
+
 
 Overview:
 
@@ -204,5 +225,5 @@ Overview:
 |7. Practice problems: URL components|24th April|
 |8. The Request Response Cycle|24th April|
 |9. Summary|24th April|
-|10. Quiz |25th April|
+|10. Quiz |25th April (85%)|11th September 2023 (54%)|
 | + Read through Discussions |
