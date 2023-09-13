@@ -2,7 +2,7 @@
 
 ## [What to Focus on](https://launchschool.com/lessons/0e67d1ce/assignments/b9609f49)
 
-- HTTP: This chapter uses Bash and other network utilities, but this is all to better understand HTTP an how it enables network connections between client and server.
+- HTTP: This chapter uses Bash and other network utilities, but this is all to better understand HTTP and how it enables network connections between client and server.
 -  HTTP and the structure of messages: HTTP can be seen as a set of rules for structuring messages exchanged between applications. Understand these rules and how to apply them.
 -  HTTP is a request-response protocol: One of the fundamental aspects of HTTP is its request-response behaviour. Try to form a solid mental model around this.
 
@@ -384,7 +384,7 @@ $ netcat -lv 2345 #              => Warning: Inverse name lookup failed for `0.0
 <img width="659" alt="Screenshot 2023-04-28 at 08 20 18" src="https://user-images.githubusercontent.com/78854926/235081295-cdb3a12c-adcf-4ac3-baf0-218f9d25cb01.png">
 
 This will be our client instance.
-You should now have two terminal windows; one acting as a client, the other as a server. Typing text into either one will appear in the other as well. Congratulations, you have made A TCP connection.
+You should now have two terminal windows; one acting as a client, the other as a server. Typing text into either one will appear in the other as well. Congratulations, you have made a TCP connection.
 - terminate the Netcat session with `command + C`
 
 ## [Implementing our own HTTP server: Basic Program Structure](https://launchschool.com/lessons/0e67d1ce/assignments/2e3c6bc3)
@@ -569,13 +569,13 @@ netcat -lv 2345 <&${SERVER_PROCESS[0]} >&${SERVER_PROCESS[1]}
   -  Up till now our client has been a terminal window running Netcat
   -  It sends one line requests.
   -  The client outputs the response from the server without tampering at all.
--  If our client was a browser, we would have to adapt out code for:
-  -  Most browsers automatically include multiple headers, over multiple lines.
-    -  The initial request header.
-    -  Then other headers.
-  -  Broswers don't just output the response without tampering, they process it. This is how HTML becomes a displayable web-page. So our response needs more information.
-  -  A browser might terminate the connection after receiving a response. We want to keep our netcat process open.
-
+-  If our client was a browser, we would have to adapt our code for:
+   -  Most browsers automatically include multiple headers, over multiple lines.
+     -  The initial request header.
+     -  Then other headers.
+   -  Browsers don't just output the response without tampering, they process it. This is how HTML becomes a displayable web-page. So our response needs more information.
+   -  A browser might terminate the connection after receiving a response. We want to keep our netcat process open.
+ 
 ### Parsing the response
 
 - The current logic reads one line at a time, ie `GET /lion.html HTTP/1.1`
