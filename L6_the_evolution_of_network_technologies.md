@@ -5,7 +5,7 @@
 - At this point you should have:
   -  a good general understanding of Networks
   -  A good deeper understanding of HTTP
--  If you're going to develop Networked applications, you should have a good idea of what networked communication looks like at a fundamental level.
+-  If you're going to develop networked applications, you should have a good idea of what networked communication looks like at a fundamental level.
 -  Many of the concepts discussed in this module are unchanging aspects of the internet.
 -  On the other hand these concepts are concretely implemented and there are reasons for their design. These details are subject to change.
 -  In this final lesson we will look at *why* and *how* they have changed. Also the importance of those changes on the work of devs today.
