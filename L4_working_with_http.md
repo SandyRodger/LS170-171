@@ -758,7 +758,7 @@ LS solution:
 |  | Once | Twice(just re-reading my own notes) | Thrice | Comprehension | Retention
 | :--- | :---: | :---: | :---: | :--- | :---
 |1. What to Focus on|26th April|13th Sept '23||10%|0%|
-|2. Using Telnet to explore HTTP|27th April||13th Sept '23|10%|0%|
+|2. Using Telnet to explore HTTP|27th April|13th Sept '23||10%|0%|
 |3. Speaking the same language|27th April|13th Sept '23||10%|0%|
 |4. Implementing your own HTTP server: Project overview|27th April|13th Sept '23||10%|0%|
 |5. Bash Basics|27th April|13th Sept '23||10%|0%|
