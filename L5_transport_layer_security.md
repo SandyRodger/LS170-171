@@ -190,7 +190,7 @@ A Brief history of Cryptography:
 
 ## Overview:
 
-|  | Once | Twice (just noets) | Thrice | Comprehension | Retention
+|  | Once | Twice (just notes) | Thrice | Comprehension | Retention
 | :--- | :---: | :---: | :---: | :--- | :---
 |1. Introduction|7/5/23|13/9/23||70%|70%|
 |2. What to focus on|7/5/23|13/9/23||70%|70%|
