@@ -763,11 +763,11 @@ LS solution:
 |4. Implementing your own HTTP server: Project overview|27th April|13th Sept '23||10%|0%|
 |5. Bash Basics|27th April|13th Sept '23||10%|0%|
 |6. Working with Netcat|28th April|13th Sept '23||10%|0%|
-|7. Implementing our own HTTP server: Basic Program Structure|28th April||13th Sept '23|10%|0%|
+|7. Implementing our own HTTP server: Basic Program Structure|28th April|13th Sept '23||10%|0%|
 |8. Implementing our own HTTP server: Sending a simple response|28th April|13th Sept '23||10%|0%|
 |9. Implementing our own HTTP server: Processing the request|29th April|13th Sept '23||10%|0%|
 |10. Implementing our own HTTP server: Serving HTML|29th April|13th Sept '23||10%|0%|
-|11. Implementing our own HTTP server: Working with the browser|29th April|||10%|0%|
+|11. Implementing our own HTTP server: Working with the browser|29th April|13th Sept '23||10%|0%|
 |12. Implementing our own HTTP server: adding Hyperlinks|5th May|13th Sept '23||10%|0%|
 |13. Summary|7th May|13th Sept '23||10%|0%|
 | + Read through Discussions |
