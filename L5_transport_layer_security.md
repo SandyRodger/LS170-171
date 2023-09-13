@@ -196,7 +196,7 @@ A Brief history of Cryptography:
 |2. |C|Tick|
 |3. |A,C|Cross| Also - The TLS Handshake is used to agree on the Cipher Suite.|
 |4. |D| Cross| Other way around: TLS uses asymmetric key encryption for the initial key exchange, and then symmetric key encryption for actual message transfer.|
-|5. | A,C,D| Not D: TLS Authentication is not used to determine if a message has been interfered with in transit, that is the role of TLS Integrity checking.
+|5. | A,C,D|Cross| Not D: TLS Authentication is not used to determine if a message has been interfered with in transit, that is the role of TLS Integrity checking.
 |6. |A| Cross| and D : Before issuing a certificate, CAs verify that whoever is requesting the certificate is who they claim to be.
 |7. | A|Cross| MAC is an algorithmically generated code included in TLS record to provide a means of checking the integrity of the record payload. Not It is an algorithm used for encrypting the keys during the key exchange process.|
 
@@ -211,6 +211,6 @@ A Brief history of Cryptography:
 |5. TLS Authentication|7/5/23|13/9/23||70%|70%|
 |6. TLS Integrity|7/5/23|13/9/23||60%|70%|
 |7. Summary|7/5/23|13/9/23||60%|70%|
-|8. Quiz|86%|13/9/23(29%)|
+|8. Quiz|86%|29%|
 | + Read through Discussions |
 .
