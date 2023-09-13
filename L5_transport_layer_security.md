@@ -5,7 +5,7 @@
 - The simplicity of HTTP (it's just plain text travelling across a network) is also the reason for it's relative insecurity.
 - If an HTTP request/response is intercepted it can be easily read.
 - It is also difficult to know if an HTTP message has been tampered with, or if its source is trustworthy.
-- Security isn't always important, but sometimes it's essential. ie Online shopping, banking etc.
+- Security isn't always important, but sometimes it's essential. ie. online shopping, banking etc.
 - Security was briefly touched upon in the [HTTP book](https://launchschool.com/books/http/read/security#securehttp)
 
 ## [What to focus on](https://launchschool.com/lessons/74f1325b/assignments/3daa92d0)
@@ -24,16 +24,16 @@
   - Encryption: Encypting a message so that only the person with the matching decryption key can read it.
   - Authentication: A process to identify the identity of a particular person in the exchange.
   - Integrity: Tell whether a message has been tampered with or faked entirely.
-- A message doesn't have to use all three of these. You could, for instanct, design an app to decrypt messages from a sender without authenticating where the message came from. But in practice, these three services are used together to provide the strongest encryption possible. 
+- A message doesn't have to use all three of these. You could, for instance, design an app to decrypt messages from a sender without authenticating where the message came from. But in practice, these three services are used together to provide the strongest encryption possible. 
 
 ## [TLS Encryption](https://launchschool.com/lessons/74f1325b/assignments/54f6defc)
 
-- TLS sets up an encrypted connectiuon with the "TLS Handshake".
+- TLS sets up an encrypted connection with the "TLS Handshake".
 
 A Brief history of Cryptography:
 
 - The Caeser Cipher
-- Blaise de Vigenere ( I don't understand this cipher)
+- Blaise de Vigenere (I don't understand this cipher)
 
 ### Symmetric Key encryption
 
@@ -58,14 +58,14 @@ A Brief history of Cryptography:
   - He makes the public key publicly available, but keeps the private key to himself.
   - Ellen writes a message and encrypts it with the public encryption key.
   - She then sends it to Crispian.
-  - Crispian has the public encryption key and uses it to read Ellen's message.
+  - Crispian has the privtate encryption key and uses it to read Ellen's message.
   - These keys can't work in the opposite direction. Ellen would have to generate her own keys to receive an encrypted response from Crispian.
 
 ### The TLS Handshake
 
-- To securely send messages via HTTP we need it to be encrypted both ways. Symetric encryption would be best, but how?
-- By sending the symetric key  by asymetric encryption, thus using a combination of both - best of both worlds.
-- The set-up with asymetric keys is called the 'TLS Handshake'.
+- To securely send messages via HTTP we need it to be encrypted both ways. Symmetric encryption would be best, but how?
+- By sending the symmetric key  by asymmetric encryption, thus using a combination of both - best of both worlds.
+- The set-up with asymmetric keys is called the 'TLS Handshake'.
 - TLS assumes that TCP is being used at the Transport Layer. The TLS handshake happens after the TSL handshake.
 - The TLS handshake is as follows:
   - A `ClientHello` message is sent after the TCP `ACK`. This contains the maximum version of the TLS protocol that the client can support and a list of cipher suites that the client is able to use.
