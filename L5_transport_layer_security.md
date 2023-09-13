@@ -66,7 +66,7 @@ A Brief history of Cryptography:
 - To securely send messages via HTTP we need it to be encrypted both ways. Symmetric encryption would be best, but how?
 - By sending the symmetric key  by asymmetric encryption, thus using a combination of both - best of both worlds.
 - The set-up with asymmetric keys is called the 'TLS Handshake'.
-- TLS assumes that TCP is being used at the Transport Layer. The TLS handshake happens after the TSL handshake.
+- TLS assumes that TCP is being used at the Transport Layer. The TLS handshake happens after the TCP (I wrote 'TSL', but that's surely a mistake) handshake.
 - The TLS handshake is as follows:
   - A `ClientHello` message is sent after the TCP `ACK`. This contains the maximum version of the TLS protocol that the client can support and a list of cipher suites that the client is able to use.
   - On receiving the `ClientHello` message, the server responds with its own message. This message includes a `ServerHello` message which sets the protocol version and Cipher Suite as well as other related information. The server incliudes its certificate (which contains its public key) and a `ServerHelloDone`, which tells the client that it is finished with the first part of the handshake.
