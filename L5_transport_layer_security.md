@@ -69,39 +69,39 @@ A Brief history of Cryptography:
 - TLS assumes that TCP is being used at the Transport Layer. The TLS handshake happens after the TCP (I wrote 'TSL', but that's surely a mistake) handshake.
 - The TLS handshake is as follows:
   - A `ClientHello` message is sent after the TCP `ACK`. This contains the maximum version of the TLS protocol that the client can support and a list of cipher suites that the client is able to use.
-  - On receiving the `ClientHello` message, the server responds with its own message. This message includes a `ServerHello` message which sets the protocol version and Cipher Suite as well as other related information. The server incliudes its certificate (which contains its public key) and a `ServerHelloDone`, which tells the client that it is finished with the first part of the handshake.
+  - On receiving the `ClientHello` message, the server responds with its own message. This message includes a `ServerHello` message which sets the protocol version and Cipher Suite as well as other related information. The server includes its certificate (which contains its public key) and a `ServerHelloDone`, which tells the client that it is finished with the first part of the handshake.
   - Once the client has received this `ServerHelloDone` marker it will star the key exchange process. This is the process that allows client and server to securely obtain a copy of the symmetric encryption key. The exact process for generating this key varies, depending on which exchange algorithms were chosen as part of the cipher suite. You don't need to worry about these key exchange algorithms, but they give an example anyway.
   - The server also sends a message with `ChangeCipherSpec` and `Finished` flags. The client and server can now begin communicating using their symmetric key.
 
 <img width="880" alt="Screenshot 2023-05-07 at 11 40 08" src="https://user-images.githubusercontent.com/78854926/236672666-8fa33609-310e-4586-a741-16222660f8dd.png">
 
-- The TLS handshake is pretty complicated, you won't be expected to remember all of it. But you should have a high level mental0model of how it works. Also the exact sequence of steps will vary depending on which version of TLS is being used.
-- Ket points about the TLS handshake to remember are that it is used to:
-  - Agree whichversion of TLS is to be used in establishing a secure connection.
+- The TLS handshake is pretty complicated, you won't be expected to remember all of it. But you should have a high level mental model of how it works. Also the exact sequence of steps will vary depending on which version of TLS is being used.
+- Key points about the TLS handshake to remember are that it is used to:
+  - Agree which version of TLS is to be used in establishing a secure connection.
   - Agree on the various algorithms that are to be incuded in the Cipher Suite.
   - Enable the exchange of symmetric keys that will be used for message encryption.
 - Be aware that this complexity has an effect on performance. The TLS handshake can add 2 round-trips of latency to the establishment of a connection. This is on top of the first TCP Handshake.
-- And they make a note of Datagram Transport Layer Seurity, which is based on TLS. THis is specifically for use with Network connections that work with UDP rather than TCP at the transport layer.
+- And they make a note of Datagram Transport Layer Seurity, which is based on TLS. This is specifically for use with Network connections that work with UDP rather than TCP at the transport layer.
 
 ### Cipher Suites
 
-- A Cipher is a cyptographic algorithm. So its a set of steps for encrypting/decrypting. So a cipher suite is a collection of these sets of instructions.
+- A Cipher is a cyptographic algorithm. So it's a set of steps for encrypting/decrypting. So a cipher suite is a collection of these sets of instructions.
 - TLS uses different ciphers for different aspects of securing a connection.
-- There are many al;gorithms that can be used for:
+- There are many algorithms that can be used for:
   - Performing the key-exchange process
   - authentication
   - symmetric key encryption
   - checking message integrity
-- So the collection of cipher algorithms necessary to do all these tasks is the Cipher Suite. This is what is agreed upon in the TSL handshake.
+- So the collection of cipher algorithms necessary to do all these tasks is the Cipher Suite. This is what is agreed upon in the TLS handshake.
 - The `ClientHello` message lists which cipher algorithms it can do for each task and the server checks which algorithms it can also do and chooses from them.
 
 ## [TLS Authentication](https://launchschool.com/lessons/74f1325b/assignments/95e698ab)
 
-- So far we have lovely encrypted message. But what if the sender is malicious? You might believe you're talking to your bank, but it could be someone pretending to be your bank. And if you think your encrption is sufficient, you could be sending all sorts of sensitive data.
+- So far we have lovely encrypted message. But what if the sender is malicious? You might believe you're talking to your bank, but it could be someone pretending to be your bank. And if you think your encryption is sufficient, you could be sending all sorts of sensitive data.
 - We need a way to identify the other party in our exchange.
 - During the TLS handshake, the `ClientHello` message contains the server's certificate. This was to give the client the public key, but it has a second function of providing a means for identification.
 - The Certificate will say who its owner is and some other things. Obviously this is publicly available, so someone can easily fake one. That's why there are a few more steps to the process.
-- The exact steps depends on which Authentication algorithm is chosen as part of the Cipher Suite. But generally it's like this:
+- Which exact steps depends on which authentication algorithm is chosen as part of the Cipher Suite. But generally it's like this:
   - The server sends a certificate, with its public key inside.
   - The server creates a 'signature' in the form of some data encrypted with the server's private key.
   - This signature is transmitted along with the original data from which the signature was created.
@@ -114,27 +114,27 @@ A Brief history of Cryptography:
 
 - In order for Identification to be trustworthy we need to trust its source. For Digital Certificates these are called Certificate Authorities.
 - When a CA issues a certificate it does these things:
-  - Verifies the party requesting the certificate is who they say they are. The way they do this depends on the CA and the tyoe of certificate. SO for example if its a 'domain validated server certificate' you'd want to prove that the sender actually owns the domain by uploading a specific file to a server that's accessible by the relevant domain.
-  - Digitally signs the certificate being issued. This is usually dione by encryting some date with the CA's own private key and using this as a signature. The unencrypted version of the data is also included. This is to prove the certificate was issued by the CA. The signature can be decrypted using the CA's public key and checked for a match against the un-encrypted version.
+  - Verifies the party requesting the certificate is who they say they are. The way they do this depends on the CA and the type of certificate. So for example if it's a 'domain validated server certificate' you'd want to prove that the sender actually owns the domain by uploading a specific file to a server that's accessible by the relevant domain. (Like email confirmation I guess).
+  - They digitally sign the certificate being issued. This is usually done by encrypting some data with the CA's own private key and using this as a signature. The unencrypted version of the data is also included. This is to prove the certificate was issued by the CA. The signature can be decrypted using the CA's public key and checked for a match against the un-encrypted version.
 
 
 #### Who are these CAs?
 
 - There are different levels of CA.
-- An intermediate CA can be any company or body authorised by a 'root CA' to issue Certificates on its behalf. For example a widely used intermediatre CA is called 'Let's Encrypt', who provide free automated certificates.
+- An intermediate CA can be any company or body authorised by a 'root CA' to issue certificates on its behalf. For example a widely used intermediatre CA is called 'Let's Encrypt', who provide free automated certificates.
 - Google have their own CA called Google Internet Authority and they issue certificates for all of Google's domains.
-- (Have theychanges their name to Google Trust Services?)
+- (Have they changes their name to Google Trust Services?)
 
 <img width="1440" alt="Screenshot 2023-05-07 at 12 40 45" src="https://user-images.githubusercontent.com/78854926/236675292-f5ed8395-cae6-4045-bcb2-0a266ac75ebc.png">
 
 - LS says the "chain of trust" should be "Google.com" to "Google Internet Security" to "GlobalSign". But what I'm seeing is "google.com" to "GTS CA 1C3" to "GTS Root R1". 
 - The Root CA has the Root Certificate. Root Certificates are 'self-signed' and are the end-point in the chain of trust.
-- Client software, like browsers, store a list of these authorities along with their root certificates(with their public keys). When receiving a certificate for checking the browser can verify all the intermediaries in the list until it gets to the root CA.
+- Client software, like browsers, store a list of these authorities along with their root certificates (with their public keys). When receiving a certificate for checking, the browser can verify all the intermediaries in the list until it gets to the root CA.
 
 <img width="874" alt="Screenshot 2023-05-07 at 12 52 07" src="https://user-images.githubusercontent.com/78854926/236675766-e03924c1-8175-48ff-bae6-6065ef9af357.png">
 
 - This chain-like structure provides great security.
-- The private key of Root CAs is heavily guarded.
+- The private key of Root CAs is closely guarded.
 - They don't issue end-user certificates.
 - If the private key of an intermediate CA is compromised then the root CA can cut off that Intermediate CA without the rest being compromised.
 - The trustworthiness of the root CA comes from a company's reputation and longevity.
@@ -144,18 +144,18 @@ A Brief history of Cryptography:
 ## [TLS Integrity](https://launchschool.com/lessons/74f1325b/assignments/a88271cf)
 
 - TLS is a "session-layer-protocol" (according to the OSI). So it exists between the Application Layer (where HTTP resides) and the Transport Layer (where TCP resides). Don't get too bogged down with this, but remember TLS operates between HTTP and TCP.
-- Just like other protocols TLS sends messages in a definite format. The format can vary deopending on the particular function that TLS is performing, but when transporting application data, TSL does it the same way other PDUs do. This means meta-data in the header and footer with a Data Payload.
+- Just like other protocols TLS sends messages in a definite format. The format can vary depending on the particular function that TLS is performing, but when transporting application data, TSL does it the same way other PDUs do. This means meta-data in the header and footer with a Data Payload.
 
 <img width="863" alt="Screenshot 2023-05-07 at 13 11 06" src="https://user-images.githubusercontent.com/78854926/236676664-0421a8a4-e592-43b4-8ad4-63ca4eecda8a.png">
 
-- For proving Message integrity we mainly want to be looking at the `MAC` field (Message Authentication Code). This is different to the MAC address on a computer (Media Access Control Address)
+- For proving message integrity we mainly want to be looking at the `MAC` field (Message Authentication Code). This is different to the MAC address on a computer (Media Access Control Address)
 
 ### Message Authentication Code
 
-  - This field is similar to the checksum fields we've found in other PDUs. However there is a different in implementation adn intention. The Checksum field in a TCP segment is meant to check for errors, which arise from corruption during transit. But the MAC fieeld in a TLS record is to establish an added layer of security. It means we can check that the message wasn't tampered with in transit.
+  - This field is similar to the checksum fields we've found in other PDUs. However there is a difference in implementation and intention. The checksum field in a TCP segment is meant to check for errors, which arise from corruption during transit. But the MAC field in a TLS record is to establish an added layer of security. It means we can check that the message wasn't tampered with in transit.
   - This is done with a hashing algorithm, that works thusly:
  1. The sender creates a 'digest' of the data payload. This is like a small amount of data taken from the actual data that will be sent in the MAC field. It is created using a hashing algorithm combined with a pre-agreed hash-value. These are decided during the TLS handshake.
- 2. The sender encodes the data-payload using the symmetric key and encapsulate it into a TLS record. Then pass this down to the Transport layer to be sent to the other party.
+ 2. The sender encodes the data-payload using the symmetric key and encapsulate it into a TLS record. This is then passes down to the Transport layer to be sent to the other party.
  3. When the other party gets the message they decrypt it with the symmetric key. They will also create a digest using the agreed hashing algorithm. If the two digests match then it confirms the integrity of the message.
 
 ## [Summary](https://launchschool.com/lessons/74f1325b/assignments/238ff36f)
@@ -163,13 +163,13 @@ A Brief history of Cryptography:
 - HTTP requests are sent in plain text which makes them INHERENTLY INSECURE.
 - We can use the TLS Protcol to add security to HTTP communications.
 - TLS encryption allows us to encrypt messages so that only those with an authorised means of decoding the message can read it.
-- TLS encryptioin uses a combination of symmetric and asymmetric encryption.
+- TLS encryption uses a combination of symmetric and asymmetric encryption.
 - The TLS handshake is the way that a client and server exchange encryption keys.
 - A TLS handshake must be performed before secure data transfer can begin. It envolves several round-trips of latency and therefore has an impact on performance.
-- A Cipher suite is an agreed set of algorithms used by the client and the servers during the secure message exchange.
+- A cipher suite is an agreed set of algorithms used by the client and the servers during the secure message exchange.
 - TLS authentication is a means of verifying the identity of a participant in a message exchange.
-- TLS authentication is impolemented through the u=se of Digital Certificates.
-- Certificates are signed by a certificate authority and work on the basis of a chain of trust, which leads uop to a small group of root Certificate Authorities.
+- TLS authentication is implemented through the use of Digital Certificates.
+- Certificates are signed by a certificate authority and work on the basis of a chain of trust, which leads up to a small group of root Certificate Authorities.
 - The server's certificate is sent during the TLS handshake.
 - TLS integrity allows a way of testing whether a message has been altered during transit.
 - TLS integrity is implemented with the use of a MAC (Message Authentication Code).
@@ -190,15 +190,15 @@ A Brief history of Cryptography:
 
 ## Overview:
 
-|  | Once | Twice | Thrice | Comprehension | Retention
+|  | Once | Twice (just noets) | Thrice | Comprehension | Retention
 | :--- | :---: | :---: | :---: | :--- | :---
-|1. Introduction|7/5/23|||70%|70%|
-|2. What to focus on|7/5/23|||70%|70%|
-|3.The Transport Layer Security Protocol|7/5/23|||70%|70%|
-|4. TLS Encryption|7/5/23|||70%|70%|
-|5. TLS Authentication|7/5/23|||70%|70%|
-|6. TLS Integrity|7/5/23|||60%|70%|
-|7. Summary|7/5/23|||60%|70%|
-|8. Quiz|86%|
+|1. Introduction|7/5/23|13/9/23||70%|70%|
+|2. What to focus on|7/5/23|13/9/23||70%|70%|
+|3.The Transport Layer Security Protocol|7/5/23|13/9/23||70%|70%|
+|4. TLS Encryption|7/5/23|13/9/23||70%|70%|
+|5. TLS Authentication|7/5/23|13/9/23||70%|70%|
+|6. TLS Integrity|7/5/23|13/9/23||60%|70%|
+|7. Summary|7/5/23|13/9/23||60%|70%|
+|8. Quiz|86%|13/9/23
 | + Read through Discussions |
 .
